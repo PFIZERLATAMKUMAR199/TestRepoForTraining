@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a4003bb1-ea7b-46da-ab3f-a2e6731f9051" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:61135/ORMService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ORMService.wsdl" MetadataType="Wsdl" ID="04c2bdf9-80d9-445c-9a5b-fac623ad5209" SourceId="1" SourceUrl="http://localhost:61135/ORMService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ORMService.xsd" MetadataType="Schema" ID="f92e93e5-126b-4bb4-a421-74fb8c13400f" SourceId="1" SourceUrl="http://localhost:61135/ORMService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ORMService1.xsd" MetadataType="Schema" ID="604684b8-5410-4735-9551-7e0d620f4794" SourceId="1" SourceUrl="http://localhost:61135/ORMService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ORMService1.wsdl" MetadataType="Wsdl" ID="b74f73e0-8994-48ce-866d-f0fb0b776d48" SourceId="1" SourceUrl="http://localhost:61135/ORMService.svc?wsdl" />
+    <MetadataFile FileName="ORMService.disco" MetadataType="Disco" ID="80aff615-7642-451c-b11b-9657ac4f9609" SourceId="1" SourceUrl="http://localhost:61135/ORMService.svc?disco" />
+    <MetadataFile FileName="ORMService2.xsd" MetadataType="Schema" ID="136d2bcf-25c0-4503-b808-f137e2a7508e" SourceId="1" SourceUrl="http://localhost:61135/ORMService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ORMService3.xsd" MetadataType="Schema" ID="753f23c0-0c7b-43f2-a877-5486afd9de2e" SourceId="1" SourceUrl="http://localhost:61135/ORMService.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

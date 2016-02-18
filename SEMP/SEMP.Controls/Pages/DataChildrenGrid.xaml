@@ -1,0 +1,37 @@
+﻿<data:DataGrid
+    x:Class="SEMP.Controls.DataChildrenGrid"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+    xmlns:ctl="clr-namespace:SEMP.Controls"
+    AutoGenerateColumns="False"
+    SelectionMode="Single"
+    >
+    <data:DataGrid.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Templates/DataGrid.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </data:DataGrid.Resources>
+    <data:DataGrid.Columns>
+        <data:DataGridTemplateColumn CanUserReorder="False" CanUserResize="False" CanUserSort="False">
+            <data:DataGridTemplateColumn.HeaderStyle>
+                <Style TargetType="Control">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate>
+                                <ctl:ImageButton Click="Children_Add" Content="../Images/ChildrenGrid/Add.png" Tag="Agregar"/>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </data:DataGridTemplateColumn.HeaderStyle>
+            <data:DataGridTemplateColumn.CellTemplate>
+                <DataTemplate>
+                    <ctl:ImageButton Click="Children_Delete" Content="../Images/ChildrenGrid/Remove.png" Tag="Quitar"/>
+                </DataTemplate>
+            </data:DataGridTemplateColumn.CellTemplate>
+        </data:DataGridTemplateColumn>
+    </data:DataGrid.Columns>
+</data:DataGrid>

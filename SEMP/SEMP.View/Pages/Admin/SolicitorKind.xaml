@@ -1,0 +1,67 @@
+﻿<!--luis - 2011-11-21-->
+<log:SolicitorKindPageControl
+    x:Class="SEMP.View.Pages.SolicitorKindPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+    xmlns:src="clr-namespace:SEMP.View"
+    xmlns:pag="clr-namespace:SEMP.View.Pages"
+    xmlns:ctl="clr-namespace:SEMP.Controls;assembly=SEMP.Controls"
+    xmlns:log="clr-namespace:SEMP.Logic.WCF.Services;assembly=SEMP.Logic"
+    xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+    >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <!-- FRL 2011-11-22 --><!--<RowDefinition Height="auto"/>-->
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="{Binding Dictionary,ConverterParameter=Name,                          Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}" Style="{StaticResource PageTextBlockStyle}" />
+        <TextBlock Grid.Row="1" Text="{Binding Dictionary,ConverterParameter=RequestsWithoutStock,          Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}" Style="{StaticResource PageTextBlockStyle}" />
+        <TextBlock Grid.Row="2" Text="{Binding Dictionary,ConverterParameter=MaxProductAmmountPerRequest,   Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}" Style="{StaticResource PageTextBlockStyle}" />
+        <TextBlock Grid.Row="3" Text="{Binding Dictionary,ConverterParameter=MaxProductAmmountPerMonth,     Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}" Style="{StaticResource PageTextBlockStyle}" />
+        <TextBlock Grid.Row="4" Text="{Binding Dictionary,ConverterParameter=MaxValidTime,                  Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}" Style="{StaticResource PageTextBlockStyle}" /> 
+        <TextBlock Grid.Row="5" Text="{Binding Dictionary,ConverterParameter=MaxRequestsPerMonth,           Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}" Style="{StaticResource PageTextBlockStyle}" />
+
+        <TextBlock  Grid.Column="1" Grid.Row="0" Text="*" Style="{StaticResource PageTextBlockStyle}" Foreground="Red" />
+        <TextBlock  Grid.Column="1" Grid.Row="1" Text="*" Style="{StaticResource PageTextBlockStyle}" Foreground="Red" />
+        <TextBlock  Grid.Column="1" Grid.Row="2" Text="*" Style="{StaticResource PageTextBlockStyle}" Foreground="Red" />
+        <TextBlock  Grid.Column="1" Grid.Row="3" Text="*" Style="{StaticResource PageTextBlockStyle}" Foreground="Red" />
+        <TextBlock  Grid.Column="1" Grid.Row="4" Text="*" Style="{StaticResource PageTextBlockStyle}" Foreground="Red" />
+        <TextBlock  Grid.Column="1" Grid.Row="5" Text="*" Style="{StaticResource PageTextBlockStyle}" Foreground="Red" />
+
+
+        <TextBox    Grid.Row="0" Text="{Binding Name, Mode=TwoWay}"                                                     MaxLength="100"             Style="{StaticResource PageControlStyle}" Grid.Column="2" />
+        <CheckBox   Grid.Row="1" IsChecked="{Binding RequestsWithoutStock, Mode=TwoWay}"    HorizontalAlignment="Left"                              Style="{StaticResource PageControlStyle}" Grid.Column="2" />
+        <TextBox    Grid.Row="2" Text="{Binding MaxProductAmmountPerRequest, Mode=TwoWay}"  HorizontalAlignment="Left"  MaxLength="10"  Width="100" Style="{StaticResource PageControlStyle}" Grid.Column="2" />
+        <TextBox    Grid.Row="3" Text="{Binding MaxProductAmmountPerMonth, Mode=TwoWay}"    HorizontalAlignment="Left"  MaxLength="10"  Width="100" Style="{StaticResource PageControlStyle}" Grid.Column="2" />
+        <TextBox    Grid.Row="4" Text="{Binding MaxValidTime, Mode=TwoWay}"                 HorizontalAlignment="Left"  MaxLength="10"  Width="100" Style="{StaticResource PageControlStyle}" Grid.Column="2" />
+        <TextBox    Grid.Row="5" Text="{Binding MaxRequestsPerMonth, Mode=TwoWay}"          HorizontalAlignment="Left"  MaxLength="10"  Width="100" Style="{StaticResource PageControlStyle}" Grid.Column="2" />
+        <!-- <<- FRL 2011-11-22 -->
+        <ctl:DataChildrenGrid x:Name="grdChildren" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="3" Margin="40,10" ItemsSource="{Binding Children, Mode=TwoWay}">
+            <ctl:DataChildrenGrid.Columns>
+                <data:DataGridTemplateColumn>
+                    <data:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <src:ProductActiveComboBox SelectedValue="{Binding ProductID, Mode=TwoWay}" MinWidth="100"/>
+                        </DataTemplate>
+                    </data:DataGridTemplateColumn.CellTemplate>
+                </data:DataGridTemplateColumn>
+                <data:DataGridTextColumn Binding="{Binding AmmountPerSolicitude, Mode=TwoWay}"/>
+            </ctl:DataChildrenGrid.Columns>
+        </ctl:DataChildrenGrid>
+        <!-- ->> -->
+    </Grid>
+</log:SolicitorKindPageControl>

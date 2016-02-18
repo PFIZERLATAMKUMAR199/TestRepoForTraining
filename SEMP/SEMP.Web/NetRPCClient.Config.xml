@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<ConfigurationAssembly Assembly="LibVBNetRPCClient">
+  <!-- ESTO IMPORTA EL QUE ESTÉ PRIMERO-->
+	<!--DESA-->
+	<UrlWebServices1>http://AMRNDHW3658/ModSeguridadWS/SearchDAL.asmx</UrlWebServices1>
+	<UrlWebServices2>http://AMRNDHW3658/ModSeguridadWS/SearchDAL.asmx</UrlWebServices2>
+
+	<!-- TEST -->
+	<UrlWebServices1>http://AMRNDHW3658/ModSeguridadWS/SearchDAL.asmx</UrlWebServices1>
+	<UrlWebServices2>http://AMRNDHW3658/ModSeguridadWS/SearchDAL.asmx</UrlWebServices2>
+
+	<!--PROD-->
+	<UrlWebServices1>http://AMRNDHW3658/ModSeguridadWS/SearchDAL.asmx</UrlWebServices1>
+	<UrlWebServices2>http://AMRNDHW3658/ModSeguridadWS/SearchDAL.asmx</UrlWebServices2>
+</ConfigurationAssembly>

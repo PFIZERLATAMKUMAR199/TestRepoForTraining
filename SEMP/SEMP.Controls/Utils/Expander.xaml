@@ -1,0 +1,20 @@
+﻿<ContentControl
+    x:Class="SEMP.Controls.Expander"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    >
+    <ContentControl.Template>
+        <ControlTemplate TargetType="ContentControl">
+            <StackPanel Orientation="Vertical">
+                <ToggleButton x:Name="tglButton" Click="tglButton_Click">
+                    <ToggleButton.Template>
+                        <ControlTemplate TargetType="ToggleButton">
+                            <ContentPresenter/>
+                        </ControlTemplate>
+                    </ToggleButton.Template>
+                </ToggleButton>
+                <ContentPresenter x:Name="ButtonContent"/>
+            </StackPanel>
+        </ControlTemplate>
+    </ContentControl.Template>
+</ContentControl>

@@ -1,0 +1,56 @@
+﻿<!--Luis - 2011-12-19-->
+<UserControl xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls" 
+    x:Class="SEMP.View.Pages.SolicitudeToPrintQueryPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+    xmlns:src="clr-namespace:SEMP.View"
+    xmlns:pag="clr-namespace:SEMP.View.Pages"
+    xmlns:ctl="clr-namespace:SEMP.Controls;assembly=SEMP.Controls"
+    xmlns:log="clr-namespace:SEMP.Logic.WCF.Services;assembly=SEMP.Logic"
+    xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+    >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Style="{StaticResource PageTextBlockStyle}" Grid.Row="0"
+                   Text="{Binding Dictionary,ConverterParameter=SelectAll,Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}"/>
+
+        <CheckBox x:Name="chkSelectsAll" Style="{StaticResource PageControlStyle}" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Checked="chkSelectsAll_Changed" Unchecked="chkSelectsAll_Changed"/>
+
+        <ctl:DataChildrenGrid x:Name="grdToProcess" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="40,10" ItemsSource="{Binding Detail, Mode=TwoWay}" RowAddColumnVisible="False"  CurrentCellChanged="grdChildren_CurrentCellChanged">
+            <ctl:DataChildrenGrid.Columns>
+                <data:DataGridTextColumn        Binding="{Binding ID, Mode=TwoWay}"             IsReadOnly="True"/>
+                <data:DataGridTextColumn        Binding="{Binding Name, Mode=TwoWay}"           IsReadOnly="True"/>
+                <data:DataGridTextColumn        Binding="{Binding ReceptionDate, Mode=TwoWay,   Converter={StaticResource ShortDateStringConverter}}" IsReadOnly="True"/>
+                <data:DataGridCheckBoxColumn    Binding="{Binding Process, Mode=TwoWay}"        IsReadOnly="False" IsThreeState="False"/>
+            </ctl:DataChildrenGrid.Columns>
+        </ctl:DataChildrenGrid>
+
+        <Image                              Grid.Row="2"    Height="20" Source="../../Images/Pages/Document.png" />
+        <HyperlinkButton Grid.Column="1"    Grid.Row="2"    x:Name="hlbReport" Style="{StaticResource PageControlStyle}" />
+
+        <ctl:FieldHelp                      Grid.Row="3"    x:Name="dgReport" AutoGenerateColumns="False" Grid.ColumnSpan="2" Margin="40,10" >
+            <ctl:FieldHelp.Columns>
+                <data:DataGridTemplateColumn Header="Reportes emitidos" Width="Auto">
+                    <data:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <HyperlinkButton Content="{Binding}" NavigateUri="{Binding}"/>
+                        </DataTemplate>
+                    </data:DataGridTemplateColumn.CellTemplate>
+                </data:DataGridTemplateColumn>
+            </ctl:FieldHelp.Columns>
+        </ctl:FieldHelp>
+        
+    </Grid>
+</UserControl>

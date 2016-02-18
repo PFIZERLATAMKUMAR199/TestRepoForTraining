@@ -1,0 +1,37 @@
+﻿<Application
+    x:Class="SEMP.View.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:ctl="clr-namespace:SEMP.Controls;assembly=SEMP.Controls"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+    >
+    <Application.Resources>
+        <Style TargetType="TextBlock" x:Name="PageTextBlockStyle">
+            <Setter Property="Margin" Value="30,0,0,0"/> <!--<Setter Property="Margin" Value="30,7,0,0"/>-->
+            <Setter Property="Foreground" Value="#3873B9"/>
+            <Setter Property="VerticalAlignment" Value="Center" /> <!-- FRL - 2012-10-18 -->
+        </Style>
+        <Style TargetType="FrameworkElement" x:Name="PageControlStyle">
+            <Setter Property="Margin" Value="10,0,30,10"/>
+        </Style>
+        <Style TargetType="TextBox" x:Name="MaxLength2Style">
+            <Setter Property="MaxLength" Value="2"/>
+        </Style>
+        <Style TargetType="TextBox" x:Name="MaxLength20Style">
+            <Setter Property="MaxLength" Value="20"/>
+        </Style>
+        <Style TargetType="TextBox" x:Name="MaxLength30Style">
+            <Setter Property="MaxLength" Value="30"/>
+        </Style>
+        <Style TargetType="TextBox" x:Name="MaxLength100Style">
+            <Setter Property="MaxLength" Value="100"/>
+        </Style>
+        <Style TargetType="TextBox" x:Name="MaxLength200Style">
+            <Setter Property="MaxLength" Value="200"/>
+        </Style>
+        <Style TargetType="TextBox" x:Name="MaxLengthInt32Style">
+            <Setter Property="MaxLength" Value="4"/>
+        </Style>
+    </Application.Resources>
+</Application>

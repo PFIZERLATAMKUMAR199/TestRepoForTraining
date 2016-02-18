@@ -1,0 +1,158 @@
+﻿<!--FRL - 2011-11-14-->
+<UserControl xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls" 
+    x:Class="SEMP.View.Pages.SolicitudePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+    xmlns:src="clr-namespace:SEMP.View"
+    xmlns:pag="clr-namespace:SEMP.View.Pages"
+    xmlns:ctl="clr-namespace:SEMP.Controls;assembly=SEMP.Controls"
+    xmlns:log="clr-namespace:SEMP.Logic.WCF.Services;assembly=SEMP.Logic"
+    xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+    >
+
+    <Grid x:Name="outer">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ctl:ImageButton    Visibility="Collapsed" Grid.Row="0"  Grid.Column="1"   x:Name="cmdBack"      Content="../Images/Pages/Find.png"       Tag="{Binding Dictionary,ConverterParameter=Back,   Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}" Click="cmdBack_Click" />
+        <data:DataGrid      Visibility="Collapsed" Grid.Row="1"  Grid.Column="0"   x:Name="grdUserLastSolicitudes" Grid.ColumnSpan="2" ItemsSource="{Binding UserSolicitudes, Mode=TwoWay}" IsEnabled="False" AutoGenerateColumns="False" >
+            <data:DataGrid.Columns>
+                <data:DataGridTextColumn Binding="{Binding ReceptionDate,   Mode=TwoWay,    Converter={StaticResource ShortDateStringConverter}}"   IsReadOnly="True" />
+                <data:DataGridTextColumn Binding="{Binding ProductName,     Mode=TwoWay}"                                                           IsReadOnly="True" />
+                <data:DataGridTextColumn Binding="{Binding Ammount,         Mode=TwoWay}"                                                           IsReadOnly="True" />
+                <data:DataGridTextColumn Binding="{Binding Status,          Mode=TwoWay}"                                                           IsReadOnly="True" />
+                <data:DataGridTextColumn Binding="{Binding Relative,        Mode=TwoWay}"                                                           IsReadOnly="True" />
+                <data:DataGridTextColumn Binding="{Binding sSolicitudeType,         Mode=TwoWay}"                                                           IsReadOnly="True" />
+                <data:DataGridTextColumn Binding="{Binding dtExpiration,   Mode=TwoWay,    Converter={StaticResource ShortDateStringConverter}}"   IsReadOnly="True" />
+                <data:DataGridTextColumn Binding="{Binding dtReceiptInitialDate,   Mode=TwoWay,    Converter={StaticResource ShortDateStringConverter}}"   IsReadOnly="True" />
+                <data:DataGridTextColumn Binding="{Binding dtReceiptFinalDate,   Mode=TwoWay,    Converter={StaticResource ShortDateStringConverter}}"   IsReadOnly="True" />                
+            </data:DataGrid.Columns>
+
+        </data:DataGrid>
+
+        <Grid x:Name="grdInner" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>  <!--0 Solicitor-->
+                <RowDefinition Height="auto"/>  <!--1 Location-->
+                <RowDefinition Height="auto"/>  <!--2 Relative-->
+                <RowDefinition Height="auto"/>  <!--3 Treatment-->
+                <RowDefinition Height="70"/>    <!--4 Observations-->
+                <RowDefinition Height="auto"/>  <!--5 BeginDate-->
+                <RowDefinition Height="auto"/>  <!--6 Product-->
+                <RowDefinition Height="7"/>     <!--7 -->
+                <RowDefinition Height="auto"/>  <!--8 Dose-->
+                <RowDefinition Height="auto"/>  <!--9 grdChildren-->
+                <RowDefinition/>                <!--9 -->
+            </Grid.RowDefinitions>
+            <TextBlock                                  Grid.Row="0" Grid.Column="0"    Text="{Binding Dictionary,ConverterParameter=Solicitor,        Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}" Style="{StaticResource PageTextBlockStyle}" />
+            <Grid                                       Grid.Row="0" Grid.Column="1" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <src:UserActiveComboBox                 Grid.Row="0" Grid.Column="0"    SelectedValue="{Binding SolicitorID, Mode=TwoWay}"             x:Name="cboSolicitor" Style="{StaticResource PageControlStyle}" SelectionChanged="cboSolicitor_SelectionChanged" />
+                <ctl:ImageButton                        Grid.Row="0" Grid.Column="1"    x:Name="cmdUserSolicitudes"      Content="../Images/Commands/Find.png"       Tag="{Binding Dictionary,ConverterParameter=Solicitudes,   Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}" Click="cmdUserSolicitudes_Click" />
+            </Grid>
+
+            <TextBlock                                  Grid.Row="1" Grid.Column="0"    Text="{Binding Dictionary,ConverterParameter=Location,       Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}" Style="{StaticResource PageTextBlockStyle}" />
+            <src:LocationComboBox                       Grid.Row="1" Grid.Column="1"    SelectedValue="{Binding LocationID, Mode=TwoWay}"            Style="{StaticResource PageControlStyle}"  />
+            
+            <TextBlock                                  Grid.Row="2" Grid.Column="0"    Text="{Binding Dictionary,ConverterParameter=Relative,       Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}" Style="{StaticResource PageTextBlockStyle}" />
+            <src:RelativeActiveOfUserComboBox           Grid.Row="2" Grid.Column="1"    SelectedValue="{Binding RelativeID, Mode=TwoWay}"            Style="{StaticResource PageControlStyle}" x:Name="cmdRelativeActiveOfUser" />
+
+            <TextBlock                                  Grid.Row="3" Grid.Column="0"    Text="{Binding Dictionary,ConverterParameter=Treatment,      Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}" Style="{StaticResource PageTextBlockStyle}" />
+            <src:TreatmentComboBox                      Grid.Row="3" Grid.Column="1"    SelectedValue="{Binding TreatmentID, Mode=TwoWay}"           Style="{StaticResource PageControlStyle}" x:Name="cboTreatment" SelectionChanged="TreatmentComboBox_SelectionChanged" />
+
+            <TextBlock                                  Grid.Row="4" Grid.Column="0"    Text="{Binding Dictionary,ConverterParameter=TreatmentObservations,   Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}" Style="{StaticResource PageTextBlockStyle}" />
+            <TextBox                                    Grid.Row="4" Grid.Column="1"    Text="{Binding Observations, Mode=TwoWay}"                   MaxLength="2000" AcceptsReturn="True" Style="{StaticResource PageControlStyle}" />
+            
+            <Grid Name="GridDates"                      Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition /> <!-- FRL - 2012-10-18 -->
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Style="{StaticResource PageTextBlockStyle}" Grid.Column="0" Grid.Row="0"
+                   Text="{Binding Dictionary,ConverterParameter=PrescriptionDate,
+                   Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}"/>
+
+                <controls:DatePicker x:Name="dtPrescriptionDate" Style="{StaticResource PageControlStyle}" Grid.Column="1" Grid.Row="0" 
+                   SelectedDate="{Binding BeginDate, Mode=TwoWay}" SelectedDateChanged="dtPrescriptionDate_SelectedDateChanged" />
+
+                <TextBlock Style="{StaticResource PageTextBlockStyle}" Grid.Column="2" Grid.Row="0"
+                   Text="{Binding Dictionary,ConverterParameter=PrescriptionEndDate,
+                   Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}"/>
+
+                <controls:DatePicker x:Name="dtPrescriptionEndDate" Style="{StaticResource PageControlStyle}" Grid.Column="3" Grid.Row="0"
+                   SelectedDate="{Binding EndDate, Mode=TwoWay}" />
+                
+                <!-- <<- FRL - 2012-10-18 -->
+                <TextBlock Style="{StaticResource PageTextBlockStyle}" Grid.Column="4" Grid.Row="0"
+                   Text="{Binding Dictionary,ConverterParameter=SolicitudeMaxValidThrough,
+                   Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}" TextWrapping="Wrap" HorizontalAlignment="Left" Margin="0" />
+                <!-- ->> -->
+            </Grid>
+            
+            <TextBlock                                  Grid.Row="6" Grid.Column="0"    Text="{Binding Dictionary,ConverterParameter=Product,        Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}" Style="{StaticResource PageTextBlockStyle}" />
+            <Grid                                       Grid.Row="6" Grid.Column="1" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <!-- FRL - 2012-10-18 <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>-->
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <TextBox                                    Grid.Column="0"    x:Name="txtProduct"      Width="200"  />
+                <ctl:ImageButton                            Grid.Column="1"    x:Name="cmdProduct"      Content="../Images/Commands/Find.png"       Tag="{Binding Dictionary,ConverterParameter=Find,   Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}" Click="cmdProduct_Click" />
+                <src:ProductActiveOfUserComboBox            Grid.Column="2"    x:Name="cboProduct"      SelectedValue="{Binding ProductID, Mode=TwoWay}" Style="{StaticResource PageControlStyle}" />
+            </Grid>
+
+            <TextBlock                                  Grid.Row="8" Grid.Column="0"    Text="{Binding Dictionary,ConverterParameter=DoseTablet,        Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}" Style="{StaticResource PageTextBlockStyle}" />
+            <Grid                                       Grid.Row="8" Grid.Column="1" >
+                <Grid.ColumnDefinitions>
+                    <!--<ColumnDefinition Width="auto"/>-->
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <TextBox                                    Grid.Column="0"    x:Name="txtDose"     Width="50" Style="{StaticResource PageControlStyle}" />
+                <TextBlock                                  Grid.Column="1"    Text="{Binding Dictionary,ConverterParameter=EveryHours, Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}" Style="{StaticResource PageTextBlockStyle}" />
+                <TextBox                                    Grid.Column="2"    x:Name="txtHours"    Width="50" Style="{StaticResource PageControlStyle}" />
+                <TextBlock                                  Grid.Column="3"    Text="{Binding Dictionary,ConverterParameter=TreatmentDaysDuration, Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}" Style="{StaticResource PageTextBlockStyle}" />
+                <TextBox                                    Grid.Column="4"    x:Name="txtDay"      Width="50" Style="{StaticResource PageControlStyle}" />
+                <ctl:ImageButton                            Grid.Column="5"    x:Name="cmdAddProduct"   Content="../Images/ChildrenGrid/Add.png"    Tag="{Binding Dictionary,ConverterParameter=Add,    Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}" Click="cmdAddProduct_Click" HorizontalAlignment="Left" />
+            </Grid>
+
+            <ctl:DataChildrenGrid                       Grid.Row="9" Grid.Column="0"    x:Name="grdChildren"  Grid.ColumnSpan="2" Margin="40,10" MaxHeight="230" ItemsSource="{Binding Children, Mode=TwoWay}">
+                <ctl:DataChildrenGrid.Columns>
+                    <data:DataGridTextColumn Binding="{Binding Name,    Mode=TwoWay}"/>
+                    <data:DataGridTextColumn Binding="{Binding Dose,    Mode=TwoWay}"/>
+                    <data:DataGridTextColumn Binding="{Binding Hours,   Mode=TwoWay}"/>
+                    <data:DataGridTextColumn Binding="{Binding Days,    Mode=TwoWay}"/>
+                    <data:DataGridTextColumn Binding="{Binding Ammount, Mode=TwoWay}"/>
+                    <data:DataGridTextColumn Binding="{Binding Value,   Mode=TwoWay, Converter={StaticResource MoneyStringConverter}}"/>
+                </ctl:DataChildrenGrid.Columns>
+            </ctl:DataChildrenGrid>
+
+        </Grid>
+    </Grid>
+</UserControl>

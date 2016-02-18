@@ -1,0 +1,23 @@
+﻿<StackPanel
+    x:Class="SEMP.Controls.CommandsMenu"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ctl="clr-namespace:SEMP.Controls"
+    >
+    <ctl:ImageButton Click="Command_Click" x:Name="New" Content="../Images/Commands/New.png"
+                     Tag="{Binding Dictionary,ConverterParameter=New,Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}"/>
+    <ctl:ImageButton Click="Command_Click" x:Name="Find" Content="../Images/Commands/Find.png"
+                     Tag="{Binding Dictionary,ConverterParameter=Find,Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}"/>
+    <ctl:ImageButton Click="Command_Click" x:Name="Save" Content="../Images/Commands/Save.png"
+                     Tag="{Binding Dictionary,ConverterParameter=Save,Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}"/>
+    <ctl:ImageButton Click="Command_Click" x:Name="Clone" Content="../Images/Commands/Clone.png"
+                     Tag="{Binding Dictionary,ConverterParameter=Clone,Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}"/>
+    <ctl:ImageButton Click="Command_Click" x:Name="Delete" Content="../Images/Commands/Delete.png"
+                     Tag="{Binding Dictionary,ConverterParameter=Delete,Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}"/>
+    <ctl:ImageButton Click="Command_Click" x:Name="Report" Content="../Images/Commands/Report.png"
+                     Tag="{Binding Dictionary,ConverterParameter=Report,Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}"/>
+    <ctl:ImageButton Click="Command_Click" x:Name="Reload" Content="../Images/Commands/Reload.png"
+                     Tag="{Binding Dictionary,ConverterParameter=Reload,Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}"/>
+    <ctl:ImageButton Click="Command_Click" x:Name="Cancel" Content="../Images/Pages/Page.png"
+                     Tag="{Binding Dictionary,ConverterParameter=CancelChanges,Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}"/>
+</StackPanel>

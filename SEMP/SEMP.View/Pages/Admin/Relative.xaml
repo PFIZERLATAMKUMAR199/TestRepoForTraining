@@ -1,0 +1,78 @@
+﻿<!--FRL - 2012-06-12-->
+<log:RelativePageControl
+    x:Class="SEMP.View.Pages.RelativePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+    xmlns:src="clr-namespace:SEMP.View"
+    xmlns:pag="clr-namespace:SEMP.View.Pages"
+    xmlns:ctl="clr-namespace:SEMP.Controls;assembly=SEMP.Controls"
+    xmlns:log="clr-namespace:SEMP.Logic.WCF.Services;assembly=SEMP.Logic"
+    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+    >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock  Style="{StaticResource PageTextBlockStyle}" Grid.Row="0"
+                    Text="{Binding Dictionary,ConverterParameter=User,Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}"/>
+
+        <TextBlock  Style="{StaticResource PageTextBlockStyle}" Grid.Row="0" Grid.Column="1"
+                    Text="*" Foreground="Red" />
+
+        <src:UserComboBox Grid.Row="0" Grid.Column="2" 
+                    SelectedValue="{Binding SolicitorID, Mode=TwoWay}" 
+                    x:Name="cboUser"  
+                    Style="{StaticResource PageControlStyle}"/>
+
+        <TextBlock  Style="{StaticResource PageTextBlockStyle}" Grid.Row="1"
+                    Text="{Binding Dictionary,ConverterParameter=Name,Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}"/>
+
+        <TextBlock  Style="{StaticResource PageTextBlockStyle}" Grid.Row="1" Grid.Column="1"
+                    Text="*" Foreground="Red" />
+
+        <TextBox    Style="{StaticResource PageControlStyle}" Grid.Row="1" Grid.Column="2"
+                    Text="{Binding Name, Mode=TwoWay}" Name="txtName" MaxLength="80" />
+
+        <TextBlock  Style="{StaticResource PageTextBlockStyle}" Grid.Row="2"
+                    Text="{Binding Dictionary,ConverterParameter=Kinship,Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}"/>
+
+        <TextBlock   Style="{StaticResource PageTextBlockStyle}" Grid.Row="2" Grid.Column="1"
+                     Text="*" Foreground="Red" />
+
+        <src:KinshipComboBox Style="{StaticResource PageControlStyle}" Grid.Row="2" Grid.Column="2"
+                             SelectedValue="{Binding KinshipID, Mode=TwoWay}" Name="cmbKinship"/>
+
+        <TextBlock Style="{StaticResource PageTextBlockStyle}" Grid.Row="3"
+                   Text="{Binding Dictionary,ConverterParameter=RUT,Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}"/>
+
+        <TextBlock Style="{StaticResource PageTextBlockStyle}" Grid.Row="3" Grid.Column="1"
+                   Text="*" Foreground="Red" />
+
+        <TextBox    Style="{StaticResource PageControlStyle}" Grid.Row="3" Grid.Column="2"
+                    Text="{Binding RUT, Mode=TwoWay}" Name="txtRUT" MaxLength="20" />
+
+        <TextBlock Style="{StaticResource PageTextBlockStyle}" Grid.Row="4"
+                   Text="{Binding Dictionary,ConverterParameter=BornDate,
+                   Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}"/>
+
+        <TextBlock Style="{StaticResource PageTextBlockStyle}" Grid.Row="4" Grid.Column="1"
+                   Text="*" Foreground="Red" />
+
+        <controls:DatePicker Style="{StaticResource PageControlStyle}" Grid.Row="4" Grid.Column="2" Width="150" Margin="10,0" HorizontalAlignment="Left"
+                             Name="dpDateBorn" SelectedDate="{Binding BornDate, Mode=TwoWay}" />
+    </Grid>
+</log:RelativePageControl>

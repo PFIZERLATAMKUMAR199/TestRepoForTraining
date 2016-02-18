@@ -1,0 +1,16 @@
+﻿<!--
+http://bueamrweb03/eff/ORMService.svc
+http://localhost:3917/SEMP.Web/ORMService.svc
+- - - - WPF - - - -
+xmlns="http://schemas.microsoft.com/.NetConfiguration/v2.0">
+behaviorConfiguration="clientEndpointCredential"
+<behaviors>
+	<endpointBehaviors>
+		<behavior name="clientEndpointCredential">
+			<clientCredentials>
+				<windows allowedImpersonationLevel="Delegation" />
+			</clientCredentials>
+		</behavior>
+	</endpointBehaviors>
+</behaviors>
+-->

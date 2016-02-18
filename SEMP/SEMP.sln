@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SEMP.Web", "SEMP.Web\", "{E23D1A29-E61D-4B8B-A1B9-78E29AEE6524}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
+		ProjectReferences = "{DB192EF6-944E-49F9-90F4-245F8A390BFD}|SEMP.Data.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/SEMP.Web"
+		Debug.AspNetCompiler.PhysicalPath = "SEMP.Web\"
+		Debug.AspNetCompiler.TargetPath = "..\..\..\PrecompiledWeb\SEMP\SEMP.Web\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/SEMP.Web"
+		Release.AspNetCompiler.PhysicalPath = "SEMP.Web\"
+		Release.AspNetCompiler.TargetPath = "..\..\..\PrecompiledWeb\SEMP\SEMP.Web\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "2221"
+		VWDVirtualPath = "/SEMP.Web"
+		ProjOutputReferences = "{752FBFBC-AE0C-4D58-9A36-EC7388B17040}|ClientBin|false;"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEMP.Data", "SEMP.Data\SEMP.Data.csproj", "{DB192EF6-944E-49F9-90F4-245F8A390BFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEMP.View", "SEMP.View\SEMP.View.csproj", "{752FBFBC-AE0C-4D58-9A36-EC7388B17040}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEMP.Controls", "SEMP.Controls\SEMP.Controls.csproj", "{A2F07019-820D-476F-BD67-D3148BB87B5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEMP.Logic", "SEMP.Logic\SEMP.Logic.csproj", "{70B00B81-A514-4B71-A28A-237CC850D5E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E23D1A29-E61D-4B8B-A1B9-78E29AEE6524}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E23D1A29-E61D-4B8B-A1B9-78E29AEE6524}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E23D1A29-E61D-4B8B-A1B9-78E29AEE6524}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{E23D1A29-E61D-4B8B-A1B9-78E29AEE6524}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{DB192EF6-944E-49F9-90F4-245F8A390BFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB192EF6-944E-49F9-90F4-245F8A390BFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB192EF6-944E-49F9-90F4-245F8A390BFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB192EF6-944E-49F9-90F4-245F8A390BFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{752FBFBC-AE0C-4D58-9A36-EC7388B17040}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{752FBFBC-AE0C-4D58-9A36-EC7388B17040}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{752FBFBC-AE0C-4D58-9A36-EC7388B17040}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{752FBFBC-AE0C-4D58-9A36-EC7388B17040}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2F07019-820D-476F-BD67-D3148BB87B5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2F07019-820D-476F-BD67-D3148BB87B5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2F07019-820D-476F-BD67-D3148BB87B5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2F07019-820D-476F-BD67-D3148BB87B5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70B00B81-A514-4B71-A28A-237CC850D5E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70B00B81-A514-4B71-A28A-237CC850D5E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70B00B81-A514-4B71-A28A-237CC850D5E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70B00B81-A514-4B71-A28A-237CC850D5E5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

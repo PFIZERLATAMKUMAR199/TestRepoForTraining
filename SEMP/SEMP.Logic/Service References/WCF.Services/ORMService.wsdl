@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="/Imports">
+      <xsd:import schemaLocation="http://localhost:61135/ORMService.svc?xsd=xsd0" />
+      <xsd:import schemaLocation="http://localhost:61135/ORMService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:61135/ORMService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SEMP.Data" />
+      <xsd:import schemaLocation="http://localhost:61135/ORMService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ORMService_SalesAdministrationReport_InputMessage">
+    <wsdl:part name="parameters" element="SalesAdministrationReport" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SalesAdministrationReport_OutputMessage">
+    <wsdl:part name="parameters" element="SalesAdministrationReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_ProductOriginGetAll_InputMessage">
+    <wsdl:part name="parameters" element="ProductOriginGetAll" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_ProductOriginGetAll_OutputMessage">
+    <wsdl:part name="parameters" element="ProductOriginGetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_ProductsActiveReport_InputMessage">
+    <wsdl:part name="parameters" element="ProductsActiveReport" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_ProductsActiveReport_OutputMessage">
+    <wsdl:part name="parameters" element="ProductsActiveReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeGetAll_InputMessage">
+    <wsdl:part name="parameters" element="SolicitudeGetAll" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeGetAll_OutputMessage">
+    <wsdl:part name="parameters" element="SolicitudeGetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeGet_InputMessage">
+    <wsdl:part name="parameters" element="SolicitudeGet" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeGet_OutputMessage">
+    <wsdl:part name="parameters" element="SolicitudeGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeGetExpired_InputMessage">
+    <wsdl:part name="parameters" element="SolicitudeGetExpired" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeGetExpired_OutputMessage">
+    <wsdl:part name="parameters" element="SolicitudeGetExpiredResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeGetNullable_InputMessage">
+    <wsdl:part name="parameters" element="SolicitudeGetNullable" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeGetNullable_OutputMessage">
+    <wsdl:part name="parameters" element="SolicitudeGetNullableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeGetLastItems_InputMessage">
+    <wsdl:part name="parameters" element="SolicitudeGetLastItems" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeGetLastItems_OutputMessage">
+    <wsdl:part name="parameters" element="SolicitudeGetLastItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeSave_InputMessage">
+    <wsdl:part name="parameters" element="SolicitudeSave" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeSave_OutputMessage">
+    <wsdl:part name="parameters" element="SolicitudeSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeModifySave_InputMessage">
+    <wsdl:part name="parameters" element="SolicitudeModifySave" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeModifySave_OutputMessage">
+    <wsdl:part name="parameters" element="SolicitudeModifySaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeGetToDeliver_InputMessage">
+    <wsdl:part name="parameters" element="SolicitudeGetToDeliver" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeGetToDeliver_OutputMessage">
+    <wsdl:part name="parameters" element="SolicitudeGetToDeliverResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeProductsOfUser_InputMessage">
+    <wsdl:part name="parameters" element="SolicitudeProductsOfUser" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeProductsOfUser_OutputMessage">
+    <wsdl:part name="parameters" element="SolicitudeProductsOfUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeProductsOfUserModify_InputMessage">
+    <wsdl:part name="parameters" element="SolicitudeProductsOfUserModify" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeProductsOfUserModify_OutputMessage">
+    <wsdl:part name="parameters" element="SolicitudeProductsOfUserModifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeFieldsToModify_InputMessage">
+    <wsdl:part name="parameters" element="SolicitudeFieldsToModify" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeFieldsToModify_OutputMessage">
+    <wsdl:part name="parameters" element="SolicitudeFieldsToModifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeGetItems_InputMessage">
+    <wsdl:part name="parameters" element="SolicitudeGetItems" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeGetItems_OutputMessage">
+    <wsdl:part name="parameters" element="SolicitudeGetItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeGetItemsModify_InputMessage">
+    <wsdl:part name="parameters" element="SolicitudeGetItemsModify" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeGetItemsModify_OutputMessage">
+    <wsdl:part name="parameters" element="SolicitudeGetItemsModifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeGetToApprove_InputMessage">
+    <wsdl:part name="parameters" element="SolicitudeGetToApprove" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeGetToApprove_OutputMessage">
+    <wsdl:part name="parameters" element="SolicitudeGetToApproveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeGetToModify_InputMessage">
+    <wsdl:part name="parameters" element="SolicitudeGetToModify" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeGetToModify_OutputMessage">
+    <wsdl:part name="parameters" element="SolicitudeGetToModifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeGetToProcess_InputMessage">
+    <wsdl:part name="parameters" element="SolicitudeGetToProcess" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeGetToProcess_OutputMessage">
+    <wsdl:part name="parameters" element="SolicitudeGetToProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeGetRejectable_InputMessage">
+    <wsdl:part name="parameters" element="SolicitudeGetRejectable" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeGetRejectable_OutputMessage">
+    <wsdl:part name="parameters" element="SolicitudeGetRejectableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_UsersReport_InputMessage">
+    <wsdl:part name="parameters" element="UsersReport" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_UsersReport_OutputMessage">
+    <wsdl:part name="parameters" element="UsersReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeProductDetailReport_InputMessage">
+    <wsdl:part name="parameters" element="SolicitudeProductDetailReport" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeProductDetailReport_OutputMessage">
+    <wsdl:part name="parameters" element="SolicitudeProductDetailReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_RequestsReport_InputMessage">
+    <wsdl:part name="parameters" element="RequestsReport" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_RequestsReport_OutputMessage">
+    <wsdl:part name="parameters" element="RequestsReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitorKindGetAll_InputMessage">
+    <wsdl:part name="parameters" element="SolicitorKindGetAll" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitorKindGetAll_OutputMessage">
+    <wsdl:part name="parameters" element="SolicitorKindGetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitorKindGet_InputMessage">
+    <wsdl:part name="parameters" element="SolicitorKindGet" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitorKindGet_OutputMessage">
+    <wsdl:part name="parameters" element="SolicitorKindGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitorKindSave_InputMessage">
+    <wsdl:part name="parameters" element="SolicitorKindSave" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitorKindSave_OutputMessage">
+    <wsdl:part name="parameters" element="SolicitorKindSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitorKindDelete_InputMessage">
+    <wsdl:part name="parameters" element="SolicitorKindDelete" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitorKindDelete_OutputMessage">
+    <wsdl:part name="parameters" element="SolicitorKindDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitorKindGetChildren_InputMessage">
+    <wsdl:part name="parameters" element="SolicitorKindGetChildren" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitorKindGetChildren_OutputMessage">
+    <wsdl:part name="parameters" element="SolicitorKindGetChildrenResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_TreatmentGetAll_InputMessage">
+    <wsdl:part name="parameters" element="TreatmentGetAll" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_TreatmentGetAll_OutputMessage">
+    <wsdl:part name="parameters" element="TreatmentGetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_TreatmentGet_InputMessage">
+    <wsdl:part name="parameters" element="TreatmentGet" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_TreatmentGet_OutputMessage">
+    <wsdl:part name="parameters" element="TreatmentGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_UserActiveGetAll_InputMessage">
+    <wsdl:part name="parameters" element="UserActiveGetAll" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_UserActiveGetAll_OutputMessage">
+    <wsdl:part name="parameters" element="UserActiveGetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_UserGetAll_InputMessage">
+    <wsdl:part name="parameters" element="UserGetAll" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_UserGetAll_OutputMessage">
+    <wsdl:part name="parameters" element="UserGetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_UserGet_InputMessage">
+    <wsdl:part name="parameters" element="UserGet" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_UserGet_OutputMessage">
+    <wsdl:part name="parameters" element="UserGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_UserSave_InputMessage">
+    <wsdl:part name="parameters" element="UserSave" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_UserSave_OutputMessage">
+    <wsdl:part name="parameters" element="UserSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_UserDelete_InputMessage">
+    <wsdl:part name="parameters" element="UserDelete" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_UserDelete_OutputMessage">
+    <wsdl:part name="parameters" element="UserDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_GetQVlink_InputMessage">
+    <wsdl:part name="parameters" element="GetQVlink" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_GetQVlink_OutputMessage">
+    <wsdl:part name="parameters" element="GetQVlinkResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_ClearSession_InputMessage">
+    <wsdl:part name="parameters" element="ClearSession" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_ClearSession_OutputMessage">
+    <wsdl:part name="parameters" element="ClearSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_GetUserMenu_InputMessage">
+    <wsdl:part name="parameters" element="GetUserMenu" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_GetUserMenu_OutputMessage">
+    <wsdl:part name="parameters" element="GetUserMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_ApproveRelativeProcess_InputMessage">
+    <wsdl:part name="parameters" element="ApproveRelativeProcess" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_ApproveRelativeProcess_OutputMessage">
+    <wsdl:part name="parameters" element="ApproveRelativeProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeToPrintReport_InputMessage">
+    <wsdl:part name="parameters" element="SolicitudeToPrintReport" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeToPrintReport_OutputMessage">
+    <wsdl:part name="parameters" element="SolicitudeToPrintReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_DeliverSolicitudeDeliver_InputMessage">
+    <wsdl:part name="parameters" element="DeliverSolicitudeDeliver" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_DeliverSolicitudeDeliver_OutputMessage">
+    <wsdl:part name="parameters" element="DeliverSolicitudeDeliverResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeToPrintQueryReport_InputMessage">
+    <wsdl:part name="parameters" element="SolicitudeToPrintQueryReport" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeToPrintQueryReport_OutputMessage">
+    <wsdl:part name="parameters" element="SolicitudeToPrintQueryReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_LocationGetAll_InputMessage">
+    <wsdl:part name="parameters" element="LocationGetAll" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_LocationGetAll_OutputMessage">
+    <wsdl:part name="parameters" element="LocationGetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_LocationGet_InputMessage">
+    <wsdl:part name="parameters" element="LocationGet" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_LocationGet_OutputMessage">
+    <wsdl:part name="parameters" element="LocationGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_LocationSave_InputMessage">
+    <wsdl:part name="parameters" element="LocationSave" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_LocationSave_OutputMessage">
+    <wsdl:part name="parameters" element="LocationSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_LocationDelete_InputMessage">
+    <wsdl:part name="parameters" element="LocationDelete" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_LocationDelete_OutputMessage">
+    <wsdl:part name="parameters" element="LocationDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_KinshipGetAll_InputMessage">
+    <wsdl:part name="parameters" element="KinshipGetAll" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_KinshipGetAll_OutputMessage">
+    <wsdl:part name="parameters" element="KinshipGetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_KinshipGet_InputMessage">
+    <wsdl:part name="parameters" element="KinshipGet" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_KinshipGet_OutputMessage">
+    <wsdl:part name="parameters" element="KinshipGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_KinshipSave_InputMessage">
+    <wsdl:part name="parameters" element="KinshipSave" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_KinshipSave_OutputMessage">
+    <wsdl:part name="parameters" element="KinshipSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_KinshipDelete_InputMessage">
+    <wsdl:part name="parameters" element="KinshipDelete" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_KinshipDelete_OutputMessage">
+    <wsdl:part name="parameters" element="KinshipDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_KinshipKindGetAll_InputMessage">
+    <wsdl:part name="parameters" element="KinshipKindGetAll" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_KinshipKindGetAll_OutputMessage">
+    <wsdl:part name="parameters" element="KinshipKindGetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_LanguageGetAll_InputMessage">
+    <wsdl:part name="parameters" element="LanguageGetAll" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_LanguageGetAll_OutputMessage">
+    <wsdl:part name="parameters" element="LanguageGetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_LanguageGetWords_InputMessage">
+    <wsdl:part name="parameters" element="LanguageGetWords" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_LanguageGetWords_OutputMessage">
+    <wsdl:part name="parameters" element="LanguageGetWordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_ProductStockReport_InputMessage">
+    <wsdl:part name="parameters" element="ProductStockReport" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_ProductStockReport_OutputMessage">
+    <wsdl:part name="parameters" element="ProductStockReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_EstimateForSolitudeReport_InputMessage">
+    <wsdl:part name="parameters" element="EstimateForSolitudeReport" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_EstimateForSolitudeReport_OutputMessage">
+    <wsdl:part name="parameters" element="EstimateForSolitudeReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeStatusGetAll_InputMessage">
+    <wsdl:part name="parameters" element="SolicitudeStatusGetAll" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeStatusGetAll_OutputMessage">
+    <wsdl:part name="parameters" element="SolicitudeStatusGetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeStatusGet_InputMessage">
+    <wsdl:part name="parameters" element="SolicitudeStatusGet" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_SolicitudeStatusGet_OutputMessage">
+    <wsdl:part name="parameters" element="SolicitudeStatusGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_RelativeGetActiveOfUserAll_InputMessage">
+    <wsdl:part name="parameters" element="RelativeGetActiveOfUserAll" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_RelativeGetActiveOfUserAll_OutputMessage">
+    <wsdl:part name="parameters" element="RelativeGetActiveOfUserAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_RelativeGetAll_InputMessage">
+    <wsdl:part name="parameters" element="RelativeGetAll" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_RelativeGetAll_OutputMessage">
+    <wsdl:part name="parameters" element="RelativeGetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_RelativeGet_InputMessage">
+    <wsdl:part name="parameters" element="RelativeGet" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_RelativeGet_OutputMessage">
+    <wsdl:part name="parameters" element="RelativeGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_RelativeSave_InputMessage">
+    <wsdl:part name="parameters" element="RelativeSave" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_RelativeSave_OutputMessage">
+    <wsdl:part name="parameters" element="RelativeSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_RelativeDelete_InputMessage">
+    <wsdl:part name="parameters" element="RelativeDelete" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_RelativeDelete_OutputMessage">
+    <wsdl:part name="parameters" element="RelativeDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_RelativeGetPending_InputMessage">
+    <wsdl:part name="parameters" element="RelativeGetPending" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_RelativeGetPending_OutputMessage">
+    <wsdl:part name="parameters" element="RelativeGetPendingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_RejectionReasonGetAll_InputMessage">
+    <wsdl:part name="parameters" element="RejectionReasonGetAll" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_RejectionReasonGetAll_OutputMessage">
+    <wsdl:part name="parameters" element="RejectionReasonGetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_RejectionReasonGet_InputMessage">
+    <wsdl:part name="parameters" element="RejectionReasonGet" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_RejectionReasonGet_OutputMessage">
+    <wsdl:part name="parameters" element="RejectionReasonGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_RejectionReasonSave_InputMessage">
+    <wsdl:part name="parameters" element="RejectionReasonSave" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_RejectionReasonSave_OutputMessage">
+    <wsdl:part name="parameters" element="RejectionReasonSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_RejectionReasonDelete_InputMessage">
+    <wsdl:part name="parameters" element="RejectionReasonDelete" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_RejectionReasonDelete_OutputMessage">
+    <wsdl:part name="parameters" element="RejectionReasonDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_MantenimientoReport_InputMessage">
+    <wsdl:part name="parameters" element="MantenimientoReport" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_MantenimientoReport_OutputMessage">
+    <wsdl:part name="parameters" element="MantenimientoReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_ModifySolicitudeModify_InputMessage">
+    <wsdl:part name="parameters" element="ModifySolicitudeModify" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_ModifySolicitudeModify_OutputMessage">
+    <wsdl:part name="parameters" element="ModifySolicitudeModifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_RejectSolicitudeReject_InputMessage">
+    <wsdl:part name="parameters" element="RejectSolicitudeReject" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_RejectSolicitudeReject_OutputMessage">
+    <wsdl:part name="parameters" element="RejectSolicitudeRejectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_ApproveSolicitudeApprove_InputMessage">
+    <wsdl:part name="parameters" element="ApproveSolicitudeApprove" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_ApproveSolicitudeApprove_OutputMessage">
+    <wsdl:part name="parameters" element="ApproveSolicitudeApproveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_ProductGetActiveOfUserAll_InputMessage">
+    <wsdl:part name="parameters" element="ProductGetActiveOfUserAll" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_ProductGetActiveOfUserAll_OutputMessage">
+    <wsdl:part name="parameters" element="ProductGetActiveOfUserAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_ProductGetActiveAll_InputMessage">
+    <wsdl:part name="parameters" element="ProductGetActiveAll" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_ProductGetActiveAll_OutputMessage">
+    <wsdl:part name="parameters" element="ProductGetActiveAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_ProductGetAll_InputMessage">
+    <wsdl:part name="parameters" element="ProductGetAll" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_ProductGetAll_OutputMessage">
+    <wsdl:part name="parameters" element="ProductGetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_ProductGet_InputMessage">
+    <wsdl:part name="parameters" element="ProductGet" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_ProductGet_OutputMessage">
+    <wsdl:part name="parameters" element="ProductGetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_ProductSave_InputMessage">
+    <wsdl:part name="parameters" element="ProductSave" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_ProductSave_OutputMessage">
+    <wsdl:part name="parameters" element="ProductSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_ProductDelete_InputMessage">
+    <wsdl:part name="parameters" element="ProductDelete" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_ProductDelete_OutputMessage">
+    <wsdl:part name="parameters" element="ProductDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_ProcessSolicitudeProcess_InputMessage">
+    <wsdl:part name="parameters" element="ProcessSolicitudeProcess" />
+  </wsdl:message>
+  <wsdl:message name="ORMService_ProcessSolicitudeProcess_OutputMessage">
+    <wsdl:part name="parameters" element="ProcessSolicitudeProcessResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ORMService">
+    <wsdl:operation name="SalesAdministrationReport">
+      <wsdl:input wsaw:Action="urn:ORMService/SalesAdministrationReport" message="ORMService_SalesAdministrationReport_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/SalesAdministrationReportResponse" message="ORMService_SalesAdministrationReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductOriginGetAll">
+      <wsdl:input wsaw:Action="urn:ORMService/ProductOriginGetAll" message="ORMService_ProductOriginGetAll_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/ProductOriginGetAllResponse" message="ORMService_ProductOriginGetAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductsActiveReport">
+      <wsdl:input wsaw:Action="urn:ORMService/ProductsActiveReport" message="ORMService_ProductsActiveReport_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/ProductsActiveReportResponse" message="ORMService_ProductsActiveReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitudeGetAll">
+      <wsdl:input wsaw:Action="urn:ORMService/SolicitudeGetAll" message="ORMService_SolicitudeGetAll_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/SolicitudeGetAllResponse" message="ORMService_SolicitudeGetAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitudeGet">
+      <wsdl:input wsaw:Action="urn:ORMService/SolicitudeGet" message="ORMService_SolicitudeGet_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/SolicitudeGetResponse" message="ORMService_SolicitudeGet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitudeGetExpired">
+      <wsdl:input wsaw:Action="urn:ORMService/SolicitudeGetExpired" message="ORMService_SolicitudeGetExpired_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/SolicitudeGetExpiredResponse" message="ORMService_SolicitudeGetExpired_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitudeGetNullable">
+      <wsdl:input wsaw:Action="urn:ORMService/SolicitudeGetNullable" message="ORMService_SolicitudeGetNullable_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/SolicitudeGetNullableResponse" message="ORMService_SolicitudeGetNullable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitudeGetLastItems">
+      <wsdl:input wsaw:Action="urn:ORMService/SolicitudeGetLastItems" message="ORMService_SolicitudeGetLastItems_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/SolicitudeGetLastItemsResponse" message="ORMService_SolicitudeGetLastItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitudeSave">
+      <wsdl:input wsaw:Action="urn:ORMService/SolicitudeSave" message="ORMService_SolicitudeSave_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/SolicitudeSaveResponse" message="ORMService_SolicitudeSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitudeModifySave">
+      <wsdl:input wsaw:Action="urn:ORMService/SolicitudeModifySave" message="ORMService_SolicitudeModifySave_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/SolicitudeModifySaveResponse" message="ORMService_SolicitudeModifySave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitudeGetToDeliver">
+      <wsdl:input wsaw:Action="urn:ORMService/SolicitudeGetToDeliver" message="ORMService_SolicitudeGetToDeliver_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/SolicitudeGetToDeliverResponse" message="ORMService_SolicitudeGetToDeliver_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitudeProductsOfUser">
+      <wsdl:input wsaw:Action="urn:ORMService/SolicitudeProductsOfUser" message="ORMService_SolicitudeProductsOfUser_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/SolicitudeProductsOfUserResponse" message="ORMService_SolicitudeProductsOfUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitudeProductsOfUserModify">
+      <wsdl:input wsaw:Action="urn:ORMService/SolicitudeProductsOfUserModify" message="ORMService_SolicitudeProductsOfUserModify_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/SolicitudeProductsOfUserModifyResponse" message="ORMService_SolicitudeProductsOfUserModify_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitudeFieldsToModify">
+      <wsdl:input wsaw:Action="urn:ORMService/SolicitudeFieldsToModify" message="ORMService_SolicitudeFieldsToModify_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/SolicitudeFieldsToModifyResponse" message="ORMService_SolicitudeFieldsToModify_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitudeGetItems">
+      <wsdl:input wsaw:Action="urn:ORMService/SolicitudeGetItems" message="ORMService_SolicitudeGetItems_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/SolicitudeGetItemsResponse" message="ORMService_SolicitudeGetItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitudeGetItemsModify">
+      <wsdl:input wsaw:Action="urn:ORMService/SolicitudeGetItemsModify" message="ORMService_SolicitudeGetItemsModify_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/SolicitudeGetItemsModifyResponse" message="ORMService_SolicitudeGetItemsModify_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitudeGetToApprove">
+      <wsdl:input wsaw:Action="urn:ORMService/SolicitudeGetToApprove" message="ORMService_SolicitudeGetToApprove_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/SolicitudeGetToApproveResponse" message="ORMService_SolicitudeGetToApprove_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitudeGetToModify">
+      <wsdl:input wsaw:Action="urn:ORMService/SolicitudeGetToModify" message="ORMService_SolicitudeGetToModify_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/SolicitudeGetToModifyResponse" message="ORMService_SolicitudeGetToModify_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitudeGetToProcess">
+      <wsdl:input wsaw:Action="urn:ORMService/SolicitudeGetToProcess" message="ORMService_SolicitudeGetToProcess_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/SolicitudeGetToProcessResponse" message="ORMService_SolicitudeGetToProcess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitudeGetRejectable">
+      <wsdl:input wsaw:Action="urn:ORMService/SolicitudeGetRejectable" message="ORMService_SolicitudeGetRejectable_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/SolicitudeGetRejectableResponse" message="ORMService_SolicitudeGetRejectable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UsersReport">
+      <wsdl:input wsaw:Action="urn:ORMService/UsersReport" message="ORMService_UsersReport_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/UsersReportResponse" message="ORMService_UsersReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitudeProductDetailReport">
+      <wsdl:input wsaw:Action="urn:ORMService/SolicitudeProductDetailReport" message="ORMService_SolicitudeProductDetailReport_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/SolicitudeProductDetailReportResponse" message="ORMService_SolicitudeProductDetailReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestsReport">
+      <wsdl:input wsaw:Action="urn:ORMService/RequestsReport" message="ORMService_RequestsReport_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/RequestsReportResponse" message="ORMService_RequestsReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitorKindGetAll">
+      <wsdl:input wsaw:Action="urn:ORMService/SolicitorKindGetAll" message="ORMService_SolicitorKindGetAll_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/SolicitorKindGetAllResponse" message="ORMService_SolicitorKindGetAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitorKindGet">
+      <wsdl:input wsaw:Action="urn:ORMService/SolicitorKindGet" message="ORMService_SolicitorKindGet_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/SolicitorKindGetResponse" message="ORMService_SolicitorKindGet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitorKindSave">
+      <wsdl:input wsaw:Action="urn:ORMService/SolicitorKindSave" message="ORMService_SolicitorKindSave_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/SolicitorKindSaveResponse" message="ORMService_SolicitorKindSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitorKindDelete">
+      <wsdl:input wsaw:Action="urn:ORMService/SolicitorKindDelete" message="ORMService_SolicitorKindDelete_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/SolicitorKindDeleteResponse" message="ORMService_SolicitorKindDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitorKindGetChildren">
+      <wsdl:input wsaw:Action="urn:ORMService/SolicitorKindGetChildren" message="ORMService_SolicitorKindGetChildren_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/SolicitorKindGetChildrenResponse" message="ORMService_SolicitorKindGetChildren_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TreatmentGetAll">
+      <wsdl:input wsaw:Action="urn:ORMService/TreatmentGetAll" message="ORMService_TreatmentGetAll_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/TreatmentGetAllResponse" message="ORMService_TreatmentGetAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TreatmentGet">
+      <wsdl:input wsaw:Action="urn:ORMService/TreatmentGet" message="ORMService_TreatmentGet_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/TreatmentGetResponse" message="ORMService_TreatmentGet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserActiveGetAll">
+      <wsdl:input wsaw:Action="urn:ORMService/UserActiveGetAll" message="ORMService_UserActiveGetAll_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/UserActiveGetAllResponse" message="ORMService_UserActiveGetAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserGetAll">
+      <wsdl:input wsaw:Action="urn:ORMService/UserGetAll" message="ORMService_UserGetAll_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/UserGetAllResponse" message="ORMService_UserGetAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserGet">
+      <wsdl:input wsaw:Action="urn:ORMService/UserGet" message="ORMService_UserGet_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/UserGetResponse" message="ORMService_UserGet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserSave">
+      <wsdl:input wsaw:Action="urn:ORMService/UserSave" message="ORMService_UserSave_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/UserSaveResponse" message="ORMService_UserSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserDelete">
+      <wsdl:input wsaw:Action="urn:ORMService/UserDelete" message="ORMService_UserDelete_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/UserDeleteResponse" message="ORMService_UserDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQVlink">
+      <wsdl:input wsaw:Action="urn:ORMService/GetQVlink" message="ORMService_GetQVlink_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/GetQVlinkResponse" message="ORMService_GetQVlink_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearSession">
+      <wsdl:input wsaw:Action="urn:ORMService/ClearSession" message="ORMService_ClearSession_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/ClearSessionResponse" message="ORMService_ClearSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserMenu">
+      <wsdl:input wsaw:Action="urn:ORMService/GetUserMenu" message="ORMService_GetUserMenu_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/GetUserMenuResponse" message="ORMService_GetUserMenu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApproveRelativeProcess">
+      <wsdl:input wsaw:Action="urn:ORMService/ApproveRelativeProcess" message="ORMService_ApproveRelativeProcess_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/ApproveRelativeProcessResponse" message="ORMService_ApproveRelativeProcess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitudeToPrintReport">
+      <wsdl:input wsaw:Action="urn:ORMService/SolicitudeToPrintReport" message="ORMService_SolicitudeToPrintReport_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/SolicitudeToPrintReportResponse" message="ORMService_SolicitudeToPrintReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeliverSolicitudeDeliver">
+      <wsdl:input wsaw:Action="urn:ORMService/DeliverSolicitudeDeliver" message="ORMService_DeliverSolicitudeDeliver_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/DeliverSolicitudeDeliverResponse" message="ORMService_DeliverSolicitudeDeliver_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitudeToPrintQueryReport">
+      <wsdl:input wsaw:Action="urn:ORMService/SolicitudeToPrintQueryReport" message="ORMService_SolicitudeToPrintQueryReport_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/SolicitudeToPrintQueryReportResponse" message="ORMService_SolicitudeToPrintQueryReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LocationGetAll">
+      <wsdl:input wsaw:Action="urn:ORMService/LocationGetAll" message="ORMService_LocationGetAll_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/LocationGetAllResponse" message="ORMService_LocationGetAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LocationGet">
+      <wsdl:input wsaw:Action="urn:ORMService/LocationGet" message="ORMService_LocationGet_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/LocationGetResponse" message="ORMService_LocationGet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LocationSave">
+      <wsdl:input wsaw:Action="urn:ORMService/LocationSave" message="ORMService_LocationSave_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/LocationSaveResponse" message="ORMService_LocationSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LocationDelete">
+      <wsdl:input wsaw:Action="urn:ORMService/LocationDelete" message="ORMService_LocationDelete_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/LocationDeleteResponse" message="ORMService_LocationDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KinshipGetAll">
+      <wsdl:input wsaw:Action="urn:ORMService/KinshipGetAll" message="ORMService_KinshipGetAll_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/KinshipGetAllResponse" message="ORMService_KinshipGetAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KinshipGet">
+      <wsdl:input wsaw:Action="urn:ORMService/KinshipGet" message="ORMService_KinshipGet_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/KinshipGetResponse" message="ORMService_KinshipGet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KinshipSave">
+      <wsdl:input wsaw:Action="urn:ORMService/KinshipSave" message="ORMService_KinshipSave_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/KinshipSaveResponse" message="ORMService_KinshipSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KinshipDelete">
+      <wsdl:input wsaw:Action="urn:ORMService/KinshipDelete" message="ORMService_KinshipDelete_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/KinshipDeleteResponse" message="ORMService_KinshipDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="KinshipKindGetAll">
+      <wsdl:input wsaw:Action="urn:ORMService/KinshipKindGetAll" message="ORMService_KinshipKindGetAll_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/KinshipKindGetAllResponse" message="ORMService_KinshipKindGetAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LanguageGetAll">
+      <wsdl:input wsaw:Action="urn:ORMService/LanguageGetAll" message="ORMService_LanguageGetAll_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/LanguageGetAllResponse" message="ORMService_LanguageGetAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LanguageGetWords">
+      <wsdl:input wsaw:Action="urn:ORMService/LanguageGetWords" message="ORMService_LanguageGetWords_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/LanguageGetWordsResponse" message="ORMService_LanguageGetWords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductStockReport">
+      <wsdl:input wsaw:Action="urn:ORMService/ProductStockReport" message="ORMService_ProductStockReport_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/ProductStockReportResponse" message="ORMService_ProductStockReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EstimateForSolitudeReport">
+      <wsdl:input wsaw:Action="urn:ORMService/EstimateForSolitudeReport" message="ORMService_EstimateForSolitudeReport_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/EstimateForSolitudeReportResponse" message="ORMService_EstimateForSolitudeReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitudeStatusGetAll">
+      <wsdl:input wsaw:Action="urn:ORMService/SolicitudeStatusGetAll" message="ORMService_SolicitudeStatusGetAll_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/SolicitudeStatusGetAllResponse" message="ORMService_SolicitudeStatusGetAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SolicitudeStatusGet">
+      <wsdl:input wsaw:Action="urn:ORMService/SolicitudeStatusGet" message="ORMService_SolicitudeStatusGet_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/SolicitudeStatusGetResponse" message="ORMService_SolicitudeStatusGet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RelativeGetActiveOfUserAll">
+      <wsdl:input wsaw:Action="urn:ORMService/RelativeGetActiveOfUserAll" message="ORMService_RelativeGetActiveOfUserAll_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/RelativeGetActiveOfUserAllResponse" message="ORMService_RelativeGetActiveOfUserAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RelativeGetAll">
+      <wsdl:input wsaw:Action="urn:ORMService/RelativeGetAll" message="ORMService_RelativeGetAll_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/RelativeGetAllResponse" message="ORMService_RelativeGetAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RelativeGet">
+      <wsdl:input wsaw:Action="urn:ORMService/RelativeGet" message="ORMService_RelativeGet_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/RelativeGetResponse" message="ORMService_RelativeGet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RelativeSave">
+      <wsdl:input wsaw:Action="urn:ORMService/RelativeSave" message="ORMService_RelativeSave_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/RelativeSaveResponse" message="ORMService_RelativeSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RelativeDelete">
+      <wsdl:input wsaw:Action="urn:ORMService/RelativeDelete" message="ORMService_RelativeDelete_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/RelativeDeleteResponse" message="ORMService_RelativeDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RelativeGetPending">
+      <wsdl:input wsaw:Action="urn:ORMService/RelativeGetPending" message="ORMService_RelativeGetPending_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/RelativeGetPendingResponse" message="ORMService_RelativeGetPending_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RejectionReasonGetAll">
+      <wsdl:input wsaw:Action="urn:ORMService/RejectionReasonGetAll" message="ORMService_RejectionReasonGetAll_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/RejectionReasonGetAllResponse" message="ORMService_RejectionReasonGetAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RejectionReasonGet">
+      <wsdl:input wsaw:Action="urn:ORMService/RejectionReasonGet" message="ORMService_RejectionReasonGet_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/RejectionReasonGetResponse" message="ORMService_RejectionReasonGet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RejectionReasonSave">
+      <wsdl:input wsaw:Action="urn:ORMService/RejectionReasonSave" message="ORMService_RejectionReasonSave_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/RejectionReasonSaveResponse" message="ORMService_RejectionReasonSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RejectionReasonDelete">
+      <wsdl:input wsaw:Action="urn:ORMService/RejectionReasonDelete" message="ORMService_RejectionReasonDelete_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/RejectionReasonDeleteResponse" message="ORMService_RejectionReasonDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MantenimientoReport">
+      <wsdl:input wsaw:Action="urn:ORMService/MantenimientoReport" message="ORMService_MantenimientoReport_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/MantenimientoReportResponse" message="ORMService_MantenimientoReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifySolicitudeModify">
+      <wsdl:input wsaw:Action="urn:ORMService/ModifySolicitudeModify" message="ORMService_ModifySolicitudeModify_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/ModifySolicitudeModifyResponse" message="ORMService_ModifySolicitudeModify_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RejectSolicitudeReject">
+      <wsdl:input wsaw:Action="urn:ORMService/RejectSolicitudeReject" message="ORMService_RejectSolicitudeReject_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/RejectSolicitudeRejectResponse" message="ORMService_RejectSolicitudeReject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApproveSolicitudeApprove">
+      <wsdl:input wsaw:Action="urn:ORMService/ApproveSolicitudeApprove" message="ORMService_ApproveSolicitudeApprove_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/ApproveSolicitudeApproveResponse" message="ORMService_ApproveSolicitudeApprove_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductGetActiveOfUserAll">
+      <wsdl:input wsaw:Action="urn:ORMService/ProductGetActiveOfUserAll" message="ORMService_ProductGetActiveOfUserAll_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/ProductGetActiveOfUserAllResponse" message="ORMService_ProductGetActiveOfUserAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductGetActiveAll">
+      <wsdl:input wsaw:Action="urn:ORMService/ProductGetActiveAll" message="ORMService_ProductGetActiveAll_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/ProductGetActiveAllResponse" message="ORMService_ProductGetActiveAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductGetAll">
+      <wsdl:input wsaw:Action="urn:ORMService/ProductGetAll" message="ORMService_ProductGetAll_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/ProductGetAllResponse" message="ORMService_ProductGetAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductGet">
+      <wsdl:input wsaw:Action="urn:ORMService/ProductGet" message="ORMService_ProductGet_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/ProductGetResponse" message="ORMService_ProductGet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductSave">
+      <wsdl:input wsaw:Action="urn:ORMService/ProductSave" message="ORMService_ProductSave_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/ProductSaveResponse" message="ORMService_ProductSave_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProductDelete">
+      <wsdl:input wsaw:Action="urn:ORMService/ProductDelete" message="ORMService_ProductDelete_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/ProductDeleteResponse" message="ORMService_ProductDelete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessSolicitudeProcess">
+      <wsdl:input wsaw:Action="urn:ORMService/ProcessSolicitudeProcess" message="ORMService_ProcessSolicitudeProcess_InputMessage" />
+      <wsdl:output wsaw:Action="urn:ORMService/ProcessSolicitudeProcessResponse" message="ORMService_ProcessSolicitudeProcess_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

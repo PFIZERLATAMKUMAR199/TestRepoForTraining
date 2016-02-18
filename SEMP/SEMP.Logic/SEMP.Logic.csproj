@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{70B00B81-A514-4B71-A28A-237CC850D5E5}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SEMP.Logic</RootNamespace>
+    <AssemblyName>SEMP.Logic</AssemblyName>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClassAdapter.cs" />
+    <Compile Include="Entities\Kinship.cs" />
+    <Compile Include="Entities\KinshipKind.cs" />
+    <Compile Include="Entities\Language.cs" />
+    <Compile Include="Entities\Location.cs" />
+    <Compile Include="Entities\Product.cs" />
+    <Compile Include="Entities\ProductActive.cs" />
+    <Compile Include="Entities\ProductActiveOfUser.cs" />
+    <Compile Include="Entities\ProductOrigin.cs" />
+    <Compile Include="Entities\RejectionReason.cs" />
+    <Compile Include="Entities\Relative.cs" />
+    <Compile Include="Entities\RelativeActiveOfUser.cs" />
+    <Compile Include="Entities\SolicitorKind.cs" />
+    <Compile Include="Entities\Solicitude.cs" />
+    <Compile Include="Entities\SolicitudeStatus.cs" />
+    <Compile Include="Entities\Treatment.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\UserActive.cs" />
+    <Compile Include="ORMServiceClient.cs" />
+    <Compile Include="Processes\ApproveRelative.cs" />
+    <Compile Include="Processes\ApproveSolicitude.cs" />
+    <Compile Include="Processes\DeliverSolicitude.cs" />
+    <Compile Include="Processes\ModifySolicitude.cs" />
+    <Compile Include="Processes\RejectSolicitude.cs" />
+    <Compile Include="Processes\ProcessSolicitude.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\EstimateForSolitude.cs" />
+    <Compile Include="Reports\Mantenimiento.cs" />
+    <Compile Include="Reports\ProductsActive.cs" />
+    <Compile Include="Reports\ProductStock.cs" />
+    <Compile Include="Reports\Requests.cs" />
+    <Compile Include="Reports\SalesAdministrationReport.cs" />
+    <Compile Include="Reports\SolicitudeProductDetail.cs" />
+    <Compile Include="Reports\SolicitudeToPrint.cs" />
+    <Compile Include="Reports\SolicitudeToPrintQuery.cs" />
+    <Compile Include="Reports\Users.cs" />
+    <Compile Include="Service References\WCF.Services\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientConfig.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Service References\WCF.Services\ORMService.disco" />
+    <None Include="Service References\WCF.Services\configuration91.svcinfo" />
+    <None Include="Service References\WCF.Services\configuration.svcinfo" />
+    <None Include="Service References\WCF.Services\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="ServiceReferences.ClientConfig" />
+    <None Include="Service References\WCF.Services\ORMService.wsdl" />
+    <None Include="Service References\WCF.Services\ORMService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WCF.Services\ORMService1.wsdl" />
+    <None Include="Service References\WCF.Services\ORMService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WCF.Services\ORMService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WCF.Services\ORMService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WCF.Services\SEMP.Logic.WCF.Services.Kinship.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WCF.Services\SEMP.Logic.WCF.Services.Language.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WCF.Services\SEMP.Logic.WCF.Services.ListedRelative.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WCF.Services\SEMP.Logic.WCF.Services.Location.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WCF.Services\SEMP.Logic.WCF.Services.NamedEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WCF.Services\SEMP.Logic.WCF.Services.NamedEntityS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WCF.Services\SEMP.Logic.WCF.Services.Product.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WCF.Services\SEMP.Logic.WCF.Services.ProductSolicitorKind.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WCF.Services\SEMP.Logic.WCF.Services.RejectionReason.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WCF.Services\SEMP.Logic.WCF.Services.Relative.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WCF.Services\SEMP.Logic.WCF.Services.SolicitorKind.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WCF.Services\SEMP.Logic.WCF.Services.Solicitude.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WCF.Services\SEMP.Logic.WCF.Services.SolicitudeFieldsToModifyResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WCF.Services\SEMP.Logic.WCF.Services.SolicitudeItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WCF.Services\SEMP.Logic.WCF.Services.SolicitudeProductsOfUserModifyResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WCF.Services\SEMP.Logic.WCF.Services.SolicitudeProductsOfUserResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WCF.Services\SEMP.Logic.WCF.Services.SolicitudeStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WCF.Services\SEMP.Logic.WCF.Services.Treatment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WCF.Services\SEMP.Logic.WCF.Services.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WCF.Services\SEMP.Logic.WCF.Services.Word.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SEMP.Controls\SEMP.Controls.csproj">
+      <Project>{a2f07019-820d-476f-bd67-d3148bb87b5d}</Project>
+      <Name>SEMP.Controls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\WCF.Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

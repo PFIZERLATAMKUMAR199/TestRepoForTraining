@@ -1,0 +1,4 @@
+Borrar el contenido deploy viejo
+Copiar el Deploy nuevo
+Poner la pagina default
+Directory Secutity debe estar en anonimus e integrado

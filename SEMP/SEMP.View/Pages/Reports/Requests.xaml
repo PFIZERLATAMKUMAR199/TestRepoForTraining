@@ -1,0 +1,62 @@
+﻿<!--luis - 2012-06-18-->
+<UserControl xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls" 
+    x:Class="SEMP.View.Pages.RequestsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+    xmlns:src="clr-namespace:SEMP.View"
+    xmlns:pag="clr-namespace:SEMP.View.Pages"
+    xmlns:ctl="clr-namespace:SEMP.Controls;assembly=SEMP.Controls"
+    xmlns:log="clr-namespace:SEMP.Logic.WCF.Services;assembly=SEMP.Logic"
+    xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+    >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid Name="GridDates" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Style="{StaticResource PageTextBlockStyle}" Grid.Column="0" Grid.Row="0"
+                   Text="{Binding Dictionary,ConverterParameter=DateBegin,Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}"/>
+            <controls:DatePicker Style="{StaticResource PageControlStyle}" Grid.Column="1" Grid.Row="0" Name="dpDateBegin"/>
+
+            <TextBlock Style="{StaticResource PageTextBlockStyle}" Grid.Column="2" Grid.Row="0"
+                   Text="{Binding Dictionary,ConverterParameter=DateEnd,Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}"/>
+            <controls:DatePicker Style="{StaticResource PageControlStyle}" Grid.Column="3" Grid.Row="0" Name="dpDateEnd"/>
+        </Grid>
+
+        <TextBlock              Style="{StaticResource PageTextBlockStyle}" Grid.Column="0" Grid.Row="1" Text="{Binding Dictionary,ConverterParameter=User,Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}"/>
+        <src:UserComboBox       Style="{StaticResource PageControlStyle}" Grid.Column="1" Grid.Row="1" SelectedValue="{Binding nSUserID, Mode=TwoWay}" />
+
+        <Image Grid.Row="2" Height="20" Source="../../Images/Pages/Report.png" />
+
+        <HyperlinkButton Style="{StaticResource PageControlStyle}" x:Name="hlbReport" Grid.Column="1" Grid.Row="2" />
+
+        <ctl:FieldHelp x:Name="dgReport" AutoGenerateColumns="False" Grid.ColumnSpan="2" Grid.Row="3" Margin="40,10">
+            <ctl:FieldHelp.Columns>
+                <data:DataGridTemplateColumn Header="Reportes emitidos" Width="Auto">
+                    <data:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <HyperlinkButton Content="{Binding}" NavigateUri="{Binding}"/>
+                        </DataTemplate>
+                    </data:DataGridTemplateColumn.CellTemplate>
+                </data:DataGridTemplateColumn>
+            </ctl:FieldHelp.Columns>
+        </ctl:FieldHelp>
+    </Grid>
+</UserControl>

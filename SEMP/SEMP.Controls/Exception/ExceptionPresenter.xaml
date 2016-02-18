@@ -1,0 +1,85 @@
+﻿<UserControl
+    x:Class="SEMP.Controls.ExceptionPresenter"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ctl="clr-namespace:SEMP.Controls"
+    >
+    <UserControl.Resources>
+        <Style TargetType="TextBlock" x:Key="TittleStyle">
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Margin" Value="5,0"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="TextStyle">
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Margin" Value="5,0"/>
+        </Style>
+        <Style TargetType="Border" x:Key="BorderStyle">
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="BorderBrush" Value="#0071BB"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Padding" Value="2"/>
+            <Setter Property="Margin" Value="2"/>
+        </Style>
+        <ctl:VisibilityConverter x:Key="VisibilityConverter"/>
+    </UserControl.Resources>
+    <ctl:Expander IsExpanded="False" x:Name="MainExpander">
+        <ctl:Expander.Title>
+            <TextBlock Style="{StaticResource TittleStyle}" Text="{Binding Message}" FontSize="12" Foreground="Red" Margin="5,2"/>
+        </ctl:Expander.Title>
+        <StackPanel>
+            <Border Style="{StaticResource BorderStyle}" x:Name="expInnerException"
+                    Visibility="{Binding InnerException,Converter={StaticResource VisibilityConverter}}">
+                <Grid>
+                    <StackPanel>
+                        <TextBlock Style="{StaticResource TittleStyle}" Text="InnerException" Margin="5,0"/>
+                        <ContentControl Content="{Binding}" HorizontalContentAlignment="Stretch" Background="Red">
+                            <ContentControl.ContentTemplate>
+                                <DataTemplate>
+                                    <ctl:ExceptionPresenter Exception="{Binding InnerException}"/>
+                                </DataTemplate>
+                            </ContentControl.ContentTemplate>
+                        </ContentControl>
+                    </StackPanel>
+                    <ctl:ImageButton Click="btnDelete_Click" Content="../Images/Commands/Delete.png"
+                                     Tag="{Binding Dictionary,ConverterParameter=Delete,Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}"
+                                     HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                </Grid>
+            </Border>
+            <Border Style="{StaticResource BorderStyle}" Visibility="{Binding Data,Converter={StaticResource VisibilityConverter}}">
+                <ctl:Expander IsExpanded="False" Content="{Binding}">
+                    <ctl:Expander.Title>
+                        <TextBlock Style="{StaticResource TittleStyle}" Text="Data" Margin="5,2"/>
+                    </ctl:Expander.Title>
+                    <ctl:Expander.ContentTemplate>
+                        <DataTemplate>
+                            <ItemsControl ItemsSource="{Binding Data}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Style="{StaticResource TittleStyle}" Text="{Binding Key}"/>
+                                            <TextBlock Style="{StaticResource TextStyle}" Text="&lt;-"/>
+                                            <TextBlock Style="{StaticResource TextStyle}" Text="{Binding Value}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </DataTemplate>
+                    </ctl:Expander.ContentTemplate>
+                </ctl:Expander>
+            </Border>
+            <Border Style="{StaticResource BorderStyle}" Visibility="{Binding StackTrace,Converter={StaticResource VisibilityConverter}}">
+                <ctl:Expander IsExpanded="False">
+                    <ctl:Expander.Title>
+                        <TextBlock Style="{StaticResource TittleStyle}" Text="StackTrace" Margin="5,2"/>
+                    </ctl:Expander.Title>
+                    <TextBlock Style="{StaticResource TextStyle}" Text="{Binding StackTrace}"/>
+                </ctl:Expander>
+            </Border>
+        </StackPanel>
+    </ctl:Expander>
+</UserControl>

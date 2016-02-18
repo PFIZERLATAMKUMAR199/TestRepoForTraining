@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="ORMService" CodeBehind="~/App_Code/ORMService.cs" %>

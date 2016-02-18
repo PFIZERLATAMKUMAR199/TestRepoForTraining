@@ -1,0 +1,92 @@
+﻿<!--luis - 2011-11-09-->
+<UserControl
+ xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"     
+    x:Class="SEMP.View.Pages.SolicitudeToPrintPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+    xmlns:src="clr-namespace:SEMP.View"
+    xmlns:pag="clr-namespace:SEMP.View.Pages"
+    xmlns:ctl="clr-namespace:SEMP.Controls;assembly=SEMP.Controls"
+    xmlns:log="clr-namespace:SEMP.Logic.WCF.Services;assembly=SEMP.Logic"
+    xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+    >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+        <Grid Name="GridDates" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Style="{StaticResource PageTextBlockStyle}" Grid.Column="0" Grid.Row="0"
+                   Text="{Binding Dictionary,ConverterParameter=DateBegin,Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}"/>
+            <controls:DatePicker Style="{StaticResource PageControlStyle}" Grid.Column="1" Grid.Row="0" Name="dpDateBegin"/>
+
+            <TextBlock Style="{StaticResource PageTextBlockStyle}" Grid.Column="2" Grid.Row="0"
+                   Text="{Binding Dictionary,ConverterParameter=DateEnd,Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}"/>
+            <controls:DatePicker Style="{StaticResource PageControlStyle}" Grid.Column="3" Grid.Row="0" Name="dpDateEnd"/>
+        </Grid>
+        
+        <Grid Name="GridSolicitude" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock  Grid.Column="0" Grid.Row="0" Text="{Binding Dictionary,ConverterParameter=SolicitudeBegin,Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}"  Style="{StaticResource PageTextBlockStyle}" />
+            <TextBox    Grid.Column="1" Grid.Row="0" Text="{Binding nSolicitudeBegin, Mode=TwoWay}" MaxLength="15"  Width="100" Style="{StaticResource PageControlStyle}" />
+            
+            <TextBlock  Grid.Column="2" Grid.Row="0" Text="{Binding Dictionary,ConverterParameter=SolicitudeEnd,Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}" Style="{StaticResource PageTextBlockStyle}" />
+            <TextBox    Grid.Column="3" Grid.Row="0" Text="{Binding nSolicitudeEnd, Mode=TwoWay}"   MaxLength="15"  Width="100" Style="{StaticResource PageControlStyle}" />
+            
+        </Grid>
+        
+        <TextBlock  Grid.Column="0" Grid.Row="2" Text="{Binding Dictionary,ConverterParameter=Solicitor,Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}" Style="{StaticResource PageTextBlockStyle}" />
+        <TextBlock  Grid.Column="0" Grid.Row="3" Text="{Binding Dictionary,ConverterParameter=NroDoc,Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}" Style="{StaticResource PageTextBlockStyle}" />
+
+        <TextBox    Grid.Column="2" Grid.Row="2" Text="{Binding sSolicitor, Mode=TwoWay}"           MaxLength="50"              Style="{StaticResource PageControlStyle}" />
+        <TextBox    Grid.Column="2" Grid.Row="3" Text="{Binding sNroDoc, Mode=TwoWay}"              MaxLength="20"  Width="100" Style="{StaticResource PageControlStyle}" HorizontalAlignment="Left" />
+        
+        <!--FRL - 2011-12-16-->
+        <!-- <<- <Image Grid.Row="4" Height="20" Source="../../Images/Pages/Report.png" />-->
+        <TextBlock Style="{StaticResource PageTextBlockStyle}" Grid.Row="4"
+                   Text="{Binding Dictionary,ConverterParameter=SolicitudeStatus,Converter={StaticResource DictionaryConverter},Source={StaticResource AppLang}}"/>
+
+        <src:SolicitudeStatusComboBox Grid.Row="4" Grid.Column="1" Style="{StaticResource PageControlStyle}" x:Name="cmbSolicitudeStatus"  SelectedValue="{Binding nSolicitudeStatusID, Mode=TwoWay}" />
+
+        <Image Grid.Row="5" Height="20" Source="../../Images/Pages/Document.png" />
+        <!--->>-->
+        <HyperlinkButton x:Name="hlbReport" Style="{StaticResource PageControlStyle}" Grid.Column="1" Grid.Row="5" />
+        
+        <ctl:FieldHelp x:Name="dgReport" AutoGenerateColumns="False" Grid.ColumnSpan="2" Grid.Row="6" Margin="40,10">
+            <ctl:FieldHelp.Columns>
+                <data:DataGridTemplateColumn Header="Reportes emitidos" Width="Auto">
+                    <data:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <HyperlinkButton Content="{Binding}" NavigateUri="{Binding}"/>
+                        </DataTemplate>
+                    </data:DataGridTemplateColumn.CellTemplate>
+                </data:DataGridTemplateColumn>
+            </ctl:FieldHelp.Columns>
+        </ctl:FieldHelp>
+    </Grid>
+</UserControl>
