@@ -1,0 +1,1156 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/29/2016 3:26:29 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="APCW10A6G00BMPQ"
+  DTS:CreatorName="AMER\PATELR50"
+  DTS:DTSID="{094DFAF7-20EC-4089-AFDF-74D2AC6B3763}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="LoadInvetoryBalanceFile"
+  DTS:PackageType="5"
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{8E18228B-7CCF-4DA8-A38B-29B25086392B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[amrndhw3657\dev1.MuestrasMedicas_Entrega_CL.BUE-A-MMPERSONAL1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{CA4E8F6E-D56F-4DD0-BFA0-69327E5D72FE}"
+      DTS:ObjectName="amrndhw3657\dev1.MuestrasMedicas_Entrega_CL.BUE-A-MMPERSONAL1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=amrndhw3657\dev1;User ID=BUE-A-MMPERSONAL;Initial Catalog=MuestrasMedicas_Entrega_CL;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFRf3gV3kAkyu2OYE9g2f7QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADeXQLXhYIFfacnUX5f2OCYAAAAAASAAACgAAAAEAAAAKXv6XAMoAvHh7y8XrAmtgooAAAAzMlJcvLnqEBgun8Qf8ajFWvMBESbD82MiZjiIdKKIXUVMHIMNRMoLhQAAAATZkJime19nRSkTEMdpTM0nCqcOw</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[InvetoryBalance File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{496C08B4-DDBA-4A20-BF28-2D44789A25AC}"
+      DTS:ObjectName="InvetoryBalance File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Rohit\backup from niraj desktop\SEMP SAP integration\Files\INVBALANCE_TO_SEMP_CL_20160216211030.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="4"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ATP_VBBE-WERKS"
+              DTS:DTSID="{97ED81E4-B3B9-421D-9F51-82ACEB7A3DE4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="4"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ATP_VBBE-LGORT"
+              DTS:DTSID="{1B587452-4CAD-4AA1-AB22-3FD81CC10FD8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="4"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MARA-MTART"
+              DTS:DTSID="{5F69AA1D-4C2C-4191-9756-EE8D9CE7A06F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="18"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ATP_VBBE-MATNR"
+              DTS:DTSID="{77F1D534-5452-4B8B-8965-846345C8F76F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ATP_VBBE-CHARG"
+              DTS:DTSID="{7EF4B4B1-09AF-4952-A0BE-E101134F23B7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ATP_VBBE-MEINS"
+              DTS:DTSID="{5DB09399-384A-4E5F-BF07-BA31AB430BFF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="13"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MCHB-CLABS"
+              DTS:DTSID="{3F57B1A6-5B2C-434B-820F-66E636858014}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="13"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MCHB-CINSM"
+              DTS:DTSID="{7F9CA4A4-5179-4971-A839-792ED3B17BEB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="15"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ATP_VBBE-OMENG"
+              DTS:DTSID="{0FE8DC04-747C-4B52-B0C0-2D56ED4567A3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:DataType="131"
+              DTS:DataPrecision="15"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ATP_VBBE- OMENG"
+              DTS:DTSID="{1461F161-4805-48B2-8124-FA4EDC183537}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{FF6431A8-5502-43FC-9F49-9013C74465B0}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load data from Invetory balance txt file into SAPInvetoryBalance table"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Load data into SAPInvetorytable"
+              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Load data into SAPInvetorytable"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[SAPInvetoryBalance]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Load data into SAPInvetorytable.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[amrndhw3657\dev1.MuestrasMedicas_Entrega_CL.BUE-A-MMPERSONAL1]"
+                  connectionManagerRefId="Package.ConnectionManagers[amrndhw3657\dev1.MuestrasMedicas_Entrega_CL.BUE-A-MMPERSONAL1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Load data into SAPInvetorytable.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Load data into SAPInvetorytable.Inputs[OLE DB Destination Input].Columns[ATP_VBBE-WERKS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="ATP_VBBE-WERKS"
+                      externalMetadataColumnId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Load data into SAPInvetorytable.Inputs[OLE DB Destination Input].ExternalColumns[ATP_VBBE_WERKS]"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Sum the Quantity Unrestricted Use by grouping Material Number.Outputs[Aggregate Output 1].Columns[ATP_VBBE-WERKS]" />
+                    <inputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Load data into SAPInvetorytable.Inputs[OLE DB Destination Input].Columns[ATP_VBBE-LGORT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="ATP_VBBE-LGORT"
+                      externalMetadataColumnId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Load data into SAPInvetorytable.Inputs[OLE DB Destination Input].ExternalColumns[ATP_VBBE_LGORT]"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Sum the Quantity Unrestricted Use by grouping Material Number.Outputs[Aggregate Output 1].Columns[ATP_VBBE-LGORT]" />
+                    <inputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Load data into SAPInvetorytable.Inputs[OLE DB Destination Input].Columns[ATP_VBBE-MATNR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="18"
+                      cachedName="ATP_VBBE-MATNR"
+                      externalMetadataColumnId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Load data into SAPInvetorytable.Inputs[OLE DB Destination Input].ExternalColumns[ATP_VBBE_MATNR]"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Sum the Quantity Unrestricted Use by grouping Material Number.Outputs[Aggregate Output 1].Columns[ATP_VBBE-MATNR]" />
+                    <inputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Load data into SAPInvetorytable.Inputs[OLE DB Destination Input].Columns[Sum_MCHB-CLABS]"
+                      cachedDataType="numeric"
+                      cachedName="Sum_MCHB-CLABS"
+                      cachedPrecision="13"
+                      externalMetadataColumnId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Load data into SAPInvetorytable.Inputs[OLE DB Destination Input].ExternalColumns[MCHB_CLABS]"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Sum the Quantity Unrestricted Use by grouping Material Number.Outputs[Aggregate Output 1].Columns[Sum_MCHB-CLABS]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Load data into SAPInvetorytable.Inputs[OLE DB Destination Input].ExternalColumns[ATP_VBBE_WERKS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="ATP_VBBE_WERKS" />
+                    <externalMetadataColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Load data into SAPInvetorytable.Inputs[OLE DB Destination Input].ExternalColumns[ATP_VBBE_LGORT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="ATP_VBBE_LGORT" />
+                    <externalMetadataColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Load data into SAPInvetorytable.Inputs[OLE DB Destination Input].ExternalColumns[ATP_VBBE_MATNR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="18"
+                      name="ATP_VBBE_MATNR" />
+                    <externalMetadataColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Load data into SAPInvetorytable.Inputs[OLE DB Destination Input].ExternalColumns[MCHB_CLABS]"
+                      dataType="numeric"
+                      name="MCHB_CLABS"
+                      precision="18"
+                      scale="5" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Load data into SAPInvetorytable.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Load data into SAPInvetorytable.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Load data into SAPInvetorytable.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Load data into SAPInvetorytable.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Load data into SAPInvetorytable.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Load data into SAPInvetorytable.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\plant has to be CL02 and storage location has to be 1050"
+              componentClassID="{7F88F654-4E20-4D14-84F4-AF9C925D3087}"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="plant has to be CL02 and storage location has to be 1050"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\plant has to be CL02 and storage location has to be 1050.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\plant has to be CL02 and storage location has to be 1050.Inputs[Conditional Split Input].Columns[ATP_VBBE-WERKS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="ATP_VBBE-WERKS"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[ATP_VBBE-WERKS]" />
+                    <inputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\plant has to be CL02 and storage location has to be 1050.Inputs[Conditional Split Input].Columns[ATP_VBBE-LGORT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="ATP_VBBE-LGORT"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[ATP_VBBE-LGORT]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\plant has to be CL02 and storage location has to be 1050.Outputs[plant has to be CL02 and storage location has to be 1050]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="plant has to be CL02 and storage location has to be 1050"
+                  synchronousInputId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\plant has to be CL02 and storage location has to be 1050.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[UPPER](#{Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[ATP_VBBE-WERKS]}) == "CL02" &amp;&amp; #{Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[ATP_VBBE-LGORT]} == "1050"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">UPPER([ATP_VBBE-WERKS]) == "CL02" &amp;&amp; [ATP_VBBE-LGORT] == "1050"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\plant has to be CL02 and storage location has to be 1050.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\plant has to be CL02 and storage location has to be 1050.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\plant has to be CL02 and storage location has to be 1050.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\plant has to be CL02 and storage location has to be 1050.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\plant has to be CL02 and storage location has to be 1050.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\plant has to be CL02 and storage location has to be 1050.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\plant has to be CL02 and storage location has to be 1050.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\plant has to be CL02 and storage location has to be 1050.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file"
+              componentClassID="{D23FD76B-F51D-420F-BBCB-19CBF6AC1AB4}"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[InvetoryBalance File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[InvetoryBalance File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[ATP_VBBE-WERKS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].ExternalColumns[ATP_VBBE-WERKS]"
+                      length="4"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[ATP_VBBE-WERKS]"
+                      name="ATP_VBBE-WERKS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[ATP_VBBE-LGORT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].ExternalColumns[ATP_VBBE-LGORT]"
+                      length="4"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[ATP_VBBE-LGORT]"
+                      name="ATP_VBBE-LGORT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[MARA-MTART]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].ExternalColumns[MARA-MTART]"
+                      length="4"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[MARA-MTART]"
+                      name="MARA-MTART"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[ATP_VBBE-MATNR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].ExternalColumns[ATP_VBBE-MATNR]"
+                      length="18"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[ATP_VBBE-MATNR]"
+                      name="ATP_VBBE-MATNR"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[ATP_VBBE-CHARG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].ExternalColumns[ATP_VBBE-CHARG]"
+                      length="10"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[ATP_VBBE-CHARG]"
+                      name="ATP_VBBE-CHARG"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[ATP_VBBE-MEINS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].ExternalColumns[ATP_VBBE-MEINS]"
+                      length="3"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[ATP_VBBE-MEINS]"
+                      name="ATP_VBBE-MEINS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[MCHB-CLABS]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].ExternalColumns[MCHB-CLABS]"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[MCHB-CLABS]"
+                      name="MCHB-CLABS"
+                      precision="13"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[MCHB-CINSM]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].ExternalColumns[MCHB-CINSM]"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[MCHB-CINSM]"
+                      name="MCHB-CINSM"
+                      precision="13"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[ATP_VBBE-OMENG]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].ExternalColumns[ATP_VBBE-OMENG]"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[ATP_VBBE-OMENG]"
+                      name="ATP_VBBE-OMENG"
+                      precision="15"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[ATP_VBBE- OMENG]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].ExternalColumns[ATP_VBBE- OMENG]"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[ATP_VBBE- OMENG]"
+                      name="ATP_VBBE- OMENG"
+                      precision="15"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].ExternalColumns[ATP_VBBE-WERKS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="ATP_VBBE-WERKS" />
+                    <externalMetadataColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].ExternalColumns[ATP_VBBE-LGORT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="ATP_VBBE-LGORT" />
+                    <externalMetadataColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].ExternalColumns[MARA-MTART]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="MARA-MTART" />
+                    <externalMetadataColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].ExternalColumns[ATP_VBBE-MATNR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="18"
+                      name="ATP_VBBE-MATNR" />
+                    <externalMetadataColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].ExternalColumns[ATP_VBBE-CHARG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="ATP_VBBE-CHARG" />
+                    <externalMetadataColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].ExternalColumns[ATP_VBBE-MEINS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="ATP_VBBE-MEINS" />
+                    <externalMetadataColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].ExternalColumns[MCHB-CLABS]"
+                      dataType="numeric"
+                      name="MCHB-CLABS"
+                      precision="13" />
+                    <externalMetadataColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].ExternalColumns[MCHB-CINSM]"
+                      dataType="numeric"
+                      name="MCHB-CINSM"
+                      precision="13" />
+                    <externalMetadataColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].ExternalColumns[ATP_VBBE-OMENG]"
+                      dataType="numeric"
+                      name="ATP_VBBE-OMENG"
+                      precision="15" />
+                    <externalMetadataColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].ExternalColumns[ATP_VBBE- OMENG]"
+                      dataType="numeric"
+                      name="ATP_VBBE- OMENG"
+                      precision="15" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Sum the Quantity Unrestricted Use by grouping Material Number"
+              componentClassID="{5B201335-B360-485C-BB93-75C34E09B3D3}"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="Sum the Quantity Unrestricted Use by grouping Material Number"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Sum the Quantity Unrestricted Use by grouping Material Number.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Sum the Quantity Unrestricted Use by grouping Material Number.Inputs[Aggregate Input 1].Columns[MCHB-CLABS]"
+                      cachedDataType="numeric"
+                      cachedName="MCHB-CLABS"
+                      cachedPrecision="13"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[MCHB-CLABS]" />
+                    <inputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Sum the Quantity Unrestricted Use by grouping Material Number.Inputs[Aggregate Input 1].Columns[ATP_VBBE-WERKS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="ATP_VBBE-WERKS"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[ATP_VBBE-WERKS]" />
+                    <inputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Sum the Quantity Unrestricted Use by grouping Material Number.Inputs[Aggregate Input 1].Columns[ATP_VBBE-LGORT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="ATP_VBBE-LGORT"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[ATP_VBBE-LGORT]" />
+                    <inputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Sum the Quantity Unrestricted Use by grouping Material Number.Inputs[Aggregate Input 1].Columns[ATP_VBBE-MATNR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="18"
+                      cachedName="ATP_VBBE-MATNR"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[ATP_VBBE-MATNR]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Sum the Quantity Unrestricted Use by grouping Material Number.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Sum the Quantity Unrestricted Use by grouping Material Number.Outputs[Aggregate Output 1].Columns[Sum_MCHB-CLABS]"
+                      dataType="numeric"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Sum the Quantity Unrestricted Use by grouping Material Number.Outputs[Aggregate Output 1].Columns[Sum_MCHB-CLABS]"
+                      name="Sum_MCHB-CLABS"
+                      precision="13">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[MCHB-CLABS]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Sum the Quantity Unrestricted Use by grouping Material Number.Outputs[Aggregate Output 1].Columns[ATP_VBBE-WERKS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Sum the Quantity Unrestricted Use by grouping Material Number.Outputs[Aggregate Output 1].Columns[ATP_VBBE-WERKS]"
+                      name="ATP_VBBE-WERKS">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[ATP_VBBE-WERKS]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Sum the Quantity Unrestricted Use by grouping Material Number.Outputs[Aggregate Output 1].Columns[ATP_VBBE-LGORT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Sum the Quantity Unrestricted Use by grouping Material Number.Outputs[Aggregate Output 1].Columns[ATP_VBBE-LGORT]"
+                      name="ATP_VBBE-LGORT">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[ATP_VBBE-LGORT]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Sum the Quantity Unrestricted Use by grouping Material Number.Outputs[Aggregate Output 1].Columns[ATP_VBBE-MATNR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="18"
+                      lineageId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Sum the Quantity Unrestricted Use by grouping Material Number.Outputs[Aggregate Output 1].Columns[ATP_VBBE-MATNR]"
+                      name="ATP_VBBE-MATNR">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output].Columns[ATP_VBBE-MATNR]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table.Paths[Aggregate Output 1]"
+              endId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Load data into SAPInvetorytable.Inputs[OLE DB Destination Input]"
+              name="Aggregate Output 1"
+              startId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Sum the Quantity Unrestricted Use by grouping Material Number.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table.Paths[Flat File Source Output]"
+              endId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\plant has to be CL02 and storage location has to be 1050.Inputs[Conditional Split Input]"
+              name="Flat File Source Output"
+              startId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table.Paths[plant has to be CL02 and storage location has to be 1050]"
+              endId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Sum the Quantity Unrestricted Use by grouping Material Number.Inputs[Aggregate Input 1]"
+              name="plant has to be CL02 and storage location has to be 1050"
+              startId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\plant has to be CL02 and storage location has to be 1050.Outputs[plant has to be CL02 and storage location has to be 1050]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate old records"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{FD497D57-7A57-4225-8A78-947DEE5C42DA}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate old records"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{CA4E8F6E-D56F-4DD0-BFA0-69327E5D72FE}"
+          SQLTask:SqlStatementSource="truncate table dbo.SAPInvetoryBalance" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{AF827C57-B97C-454F-8A7E-1A3116347276}"
+      DTS:From="Package\Truncate old records"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="216,78"
+          Id="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table"
+          TopLeft="373,218" />
+        <NodeLayout
+          Size="208,63"
+          Id="Package\Truncate old records"
+          TopLeft="373,103" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="479,166">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="246,61"
+          Id="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file"
+          TopLeft="372,41" />
+        <NodeLayout
+          Size="247,66"
+          Id="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Sum the Quantity Unrestricted Use by grouping Material Number"
+          TopLeft="376,229" />
+        <NodeLayout
+          Size="238,69"
+          Id="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Load data into SAPInvetorytable"
+          TopLeft="379,344" />
+        <EdgeLayout
+          Id="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table.Paths[Aggregate Output 1]"
+          TopLeft="498.75,295">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49"
+              Start="0,0"
+              End="0,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,12.75,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="242,53"
+          Id="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\plant has to be CL02 and storage location has to be 1050"
+          TopLeft="376,132" />
+        <EdgeLayout
+          Id="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table.Paths[Flat File Source Output]"
+          TopLeft="496,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,3.25,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table.Paths[plant has to be CL02 and storage location has to be 1050]"
+          TopLeft="498.25,185">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-135.95685546875,10.25,271.9137109375,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Load data into SAPInvetorytable">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
