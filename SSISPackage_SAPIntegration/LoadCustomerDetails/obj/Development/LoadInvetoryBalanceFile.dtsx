@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadInvetoryBalanceFile"
   DTS:PackageType="5"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{8E18228B-7CCF-4DA8-A38B-29B25086392B}">
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{CE9BD3DB-5C58-4ADB-BF11-79E7B3804B20}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFRf3gV3kAkyu2OYE9g2f7QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADynrMDi+sRlDVAupaV4LaRAAAAAASAAACgAAAAEAAAAO57iyEt9gNKRTNeQeInNkEoAAAA2WDB7PHfnMafeH/XumFO1Xb2WyjKZ4tqx7bqIAz8paImA6oU3I+d4RQAAABZ/isC+eQZZqASCC646uJ2gAmeCA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFRf3gV3kAkyu2OYE9g2f7QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABYv59TleuV+hdtQxk+fBU5AAAAAASAAACgAAAAEAAAAAvy6+bl7+YpYpqxWJ3wNigoAAAAgbaE7J1e66gzF3M1kIr/SKgeBvT3BaakUWNmOKCtVMwsSBZK91jHMxQAAACP5oshQ1ZuFVsnJi2M8VkcXe4lBw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -140,8 +140,105 @@
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LogFile_LoadInvetoryBalance.txt]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{D479FBF4-DEC0-47C8-9CFC-68F037CED93C}"
+      DTS:ObjectName="LogFile_LoadInvetoryBalance.txt">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Rohit\backup from niraj desktop\SEMP SAP integration\Files\Logs\LogFile_LoadInvetoryBalance.txt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SMTP Connection Manager]"
+      DTS:CreationName="SMTP"
+      DTS:DTSID="{53C304BB-DDC1-4F9F-A5C8-AC11F4F6B705}"
+      DTS:ObjectName="SMTP Connection Manager">
+      <DTS:ObjectData>
+        <SmtpConnectionManager
+          ConnectionString="SmtpServer=Ndhsmtp.amer.pfizer.com;UseWindowsAuthentication=False;EnableSsl=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="LogFile_LoadInvetoryBalance.txt"
+      DTS:CreationName="DTS.LogProviderTextFile.3"
+      DTS:Description="Writes log entries for events to a CSV file"
+      DTS:DTSID="{6D418FAB-AE96-4533-B13F-D439B1FD6C5E}"
+      DTS:ObjectName="SSIS log provider for Text files">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
   <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">3,7,OnError,13,OnPostExecute,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{6D418FAB-AE96-4533-B13F-D439B1FD6C5E}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table"
@@ -153,6 +250,60 @@
       DTS:ObjectName="Load data from Invetory balance txt file into SAPInvetoryBalance table"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0"
+        DTS:LoggingMode="1" />
+      <DTS:EventHandlers>
+        <DTS:EventHandler
+          DTS:refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table.EventHandlers[OnPostExecute]"
+          DTS:CreationName="OnPostExecute"
+          DTS:DTSID="{9CE8E3DF-661F-48D5-A06E-159D79A47EEB}"
+          DTS:EventID="0"
+          DTS:EventName="OnPostExecute"
+          DTS:LocaleID="-1">
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:Description="The propagate property of the event"
+              DTS:DTSID="{23B56733-FBEE-4C3E-AFB6-C321A159A7F9}"
+              DTS:IncludeInDebugDump="6789"
+              DTS:Namespace="System"
+              DTS:ObjectName="Propagate">
+              <DTS:VariableValue
+                DTS:DataType="11">-1</DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table.EventHandlers[OnPostExecute]\Email notification on completion of package"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.SendMailTask.SendMailTask, Microsoft.SqlServer.SendMailTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Send Mail Task"
+              DTS:DTSID="{2507fe5d-3a09-4bdc-9d64-72a927af7649}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.SendMailTask.SendMailTask, Microsoft.SqlServer.SendMailTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Email notification on completion of package"
+              DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:PropertyExpression
+                DTS:Name="MessageSource">"
+Task to load data from files is completed successfully" +"
+
+Regards,
+Technical Support Team"</DTS:PropertyExpression>
+              <DTS:PropertyExpression
+                DTS:Name="Subject">"UAT Environment || "+@[System::PackageName] + "  package completed successfully -"+ (DT_WSTR,50) DATEPART("yyyy", GETDATE()) + "-"+(DT_WSTR,50) DATEPART("mm", GETDATE())+"-"+(DT_WSTR,50) DATEPART("dd", GETDATE())</DTS:PropertyExpression>
+              <DTS:ObjectData>
+                <SendMailTask:SendMailTaskData
+                  SendMailTask:SMTPServer="{53C304BB-DDC1-4F9F-A5C8-AC11F4F6B705}"
+                  SendMailTask:From="rohit.g.patel@pfizer.com"
+                  SendMailTask:To="rohit.g.patel@pfizer.com"
+                  SendMailTask:Subject="UAT Environment || LoadInvetoryBalanceFile  package completed successfully -2016-3-17"
+                  SendMailTask:MessageSource="&#xA;Task to load data from files is completed successfully&#xA;&#xA;Regards,&#xA;Technical Support Team" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:EventHandler>
+      </DTS:EventHandlers>
       <DTS:ObjectData>
         <pipeline
           version="1">
@@ -981,6 +1132,9 @@
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0"
+        DTS:LoggingMode="1" />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{CA4E8F6E-D56F-4DD0-BFA0-69327E5D72FE}"
@@ -998,6 +1152,65 @@
       DTS:ObjectName="Constraint"
       DTS:To="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table" />
   </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{CA6BFA5A-56D3-44DB-8AF6-36E213AD41BE}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{43D757C3-5798-4093-99C5-31876EACDB1A}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Send Error notification"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.SendMailTask.SendMailTask, Microsoft.SqlServer.SendMailTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Send Mail Task"
+          DTS:DTSID="{90d2d1ac-9e56-4f62-8fab-444ff5a4d574}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.SendMailTask.SendMailTask, Microsoft.SqlServer.SendMailTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:FailPackageOnFailure="True"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Send Error notification"
+          DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="MessageSource">"Hi Team,
+
+Error has occured in "+@[System::SourceName]+"  task
+
+ErrorCode is : " +  (DT_WSTR, 50)@[System::ErrorCode]+"
+
+ErrorDescription is : "+ @[System::ErrorDescription]+"
+
+Kindly reach out to technical team by raising the ticket to queue AMR-BBT-LATAM OSM SUPPORT
+
+Regards,
+Technical Support Team"</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="Subject">"UAT Environment || Error occured - "+  @[System::PackageName] +" package - "+ (DT_WSTR,50) DATEPART("yyyy", GETDATE()) + "-"+(DT_WSTR,50) DATEPART("mm", GETDATE())+"-"+(DT_WSTR,50) DATEPART("dd", GETDATE())</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SendMailTask:SendMailTaskData
+              SendMailTask:SMTPServer="{53C304BB-DDC1-4F9F-A5C8-AC11F4F6B705}"
+              SendMailTask:From="rohit.g.patel@pfizer.com"
+              SendMailTask:To="rohit.g.patel@pfizer.com"
+              SendMailTask:Subject="UAT Environment || Error occured - LoadInvetoryBalanceFile package - 2016-3-17"
+              SendMailTask:MessageSource="Hi Team,&#xA;&#xA;Error has occured in   task&#xA;&#xA;ErrorCode is : 0&#xA;&#xA;ErrorDescription is : &#xA;&#xA;Kindly reach out to technical team by raising the ticket to queue AMR-BBT-LATAM OSM SUPPORT&#xA;&#xA;Regards,&#xA;Technical Support Team" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -1049,45 +1262,45 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="242,53"
+          Id="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\plant has to be CL02 and storage location has to be 1050"
+          TopLeft="376,132" />
+        <NodeLayout
           Size="246,61"
           Id="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Read the INVBALANCE_TO_SEMP_CL_20160216211030 txt file"
           TopLeft="372,41" />
         <NodeLayout
-          Size="247,66"
-          Id="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Sum the Quantity Unrestricted Use by grouping Material Number"
-          TopLeft="376,229" />
-        <NodeLayout
           Size="238,69"
           Id="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Load data into SAPInvetorytable"
           TopLeft="379,344" />
+        <NodeLayout
+          Size="247,66"
+          Id="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\Sum the Quantity Unrestricted Use by grouping Material Number"
+          TopLeft="376,229" />
         <EdgeLayout
-          Id="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table.Paths[Aggregate Output 1]"
-          TopLeft="498.75,295">
+          Id="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table.Paths[plant has to be CL02 and storage location has to be 1050]"
+          TopLeft="498.25,185">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,49"
+              EndConnector="0,44"
               Start="0,0"
-              End="0,41.5">
+              End="0,36.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41.5" />
+                    End="0,36.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-8,12.75,16,16"
+              BoundingBox="-135.95685546875,10.25,271.9137109375,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="242,53"
-          Id="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table\plant has to be CL02 and storage location has to be 1050"
-          TopLeft="376,132" />
         <EdgeLayout
           Id="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table.Paths[Flat File Source Output]"
           TopLeft="496,102">
@@ -1113,26 +1326,26 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table.Paths[plant has to be CL02 and storage location has to be 1050]"
-          TopLeft="498.25,185">
+          Id="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table.Paths[Aggregate Output 1]"
+          TopLeft="498.75,295">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,44"
+              EndConnector="0,49"
               Start="0,0"
-              End="0,36.5">
+              End="0,41.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.5" />
+                    End="0,41.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-135.95685546875,10.25,271.9137109375,16"
+              BoundingBox="-8,12.75,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1152,5 +1365,29 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="184,42"
+          Id="Package.EventHandlers[OnError]\Send Error notification"
+          TopLeft="521,107" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table.EventHandlers[OnPostExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="229,42"
+          Id="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table.EventHandlers[OnPostExecute]\Email notification on completion of package"
+          TopLeft="479,94" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
