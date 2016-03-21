@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadCustomerFile"
   DTS:PackageType="5"
-  DTS:VersionBuild="63"
-  DTS:VersionGUID="{6F677766-974D-43EE-BCE3-367227DA46D0}">
+  DTS:VersionBuild="64"
+  DTS:VersionGUID="{D20B9A76-4710-44DF-8160-FCC0F8E88381}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFRf3gV3kAkyu2OYE9g2f7QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAJrLvVye8V87KaGd2lFaakAAAAAASAAACgAAAAEAAAAGyBZt4spChyezlsjjAiSwEoAAAA9TAVZ2/51oEqvVAcJnfBBYjP23uS8lr8jbQWY5lMmQ3qCmgB5iXOcBQAAADnFNO3AFD3lAibKL+Z0Q7ufm+23w</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFRf3gV3kAkyu2OYE9g2f7QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAz1VChyu5X/DV2XyU87I5RAAAAAASAAACgAAAAEAAAAD1WA108j5Rr0jcLui6/2z0oAAAAm1aA3ZIMVTiGJadFy4rdyhqPkx0oyO36ewk5BaLTbssoKGfZMWmFyxQAAADpTFLa5uaCkFVwhOyPS7L1EJZ+xw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -3807,7 +3807,7 @@ Technical Support Team"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{A2C37468-1E3C-4805-ADB4-B789CB2DC9A2}"
-          SQLTask:SqlStatementSource="UPDATE t_LoadCustomerRecord&#xA;SET STKZN=[UsuariosPS].[Status]&#xA;FROM t_LoadCustomerRecord&#xA;INNER JOIN [UsuariosPS]&#xA;ON t_LoadCustomerRecord.BRAN1 = [UsuariosPS].emplid" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="UPDATE t_LoadCustomerRecord&#xA;SET STKZN=lTrim(rTrim([UsuariosPS].[Status]))&#xA;FROM t_LoadCustomerRecord&#xA;INNER JOIN [UsuariosPS]&#xA;ON lTrim(rTrim(t_LoadCustomerRecord.BRAN1)) = lTrim(rTrim([UsuariosPS].emplid))" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>

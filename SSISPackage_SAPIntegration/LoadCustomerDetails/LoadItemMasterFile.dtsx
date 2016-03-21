@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadItemMasterFile"
   DTS:PackageType="5"
-  DTS:VersionBuild="117"
-  DTS:VersionGUID="{6EAA8715-6696-478A-A111-40519E981A9F}">
+  DTS:VersionBuild="118"
+  DTS:VersionGUID="{D775151E-94EE-4B95-B8C2-A482FED3F4A5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFRf3gV3kAkyu2OYE9g2f7QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACul/6cc4LlgFGCFQoPEvAeAAAAAASAAACgAAAAEAAAAG+C/jgobVXY6BgPw514pT8oAAAAZAvQ4HmQP8+57VPXbarZ1i1xePoaXTfQ84pPlP3CzECxN5tiWJi9fhQAAAApeTlX5NXox/r7k0rhy4rZYqUfuA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFRf3gV3kAkyu2OYE9g2f7QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADHFxYP5Pq9/YwlBlECWYKDAAAAAASAAACgAAAAEAAAADykOq0Gc6bBxklgkiijTNIoAAAAZcUZLBNpUdm3ffB0UZw9rGlclEIc9EwHf22f7iDBjnhk9VfTxnQYoxQAAAD/dBSPC2Kj9EBJmFLH2gGK42+uzA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -7955,7 +7955,7 @@ Technical Support Team"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{A244EEE5-F330-474A-92F2-4E759CF9188C}"
-          SQLTask:SqlStatementSource="update SAPItemMasterProduct set KBETR=t_LoadPriceDetailcontent.KBETR,&#xA;KONDA=t_LoadPriceDetailcontent.KONDA&#xA;FROM SAPItemMasterProduct &#xA;inner join t_LoadPriceDetailcontent&#xA;on SAPItemMasterProduct.MATNR=t_LoadPriceDetailcontent.MATNR and SAPItemMasterProduct.VKORG=t_LoadPriceDetailcontent.VKORG" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="update SAPItemMasterProduct set KBETR=lTrim(rTrim(t_LoadPriceDetailcontent.KBETR)),&#xA;KONDA=lTrim(rTrim(t_LoadPriceDetailcontent.KONDA))&#xA;FROM SAPItemMasterProduct &#xA;inner join t_LoadPriceDetailcontent&#xA;on lTrim(rTrim(SAPItemMasterProduct.MATNR))=lTrim(rTrim(t_LoadPriceDetailcontent.MATNR)) and lTrim(rTrim(SAPItemMasterProduct.VKORG))=lTrim(rTrim(t_LoadPriceDetailcontent.VKORG))" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -8319,9 +8319,7 @@ Technical Support Team"</DTS:PropertyExpression>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8392,9 +8390,7 @@ Technical Support Team"</DTS:PropertyExpression>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8428,9 +8424,7 @@ Technical Support Team"</DTS:PropertyExpression>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8453,7 +8447,7 @@ Technical Support Team"</DTS:PropertyExpression>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-56.2155859375,15.25,112.431171875,16"
+              BoundingBox="-56.2155859375,15.25,95.48,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
