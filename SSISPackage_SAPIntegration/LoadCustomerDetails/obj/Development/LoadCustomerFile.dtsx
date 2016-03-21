@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadCustomerFile"
   DTS:PackageType="5"
-  DTS:VersionBuild="49"
-  DTS:VersionGUID="{CF87F394-E241-43E5-A2A1-C22877F4C44F}">
+  DTS:VersionBuild="63"
+  DTS:VersionGUID="{6F677766-974D-43EE-BCE3-367227DA46D0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFRf3gV3kAkyu2OYE9g2f7QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADyLhF1qUHKZASgYx7sj7K1AAAAAASAAACgAAAAEAAAAKIIiCeHIFoRs85bWl/ojp0oAAAA6bm5jrt52JnZjgKTejaX6ZOKBBfwFm7iar8MfJGMZa1Z0qHE16QLCRQAAADW//Y2kTPb5z5FCDmowtMZQJceDA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFRf3gV3kAkyu2OYE9g2f7QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADEg+2+Qnxk5NYiX0aVGkcsAAAAAASAAACgAAAAEAAAAJklO64TM0UXv/Mf5u7Fd2goAAAAVh69PU6OnklJ2L0WJZjFkLr+2J7Gsq1Aom03wKRmWWMeRhWNDvck0hQAAAARVTCmd2FfKWuV4cR1WeKfecPaGg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -1055,7 +1055,44 @@
       </DTS:ObjectData>
     </DTS:LogProvider>
   </DTS:LogProviders>
-  <DTS:Variables />
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2BB22D07-CB4B-46B5-80BD-EFBCA625D1CE}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="MailEnvironment">
+      <DTS:VariableValue
+        DTS:DataType="8">""</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1656B687-7528-4C7A-A4E1-DBD55BBCC2D2}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="MailFromField">
+      <DTS:VariableValue
+        DTS:DataType="8">""</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{56FDC9DA-28F9-4428-9E06-7949B08241E7}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="MailToField">
+      <DTS:VariableValue
+        DTS:DataType="8">""</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7B97266C-2EA3-4654-B599-E1C600896D4A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SMTPServer">
+      <DTS:VariableValue
+        DTS:DataType="8">""</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
   <DTS:LoggingOptions
     DTS:FilterKind="0"
     DTS:LoggingMode="1">
@@ -3697,12 +3734,14 @@
               DTS:refId="Package\Update Status column value in DB table.EventHandlers[OnPostExecute]\Email notification on completion of package"
               DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.SendMailTask.SendMailTask, Microsoft.SqlServer.SendMailTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:Description="Send Mail Task"
-              DTS:DTSID="{d37bc5bb-060e-4135-bfcc-0cb9c8a7cd42}"
+              DTS:DTSID="{88167c1d-5184-46bf-8ef0-3dfaa6dc3982}"
               DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.SendMailTask.SendMailTask, Microsoft.SqlServer.SendMailTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
               DTS:LocaleID="-1"
               DTS:ObjectName="Email notification on completion of package"
               DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
               <DTS:Variables />
+              <DTS:PropertyExpression
+                DTS:Name="FromLine">@[User::MailFromField]</DTS:PropertyExpression>
               <DTS:PropertyExpression
                 DTS:Name="MessageSource">"
 Task to load data from files is completed successfully" +"
@@ -3710,17 +3749,59 @@ Task to load data from files is completed successfully" +"
 Regards,
 Technical Support Team"</DTS:PropertyExpression>
               <DTS:PropertyExpression
-                DTS:Name="Subject">"UAT Environment || "+@[System::PackageName] + "  package completed successfully -"+ (DT_WSTR,50) DATEPART("yyyy", GETDATE()) + "-"+(DT_WSTR,50) DATEPART("mm", GETDATE())+"-"+(DT_WSTR,50) DATEPART("dd", GETDATE())</DTS:PropertyExpression>
+                DTS:Name="Subject">TRIM( @[User::MailEnvironment]  ) +" Environment || "+@[System::PackageName] + "  package completed successfully -"+ (DT_WSTR,50) DATEPART("yyyy", GETDATE()) + "-"+(DT_WSTR,50) DATEPART("mm", GETDATE())+"-"+(DT_WSTR,50) DATEPART("dd", GETDATE())</DTS:PropertyExpression>
+              <DTS:PropertyExpression
+                DTS:Name="ToLine">@[User::MailToField]</DTS:PropertyExpression>
               <DTS:ObjectData>
                 <SendMailTask:SendMailTaskData
                   SendMailTask:SMTPServer="{BBC04104-C160-4EAF-B602-1C31D6859AA0}"
-                  SendMailTask:From="rohit.g.patel@pfizer.com"
-                  SendMailTask:To="rohit.g.patel@pfizer.com"
-                  SendMailTask:Subject="UAT Environment || LoadCustomerFile  package completed successfully -2016-3-17"
+                  SendMailTask:From="&quot;&quot;"
+                  SendMailTask:To="&quot;&quot;"
+                  SendMailTask:Subject="&quot;&quot; Environment || LoadCustomerFile  package completed successfully -2016-3-21"
                   SendMailTask:MessageSource="&#xA;Task to load data from files is completed successfully&#xA;&#xA;Regards,&#xA;Technical Support Team" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
               </DTS:ObjectData>
             </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Update Status column value in DB table.EventHandlers[OnPostExecute]\Set Email Parameter"
+              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{c1c27df4-a884-4d17-8a1e-bfd3d2a662df}"
+              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Set Email Parameter"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{A2C37468-1E3C-4805-ADB4-B789CB2DC9A2}"
+                  SQLTask:SqlStatementSource="exec [dbo].[pSEMP_SAP_SetSSISEmailParameter]"
+                  SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="SendMailToField"
+                    SQLTask:DtsVariableName="User::MailToField" />
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="SendMailFromField"
+                    SQLTask:DtsVariableName="User::MailFromField" />
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="SendMailEnvironment"
+                    SQLTask:DtsVariableName="User::MailEnvironment" />
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="SendMailSMTPServer"
+                    SQLTask:DtsVariableName="User::SMTPServer" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
           </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Update Status column value in DB table.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint]"
+              DTS:CreationName=""
+              DTS:DTSID="{3D92151C-3F41-42C6-BBEC-05AD6EBEEA3C}"
+              DTS:From="Package\Update Status column value in DB table.EventHandlers[OnPostExecute]\Set Email Parameter"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint"
+              DTS:To="Package\Update Status column value in DB table.EventHandlers[OnPostExecute]\Email notification on completion of package" />
+          </DTS:PrecedenceConstraints>
         </DTS:EventHandler>
       </DTS:EventHandlers>
       <DTS:ObjectData>
@@ -3773,13 +3854,15 @@ Technical Support Team"</DTS:PropertyExpression>
           DTS:refId="Package.EventHandlers[OnError]\Send Error notification"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.SendMailTask.SendMailTask, Microsoft.SqlServer.SendMailTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Send Mail Task"
-          DTS:DTSID="{280d903b-9535-42bc-b05a-e9029e41a8d7}"
+          DTS:DTSID="{6ba80328-65f4-4003-9d37-a50198c640f5}"
           DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.SendMailTask.SendMailTask, Microsoft.SqlServer.SendMailTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:FailPackageOnFailure="True"
           DTS:LocaleID="-1"
           DTS:ObjectName="Send Error notification"
           DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="FromLine">@[User::MailFromField]</DTS:PropertyExpression>
           <DTS:PropertyExpression
             DTS:Name="MessageSource">"Hi Team,
 
@@ -3794,17 +3877,59 @@ Kindly reach out to technical team by raising the ticket to queue AMR-BBT-LATAM 
 Regards,
 Technical Support Team"</DTS:PropertyExpression>
           <DTS:PropertyExpression
-            DTS:Name="Subject">"UAT Environment || Error occured - "+  @[System::PackageName] +" package - "+ (DT_WSTR,50) DATEPART("yyyy", GETDATE()) + "-"+(DT_WSTR,50) DATEPART("mm", GETDATE())+"-"+(DT_WSTR,50) DATEPART("dd", GETDATE())</DTS:PropertyExpression>
+            DTS:Name="Subject">TRIM( @[User::MailEnvironment] ) + " Environment || Error occured - "+  @[System::PackageName] +" package - "+ (DT_WSTR,50) DATEPART("yyyy", GETDATE()) + "-"+(DT_WSTR,50) DATEPART("mm", GETDATE())+"-"+(DT_WSTR,50) DATEPART("dd", GETDATE())</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="ToLine">@[User::MailToField]</DTS:PropertyExpression>
           <DTS:ObjectData>
             <SendMailTask:SendMailTaskData
               SendMailTask:SMTPServer="{BBC04104-C160-4EAF-B602-1C31D6859AA0}"
-              SendMailTask:From="rohit.g.patel@pfizer.com"
-              SendMailTask:To="rohit.g.patel@pfizer.com"
-              SendMailTask:Subject="UAT Environment || Error occured - LoadCustomerFile package - 2016-3-17"
+              SendMailTask:From="&quot;&quot;"
+              SendMailTask:To="&quot;&quot;"
+              SendMailTask:Subject="&quot;&quot; Environment || Error occured - LoadCustomerFile package - 2016-3-21"
               SendMailTask:MessageSource="Hi Team,&#xA;&#xA;Error has occured in   task&#xA;&#xA;ErrorCode is : 0&#xA;&#xA;ErrorDescription is : &#xA;&#xA;Kindly reach out to technical team by raising the ticket to queue AMR-BBT-LATAM OSM SUPPORT&#xA;&#xA;Regards,&#xA;Technical Support Team" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Set Email Parameter"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{37dc824e-76cb-4787-9632-d5c09392974c}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Set Email Parameter"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{A2C37468-1E3C-4805-ADB4-B789CB2DC9A2}"
+              SQLTask:SqlStatementSource="exec [dbo].[pSEMP_SAP_SetSSISEmailParameter]"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="SendMailToField"
+                SQLTask:DtsVariableName="User::MailToField" />
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="SendMailFromField"
+                SQLTask:DtsVariableName="User::MailFromField" />
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="SendMailEnvironment"
+                SQLTask:DtsVariableName="User::MailEnvironment" />
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="SendMailSMTPServer"
+                SQLTask:DtsVariableName="User::SMTPServer" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
       </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{05D90367-BFDD-4AC2-8849-F37C98CEFEAF}"
+          DTS:From="Package.EventHandlers[OnError]\Set Email Parameter"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package.EventHandlers[OnError]\Send Error notification" />
+      </DTS:PrecedenceConstraints>
     </DTS:EventHandler>
   </DTS:EventHandlers>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -3878,6 +4003,44 @@ Technical Support Team"</DTS:PropertyExpression>
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="175,42"
+          Id="Package.EventHandlers[OnError]\Set Email Parameter"
+          TopLeft="631,92" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package.EventHandlers[OnError]\Send Error notification"
+          TopLeft="628,174" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          TopLeft="719.25,134">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40"
+              Start="0,0"
+              End="0,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
   <TaskHost
     design-time-name="Package\Read the Customer txt file and load data in DB table">
     <LayoutInfo>
@@ -3915,7 +4078,7 @@ Technical Support Team"</DTS:PropertyExpression>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-90.5824609375,16.75,181.164921875,16"
+              BoundingBox="-81.91888671875,19.87548828125,163.8377734375,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -3938,9 +4101,7 @@ Technical Support Team"</DTS:PropertyExpression>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,4.25,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3960,26 +4121,52 @@ Technical Support Team"</DTS:PropertyExpression>
     </Properties>
   </PipelineComponentMetadata>
   <DtsEventHandler
-    design-time-name="Package.EventHandlers[OnError]">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="184,42"
-          Id="Package.EventHandlers[OnError]\Send Error notification"
-          TopLeft="534,83" />
-      </GraphLayout>
-    </LayoutInfo>
-  </DtsEventHandler>
-  <DtsEventHandler
     design-time-name="Package\Update Status column value in DB table.EventHandlers[OnPostExecute]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="229,42"
           Id="Package\Update Status column value in DB table.EventHandlers[OnPostExecute]\Email notification on completion of package"
-          TopLeft="476,104" />
+          TopLeft="489,153" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Update Status column value in DB table.EventHandlers[OnPostExecute]\Set Email Parameter"
+          TopLeft="504,85" />
+        <EdgeLayout
+          Id="Package\Update Status column value in DB table.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint]"
+          TopLeft="591.5,127">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12,26"
+              Start="0,0"
+              End="12,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9"
+                    Point2="0,13"
+                    Point3="4,13" />
+                  <mssgle:LineSegment
+                    End="8,13" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8,13"
+                    Point2="12,13"
+                    Point3="12,17" />
+                  <mssgle:LineSegment
+                    End="12,18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </DtsEventHandler>
