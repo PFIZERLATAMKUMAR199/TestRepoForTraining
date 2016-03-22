@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadItemMasterFile"
   DTS:PackageType="5"
-  DTS:VersionBuild="117"
-  DTS:VersionGUID="{6EAA8715-6696-478A-A111-40519E981A9F}">
+  DTS:VersionBuild="124"
+  DTS:VersionGUID="{D86A5557-AD10-4063-BBE0-D3177CD33052}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFRf3gV3kAkyu2OYE9g2f7QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAD97jEiZbfxIgJ3jmiOJ1czAAAAAASAAACgAAAAEAAAAF9bvsm5mhNfOe6YynkGXdwoAAAAlk2tziToGycOzMHXVmU2+Qk5mAOmQpgI5l8SBZ1juQbCbP+rsxRO5xQAAADg6Q13vQoPlZe0vBCXZeh+KA2zCg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFRf3gV3kAkyu2OYE9g2f7QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABlguZYkV2HgPxZbuqroSMOAAAAAASAAACgAAAAEAAAAFfIreYrfYZEUezeA8eyIbgoAAAAcxn5bKTHgrGwhVBj5Qr+E3hzJ25Cdj8V71uqNhIHv78xJ1OTAvUL2BQAAACUeo4Fon4YM9FefJ1WJWZ94spY/w</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -6021,6 +6021,13 @@
                       cachedDataType="date"
                       cachedName="New_DATBI"
                       lineageId="Package\Read Price Detail file\Transform the start and end date from string to date.Outputs[Derived Column Output].Columns[New_DATBI]" />
+                    <inputColumn
+                      refId="Package\Read Price Detail file\Apply data filtering condition.Inputs[Conditional Split Input].Columns[KSCHL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="KSCHL"
+                      lineageId="Package\Read Price Detail file\Read price detail file.Outputs[Flat File Source Output].Columns[KSCHL]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -6040,13 +6047,13 @@
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">#{Package\Read Price Detail file\Read price detail file.Outputs[Flat File Source Output].Columns[RecordType]} == "01" &amp;&amp; #{Package\Read Price Detail file\Read price detail file.Outputs[Flat File Source Output].Columns[VTWEG]} == "99" &amp;&amp; ([UPPER](#{Package\Read Price Detail file\Read price detail file.Outputs[Flat File Source Output].Columns[VKORG]}) == "CL10" || [UPPER](#{Package\Read Price Detail file\Read price detail file.Outputs[Flat File Source Output].Columns[VKORG]}) == "CL11" || [UPPER](#{Package\Read Price Detail file\Read price detail file.Outputs[Flat File Source Output].Columns[VKORG]}) == "CL20") &amp;&amp; #{Package\Read Price Detail file\Transform the start and end date from string to date.Outputs[Derived Column Output].Columns[New_DATAB]} &lt;= [GETDATE]() &amp;&amp; #{Package\Read Price Detail file\Transform the start and end date from string to date.Outputs[Derived Column Output].Columns[New_DATBI]} &gt;= [GETDATE]()</property>
+                      name="Expression">[UPPER](#{Package\Read Price Detail file\Read price detail file.Outputs[Flat File Source Output].Columns[KSCHL]}) == "ZA00" &amp;&amp; #{Package\Read Price Detail file\Read price detail file.Outputs[Flat File Source Output].Columns[RecordType]} == "01" &amp;&amp; #{Package\Read Price Detail file\Read price detail file.Outputs[Flat File Source Output].Columns[VTWEG]} == "99" &amp;&amp; ([UPPER](#{Package\Read Price Detail file\Read price detail file.Outputs[Flat File Source Output].Columns[VKORG]}) == "CL10" || [UPPER](#{Package\Read Price Detail file\Read price detail file.Outputs[Flat File Source Output].Columns[VKORG]}) == "CL11" || [UPPER](#{Package\Read Price Detail file\Read price detail file.Outputs[Flat File Source Output].Columns[VKORG]}) == "CL20") &amp;&amp; #{Package\Read Price Detail file\Transform the start and end date from string to date.Outputs[Derived Column Output].Columns[New_DATAB]} &lt;= [GETDATE]() &amp;&amp; #{Package\Read Price Detail file\Transform the start and end date from string to date.Outputs[Derived Column Output].Columns[New_DATBI]} &gt;= [GETDATE]()</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the friendly version of the expression. This expression version uses column names."
                       expressionType="Notify"
-                      name="FriendlyExpression">RecordType == "01" &amp;&amp; VTWEG == "99" &amp;&amp; (UPPER(VKORG) == "CL10" || UPPER(VKORG) == "CL11" || UPPER(VKORG) == "CL20") &amp;&amp; New_DATAB &lt;= GETDATE() &amp;&amp; New_DATBI &gt;= GETDATE()</property>
+                      name="FriendlyExpression">UPPER(KSCHL) == "ZA00" &amp;&amp; RecordType == "01" &amp;&amp; VTWEG == "99" &amp;&amp; (UPPER(VKORG) == "CL10" || UPPER(VKORG) == "CL11" || UPPER(VKORG) == "CL20") &amp;&amp; New_DATAB &lt;= GETDATE() &amp;&amp; New_DATBI &gt;= GETDATE()</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -7835,7 +7842,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{A244EEE5-F330-474A-92F2-4E759CF9188C}"
-          SQLTask:SqlStatementSource="truncate table dbo.SAPItemMasterProduct;&#xA;truncate table t_LoadPriceDetailcontent;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[tmp_SAPItemMasterProduct]&#xA;&#xA;insert into [tmp_SAPItemMasterProduct]&#xA;select * &#xA;from [dbo].[SAPItemMasterProduct]&#xA;&#xA;TRUNCATE TABLE [dbo].[SAPItemMasterProduct];&#xA;truncate table t_LoadPriceDetailcontent&#xA;go" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -7905,7 +7912,7 @@ Technical Support Team"</DTS:PropertyExpression>
                   SendMailTask:SMTPServer="{E4E0B4B6-975B-4CBE-910D-5911308EC4BF}"
                   SendMailTask:From="&quot;&quot;"
                   SendMailTask:To="&quot;&quot;"
-                  SendMailTask:Subject="&quot;&quot; Environment || LoadItemMasterFile  package completed successfully -2016-3-21"
+                  SendMailTask:Subject="&quot;&quot; Environment || LoadItemMasterFile  package completed successfully -2016-3-22"
                   SendMailTask:MessageSource="&#xA;Task to load data from files is completed successfully&#xA;&#xA;Regards,&#xA;Technical Support Team" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -7955,7 +7962,7 @@ Technical Support Team"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{A244EEE5-F330-474A-92F2-4E759CF9188C}"
-          SQLTask:SqlStatementSource="update SAPItemMasterProduct set KBETR=t_LoadPriceDetailcontent.KBETR,&#xA;KONDA=t_LoadPriceDetailcontent.KONDA&#xA;FROM SAPItemMasterProduct &#xA;inner join t_LoadPriceDetailcontent&#xA;on SAPItemMasterProduct.MATNR=t_LoadPriceDetailcontent.MATNR and SAPItemMasterProduct.VKORG=t_LoadPriceDetailcontent.VKORG" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="update SAPItemMasterProduct set KBETR=lTrim(rTrim(tblLoadPriceDetailcontent.KBETR)),&#xA;KONDA=lTrim(rTrim(tblLoadPriceDetailcontent.KONDA))&#xA;FROM SAPItemMasterProduct &#xA;inner join (select * from t_LoadPriceDetailcontent t&#xA;where t.DATAB in (select top 1 t1.DATAB from  t_LoadPriceDetailcontent t1&#xA;where t1.MATNR=t.MATNR and t1.VKORG=t.VKORG &#xA;order by  t1.DATAB desc&#xA;)) tblLoadPriceDetailcontent&#xA;on lower(lTrim(rTrim(SAPItemMasterProduct.MATNR)))=lower(lTrim(rTrim(tblLoadPriceDetailcontent.MATNR))) and lower(lTrim(rTrim(SAPItemMasterProduct.VKORG)))=lower(lTrim(rTrim(tblLoadPriceDetailcontent.VKORG)))" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -8007,6 +8014,22 @@ Technical Support Team"</DTS:PropertyExpression>
       </DTS:Variables>
       <DTS:Executables>
         <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Rollback the tables data"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{007AC3B7-A7FA-45A1-9584-69464025BAD4}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Rollback the tables data"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{A244EEE5-F330-474A-92F2-4E759CF9188C}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[SAPItemMasterProduct];&#xA;&#xA;insert into [dbo].[SAPItemMasterProduct]&#xA;select * &#xA;from [dbo].[tmp_SAPItemMasterProduct]&#xA;&#xA;&#xA;Go" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package.EventHandlers[OnError]\Send Error notification"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.SendMailTask.SendMailTask, Microsoft.SqlServer.SendMailTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Send Mail Task"
@@ -8041,7 +8064,7 @@ Technical Support Team"</DTS:PropertyExpression>
               SendMailTask:SMTPServer="{E4E0B4B6-975B-4CBE-910D-5911308EC4BF}"
               SendMailTask:From="&quot;&quot;"
               SendMailTask:To="&quot;&quot;"
-              SendMailTask:Subject="&quot;&quot; Environment || Error occured - LoadItemMasterFile package - 2016-3-21"
+              SendMailTask:Subject="&quot;&quot; Environment || Error occured - LoadItemMasterFile package - 2016-3-22"
               SendMailTask:MessageSource="Hi Team,&#xA;&#xA;Error has occured in   task&#xA;&#xA;ErrorCode is : 0&#xA;&#xA;ErrorDescription is : &#xA;&#xA;Kindly reach out to technical team by raising the ticket to queue AMR-BBT-LATAM OSM SUPPORT&#xA;&#xA;Regards,&#xA;Technical Support Team" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -8085,6 +8108,14 @@ Technical Support Team"</DTS:PropertyExpression>
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
           DTS:To="Package.EventHandlers[OnError]\Send Error notification" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{CB03F06C-B3EF-4A96-8341-108B8101F42B}"
+          DTS:From="Package.EventHandlers[OnError]\Rollback the tables data"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package.EventHandlers[OnError]\Set Email Parameter" />
       </DTS:PrecedenceConstraints>
     </DTS:EventHandler>
   </DTS:EventHandlers>
@@ -8213,7 +8244,7 @@ Technical Support Team"</DTS:PropertyExpression>
     design-time-name="Package.EventHandlers[OnError]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="184,42"
           Id="Package.EventHandlers[OnError]\Send Error notification"
@@ -8236,6 +8267,44 @@ Technical Support Team"</DTS:PropertyExpression>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="192,42"
+          Id="Package.EventHandlers[OnError]\Rollback the tables data"
+          TopLeft="474,17" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint 1]"
+          TopLeft="570,59">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-25.5,24"
+              Start="0,0"
+              End="-25.5,16.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8"
+                    Point2="0,12"
+                    Point3="-4,12" />
+                  <mssgle:LineSegment
+                    End="-21.5,12" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-21.5,12"
+                    Point2="-25.5,12"
+                    Point3="-25.5,16" />
+                  <mssgle:LineSegment
+                    End="-25.5,16.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8319,9 +8388,7 @@ Technical Support Team"</DTS:PropertyExpression>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8392,9 +8459,7 @@ Technical Support Team"</DTS:PropertyExpression>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8428,9 +8493,7 @@ Technical Support Team"</DTS:PropertyExpression>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8453,7 +8516,7 @@ Technical Support Team"</DTS:PropertyExpression>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-56.2155859375,15.25,112.431171875,16"
+              BoundingBox="-47.74,17.4453125,95.48,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

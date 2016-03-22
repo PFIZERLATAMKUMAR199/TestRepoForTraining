@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadInvetoryBalanceFile"
   DTS:PackageType="5"
-  DTS:VersionBuild="29"
-  DTS:VersionGUID="{77060758-3A17-4B5A-886F-1ECFB3BB5158}">
+  DTS:VersionBuild="39"
+  DTS:VersionGUID="{CCFD68EC-185C-4C0E-8EA5-1AF48841BDE9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFRf3gV3kAkyu2OYE9g2f7QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAD5aHfSwNpPzmj9jNwr/AjnAAAAAASAAACgAAAAEAAAAAajXk7fxg1CluxenDGnRW4oAAAArvybKfk+kcTrDxfKAqWcZyV8gXTrNFhJ4FYKQHTY8OOWbJ4BtuCcSRQAAAA/b/Ci1V1a4Mxrn8/XFM3gRT7Ogg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFRf3gV3kAkyu2OYE9g2f7QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAC3ev0Sq8Bqh8WVflWVUASSAAAAAASAAACgAAAAEAAAAMEwHxfiObOQSh2PJBqFC10oAAAAeRKXBSQazjIBKY+aOIvfzOpJ8meSmvFTpeR3j5DxUO//uAETP9CbOxQAAADuuEekLIrAszx+jPl3kAro00R+1Q</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -338,7 +338,7 @@ Technical Support Team"</DTS:PropertyExpression>
                   SendMailTask:SMTPServer="{53C304BB-DDC1-4F9F-A5C8-AC11F4F6B705}"
                   SendMailTask:From="&quot;&quot;"
                   SendMailTask:To="&quot;&quot;"
-                  SendMailTask:Subject="&quot;&quot; Environment || LoadInvetoryBalanceFile  package completed successfully -2016-3-21"
+                  SendMailTask:Subject="&quot;&quot; Environment || LoadInvetoryBalanceFile  package completed successfully -2016-3-22"
                   SendMailTask:MessageSource="&#xA;Task to load data from files is completed successfully&#xA;&#xA;Regards,&#xA;Technical Support Team" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -1219,7 +1219,7 @@ Technical Support Team"</DTS:PropertyExpression>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{CA4E8F6E-D56F-4DD0-BFA0-69327E5D72FE}"
-          SQLTask:SqlStatementSource="truncate table dbo.SAPInvetoryBalance1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[tmp_SAPInvetoryBalance];&#xA;&#xA;insert into [tmp_SAPInvetoryBalance]&#xA;select * &#xA;from [dbo].[SAPInvetoryBalance]&#xA;&#xA;TRUNCATE TABLE [dbo].[SAPInvetoryBalance];&#xA;go" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -1255,6 +1255,22 @@ Technical Support Team"</DTS:PropertyExpression>
       </DTS:Variables>
       <DTS:Executables>
         <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Rollback the tables data"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{E326C675-EDD0-4271-B83D-0F1F13FFD959}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Rollback the tables data"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{CA4E8F6E-D56F-4DD0-BFA0-69327E5D72FE}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[SAPInvetoryBalance];&#xA;&#xA;insert into [dbo].[SAPInvetoryBalance]&#xA;select * &#xA;from [dbo].[tmp_SAPInvetoryBalance]&#xA;&#xA;&#xA;Go" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package.EventHandlers[OnError]\Send Error notification"
           DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.SendMailTask.SendMailTask, Microsoft.SqlServer.SendMailTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
           DTS:Description="Send Mail Task"
@@ -1289,7 +1305,7 @@ Technical Support Team"</DTS:PropertyExpression>
               SendMailTask:SMTPServer="{53C304BB-DDC1-4F9F-A5C8-AC11F4F6B705}"
               SendMailTask:From="&quot;&quot;"
               SendMailTask:To="&quot;&quot;"
-              SendMailTask:Subject="&quot;&quot; Environment || Error occured - LoadInvetoryBalanceFile package - 2016-3-21"
+              SendMailTask:Subject="&quot;&quot; Environment || Error occured - LoadInvetoryBalanceFile package - 2016-3-22"
               SendMailTask:MessageSource="Hi Team,&#xA;&#xA;Error has occured in   task&#xA;&#xA;ErrorCode is : 0&#xA;&#xA;ErrorDescription is : &#xA;&#xA;Kindly reach out to technical team by raising the ticket to queue AMR-BBT-LATAM OSM SUPPORT&#xA;&#xA;Regards,&#xA;Technical Support Team" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -1333,6 +1349,14 @@ Technical Support Team"</DTS:PropertyExpression>
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
           DTS:To="Package.EventHandlers[OnError]\Send Error notification" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{C692D9E6-9D32-4C88-B092-66F1CF12521C}"
+          DTS:From="Package.EventHandlers[OnError]\Rollback the tables data"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package.EventHandlers[OnError]\Set Email Parameter" />
       </DTS:PrecedenceConstraints>
     </DTS:EventHandler>
   </DTS:EventHandlers>
@@ -1385,7 +1409,7 @@ Technical Support Team"</DTS:PropertyExpression>
     design-time-name="Package.EventHandlers[OnError]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="175,42"
           Id="Package.EventHandlers[OnError]\Set Email Parameter"
@@ -1408,6 +1432,32 @@ Technical Support Team"</DTS:PropertyExpression>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="192,42"
+          Id="Package.EventHandlers[OnError]\Rollback the tables data"
+          TopLeft="546,21" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint 1]"
+          TopLeft="645.25,63">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25"
+              Start="0,0"
+              End="0,17.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1460,7 +1510,7 @@ Technical Support Team"</DTS:PropertyExpression>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-135.95685546875,10.25,271.9137109375,16"
+              BoundingBox="-127.12482421875,12.41845703125,254.2496484375,11.6630859375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1483,9 +1533,7 @@ Technical Support Team"</DTS:PropertyExpression>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,3.25,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1507,9 +1555,7 @@ Technical Support Team"</DTS:PropertyExpression>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,12.75,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -1523,14 +1569,14 @@ Technical Support Team"</DTS:PropertyExpression>
         <NodeLayout
           Size="175,42"
           Id="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table.EventHandlers[OnPostExecute]\Set Email Parameter"
-          TopLeft="461,75" />
+          TopLeft="354,117" />
         <NodeLayout
           Size="284,42"
           Id="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table.EventHandlers[OnPostExecute]\Email notification on completion of package"
-          TopLeft="446,143" />
+          TopLeft="339,185" />
         <EdgeLayout
           Id="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint]"
-          TopLeft="548.5,117">
+          TopLeft="441.5,159">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
