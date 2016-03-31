@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="8" virtualPath="/PPP.Web/global.asax" hash="ffffffffcdec7f69" filehash="19c6a4d18332" flags="150000" assembly="App_global.asax" type="ASP.global_asax">
+    <filedeps>
+        <filedep name="/PPP.Web/global.asax" />
+    </filedeps>
+</preserve>
