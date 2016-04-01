@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadInvetoryBalanceFile"
   DTS:PackageType="5"
-  DTS:VersionBuild="39"
-  DTS:VersionGUID="{CCFD68EC-185C-4C0E-8EA5-1AF48841BDE9}">
+  DTS:VersionBuild="40"
+  DTS:VersionGUID="{4C51D85D-E3B2-4C35-94F5-ED6E382FFD6E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFRf3gV3kAkyu2OYE9g2f7QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADVWnbt/Z7PXtMGSVcs9UBKAAAAAASAAACgAAAAEAAAAI6famFxGRy7XCfXDCa9HkIoAAAAwLEK2qaaMN6l1u2/AMPO9OU2W7WM6myZjlsZqHdx12ZQjHImp7vSJBQAAAAtwIYIxmFCnPrqxdabGHKX0EY0LA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFRf3gV3kAkyu2OYE9g2f7QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACB2LhuN7dquSLLPQS1ZKB8AAAAAASAAACgAAAAEAAAAFD/aLhRbEjyblXwCe/G80EoAAAAdC6U7GUOt9VA/T+ORlX1TAjrWB6wKXH5MTBTL/KPVmsTbGnRLn9DcBQAAACe6OBCFRIGVpC/4KzZQbsjdlsKfQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -44,7 +44,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Rohit\backup from niraj desktop\SEMP SAP integration\Files\INVBALANCE_TO_SEMP_CL_20160216211030.txt">
+          DTS:ConnectionString="\\amrndhw3658\semp\In\Files\INVBALANCE_TO_SEMP_CL_20160216211030.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -53,7 +53,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ATP_VBBE-WERKS"
-              DTS:DTSID="{97ED81E4-B3B9-421D-9F51-82ACEB7A3DE4}"
+              DTS:DTSID="{FAED51B5-8091-4451-974D-160C7DEEC593}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -62,7 +62,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ATP_VBBE-LGORT"
-              DTS:DTSID="{1B587452-4CAD-4AA1-AB22-3FD81CC10FD8}"
+              DTS:DTSID="{CB520146-3E8D-490A-A642-2752EFB40A77}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -71,7 +71,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="MARA-MTART"
-              DTS:DTSID="{5F69AA1D-4C2C-4191-9756-EE8D9CE7A06F}"
+              DTS:DTSID="{22486463-68D8-4E61-B4FE-78BFBF2388B9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -80,7 +80,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ATP_VBBE-MATNR"
-              DTS:DTSID="{77F1D534-5452-4B8B-8965-846345C8F76F}"
+              DTS:DTSID="{8498FA08-BEF0-4582-857A-772A19BB6B73}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -89,7 +89,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ATP_VBBE-CHARG"
-              DTS:DTSID="{7EF4B4B1-09AF-4952-A0BE-E101134F23B7}"
+              DTS:DTSID="{D7725930-A95E-4C6B-B966-A9BA8C60F8CC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -98,7 +98,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ATP_VBBE-MEINS"
-              DTS:DTSID="{5DB09399-384A-4E5F-BF07-BA31AB430BFF}"
+              DTS:DTSID="{EC099A91-3966-4759-9C97-5AEF6520E4A4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -107,7 +107,7 @@
               DTS:DataPrecision="13"
               DTS:TextQualified="True"
               DTS:ObjectName="MCHB-CLABS"
-              DTS:DTSID="{3F57B1A6-5B2C-434B-820F-66E636858014}"
+              DTS:DTSID="{AE1139DA-DB80-4891-9E2D-B8DD93E18A56}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -116,7 +116,7 @@
               DTS:DataPrecision="13"
               DTS:TextQualified="True"
               DTS:ObjectName="MCHB-CINSM"
-              DTS:DTSID="{7F9CA4A4-5179-4971-A839-792ED3B17BEB}"
+              DTS:DTSID="{C4D1D5D3-2D95-4716-A351-332537BAF19F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -125,7 +125,7 @@
               DTS:DataPrecision="15"
               DTS:TextQualified="True"
               DTS:ObjectName="ATP_VBBE-OMENG"
-              DTS:DTSID="{0FE8DC04-747C-4B52-B0C0-2D56ED4567A3}"
+              DTS:DTSID="{6678DF7D-4832-476B-8F32-3017F767767C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -134,7 +134,7 @@
               DTS:DataPrecision="15"
               DTS:TextQualified="True"
               DTS:ObjectName="ATP_VBBE- OMENG"
-              DTS:DTSID="{1461F161-4805-48B2-8124-FA4EDC183537}"
+              DTS:DTSID="{8A40FCE2-1210-4E6E-B79E-301DB332CC0E}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -147,7 +147,7 @@
       DTS:ObjectName="LogFile_LoadInvetoryBalance.txt">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="C:\Rohit\backup from niraj desktop\SEMP SAP integration\Files\Logs\LogFile_LoadInvetoryBalance.txt" />
+          DTS:ConnectionString="\\amrndhw3658\semp\Logs\LogFile_LoadInvetoryBalance.txt" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -338,7 +338,7 @@ Technical Support Team"</DTS:PropertyExpression>
                   SendMailTask:SMTPServer="{53C304BB-DDC1-4F9F-A5C8-AC11F4F6B705}"
                   SendMailTask:From="&quot;&quot;"
                   SendMailTask:To="&quot;&quot;"
-                  SendMailTask:Subject="&quot;&quot; Environment || LoadInvetoryBalanceFile  package completed successfully -2016-3-22"
+                  SendMailTask:Subject="&quot;&quot; Environment || LoadInvetoryBalanceFile  package completed successfully -2016-4-1"
                   SendMailTask:MessageSource="&#xA;Task to load data from files is completed successfully&#xA;&#xA;Regards,&#xA;Technical Support Team" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -1305,7 +1305,7 @@ Technical Support Team"</DTS:PropertyExpression>
               SendMailTask:SMTPServer="{53C304BB-DDC1-4F9F-A5C8-AC11F4F6B705}"
               SendMailTask:From="&quot;&quot;"
               SendMailTask:To="&quot;&quot;"
-              SendMailTask:Subject="&quot;&quot; Environment || Error occured - LoadInvetoryBalanceFile package - 2016-3-22"
+              SendMailTask:Subject="&quot;&quot; Environment || Error occured - LoadInvetoryBalanceFile package - 2016-4-1"
               SendMailTask:MessageSource="Hi Team,&#xA;&#xA;Error has occured in   task&#xA;&#xA;ErrorCode is : 0&#xA;&#xA;ErrorDescription is : &#xA;&#xA;Kindly reach out to technical team by raising the ticket to queue AMR-BBT-LATAM OSM SUPPORT&#xA;&#xA;Regards,&#xA;Technical Support Team" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -1409,15 +1409,19 @@ Technical Support Team"</DTS:PropertyExpression>
     design-time-name="Package.EventHandlers[OnError]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="175,42"
-          Id="Package.EventHandlers[OnError]\Set Email Parameter"
-          TopLeft="561,88" />
+          Size="192,42"
+          Id="Package.EventHandlers[OnError]\Rollback the tables data"
+          TopLeft="546,21" />
         <NodeLayout
           Size="184,42"
           Id="Package.EventHandlers[OnError]\Send Error notification"
           TopLeft="558,170" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package.EventHandlers[OnError]\Set Email Parameter"
+          TopLeft="561,88" />
         <EdgeLayout
           Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
           TopLeft="649.25,130">
@@ -1437,13 +1441,11 @@ Technical Support Team"</DTS:PropertyExpression>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="192,42"
-          Id="Package.EventHandlers[OnError]\Rollback the tables data"
-          TopLeft="546,21" />
         <EdgeLayout
           Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint 1]"
           TopLeft="645.25,63">
@@ -1463,7 +1465,9 @@ Technical Support Team"</DTS:PropertyExpression>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -1565,15 +1569,15 @@ Technical Support Team"</DTS:PropertyExpression>
     design-time-name="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table.EventHandlers[OnPostExecute]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table.EventHandlers[OnPostExecute]\Set Email Parameter"
-          TopLeft="354,117" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="284,42"
           Id="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table.EventHandlers[OnPostExecute]\Email notification on completion of package"
           TopLeft="339,185" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table.EventHandlers[OnPostExecute]\Set Email Parameter"
+          TopLeft="354,117" />
         <EdgeLayout
           Id="Package\Load data from Invetory balance txt file into SAPInvetoryBalance table.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint]"
           TopLeft="441.5,159">
@@ -1605,7 +1609,9 @@ Technical Support Team"</DTS:PropertyExpression>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">APCW10A6G00BMPQ</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFRf3gV3kAkyu2OYE9g2f7QAAAAACAAAAAAADZgAAwAAAABAAAAA6f+93KyAiKMkaLf7dpVeCAAAAAASAAACgAAAAEAAAAOaDe4f87E+7FwdjRC9aAH+IAAAAWkuGrMDKIR6BKp8ISpcvYBRgY6XDYu4/oLISe/kIrobmCCUdEDoYug5GJkRKSMbfC4GWvsvukBTcYl2EH2o/LWQVW+q60uKcBn+IsGhsAnFDQ/zmkLg184KIrvpi0GaR+f9/bY90cOXZ5Pv1yalBhTJXlS5AqxiLVLf6lht375otaNZ10+fpvBQAAADPczcqVy3HE5lngYWbp3FIutyf0Q==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFRf3gV3kAkyu2OYE9g2f7QAAAAACAAAAAAADZgAAwAAAABAAAAALFu6W+EMmfEWp/zzw99UFAAAAAASAAACgAAAAEAAAANzHQd1k8MzxV5V0Xcbnyz+IAAAAlEpIb3RJr9IsHGLxhiH+FtWHVUh3dasWxfDMZ1kBz7oAKp+vgFqzwZZ6SYaQTTythjRrI4G0oCM8OMaqIMhdXfpo3eM3TzphhVOD94qqCBDp796xpc3sEi5FvzLAbQBQxIHd4UicM41P4klF3gc7jH+ve0zeHqNXl0AxNuyO4fVtMS9v2DRdZBQAAAC+JnRSn1KnhR2RypC7j/L59Y4cwQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -44,10 +44,10 @@
                 <SSIS:Property SSIS:Name="Name">LoadInvetoryBalanceFile</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">39</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">40</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{CCFD68EC-185C-4C0E-8EA5-1AF48841BDE9}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{4C51D85D-E3B2-4C35-94F5-ED6E382FFD6E}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -199,7 +199,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Rohit\backup from niraj desktop\SEMP SAP integration\Files\INVBALANCE_TO_SEMP_CL_20160216211030.txt</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">\\amrndhw3658\semp\In\Files\INVBALANCE_TO_SEMP_CL_20160216211030.txt</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -336,7 +336,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Rohit\backup from niraj desktop\SEMP SAP integration\Files\Logs\LogFile_LoadInvetoryBalance.txt</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">\\amrndhw3658\semp\Logs\LogFile_LoadInvetoryBalance.txt</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -408,10 +408,10 @@
                 <SSIS:Property SSIS:Name="Name">LoadItemMasterFile</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">121</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">125</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{F0D8B5B4-717D-4C6E-8DF7-DDB2C1FA34CB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{7A23869F-3BB4-4057-95F4-48BA4A3C0534}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -563,7 +563,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Rohit\backup from niraj desktop\SEMP SAP integration\Files\ITEMMASTER_TO_SEMP_CL_20160229003500.txt</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">\\amrndhw3658\semp\In\Files\ITEMMASTER_TO_SEMP_CL_20160229003500.txt</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -700,7 +700,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Rohit\backup from niraj desktop\SEMP SAP integration\Files\Logs\LogFile_LoadItemMaster.txt</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">\\amrndhw3658\semp\Logs\LogFile_LoadItemMaster.txt</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -820,7 +820,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Rohit\backup from niraj desktop\SEMP SAP integration\Files\newfileason1stmarch16\Mapeo File SEMP\PRICE_DETAILS_TO_SEMP_CL_20160304084304.txt</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">\\amrndhw3658\semp\In\Files\PRICE_DETAILS_TO_SEMP_CL_20160304084304.txt</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -954,10 +954,10 @@
                 <SSIS:Property SSIS:Name="Name">LoadCustomerFile</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">76</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">77</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{0BBACAEF-A92E-4944-9DC2-DC79B12C480E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{74C122EF-603B-44EE-B149-2C4059DC4FBA}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1109,7 +1109,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Rohit\backup from niraj desktop\SEMP SAP integration\Files\newfileason1stmarch16\Mapeo File SEMP\CUSTOMERMASTER_TO_SEMP_CL_20160314013000.txt</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">\\amrndhw3658\semp\In\Files\CUSTOMERMASTER_TO_SEMP_CL_20160314013000.txt</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -1246,7 +1246,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Rohit\backup from niraj desktop\SEMP SAP integration\Files\Logs\LogFile_LoadCustomerdata.txt</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">\\amrndhw3658\semp\Logs\LogFile_LoadCustomerdata.txt</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
