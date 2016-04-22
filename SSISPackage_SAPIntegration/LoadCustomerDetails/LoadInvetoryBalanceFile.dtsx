@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadInvetoryBalanceFile"
   DTS:PackageType="5"
-  DTS:VersionBuild="40"
-  DTS:VersionGUID="{4C51D85D-E3B2-4C35-94F5-ED6E382FFD6E}">
+  DTS:VersionBuild="42"
+  DTS:VersionGUID="{334452D1-6C0F-4A40-B5D9-8B36EEF2A621}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFRf3gV3kAkyu2OYE9g2f7QAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACB2LhuN7dquSLLPQS1ZKB8AAAAAASAAACgAAAAEAAAAFD/aLhRbEjyblXwCe/G80EoAAAAdC6U7GUOt9VA/T+ORlX1TAjrWB6wKXH5MTBTL/KPVmsTbGnRLn9DcBQAAACe6OBCFRIGVpC/4KzZQbsjdlsKfQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAut6/Bl8Z2kybDKiiJi8irQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABKTsYB5tbDJGsM7KmAeHRWAAAAAASAAACgAAAAEAAAAI1BsBBAv1sES0ZawFaGQ3QoAAAAtK37WQWzuXkVqgtml65aDA6gvDw4D3V01wMArGeXT7LLNY3yA6dNUhQAAAC2YyhwljxZyFK0FmP1PZcfgB+hhg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -338,7 +338,7 @@ Technical Support Team"</DTS:PropertyExpression>
                   SendMailTask:SMTPServer="{53C304BB-DDC1-4F9F-A5C8-AC11F4F6B705}"
                   SendMailTask:From="&quot;&quot;"
                   SendMailTask:To="&quot;&quot;"
-                  SendMailTask:Subject="&quot;&quot; Environment || LoadInvetoryBalanceFile  package completed successfully -2016-4-1"
+                  SendMailTask:Subject="&quot;&quot; Environment || LoadInvetoryBalanceFile  package completed successfully -2016-4-22"
                   SendMailTask:MessageSource="&#xA;Task to load data from files is completed successfully&#xA;&#xA;Regards,&#xA;Technical Support Team" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -1305,7 +1305,7 @@ Technical Support Team"</DTS:PropertyExpression>
               SendMailTask:SMTPServer="{53C304BB-DDC1-4F9F-A5C8-AC11F4F6B705}"
               SendMailTask:From="&quot;&quot;"
               SendMailTask:To="&quot;&quot;"
-              SendMailTask:Subject="&quot;&quot; Environment || Error occured - LoadInvetoryBalanceFile package - 2016-4-1"
+              SendMailTask:Subject="&quot;&quot; Environment || Error occured - LoadInvetoryBalanceFile package - 2016-4-22"
               SendMailTask:MessageSource="Hi Team,&#xA;&#xA;Error has occured in   task&#xA;&#xA;ErrorCode is : 0&#xA;&#xA;ErrorDescription is : &#xA;&#xA;Kindly reach out to technical team by raising the ticket to queue AMR-BBT-LATAM OSM SUPPORT&#xA;&#xA;Regards,&#xA;Technical Support Team" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -1411,32 +1411,28 @@ Technical Support Team"</DTS:PropertyExpression>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="192,42"
+          Size="NaN,NaN"
           Id="Package.EventHandlers[OnError]\Rollback the tables data"
-          TopLeft="546,21" />
+          TopLeft="NaN,NaN" />
         <NodeLayout
-          Size="184,42"
+          Size="NaN,NaN"
           Id="Package.EventHandlers[OnError]\Send Error notification"
-          TopLeft="558,170" />
+          TopLeft="NaN,NaN" />
         <NodeLayout
-          Size="175,42"
+          Size="NaN,NaN"
           Id="Package.EventHandlers[OnError]\Set Email Parameter"
-          TopLeft="561,88" />
+          TopLeft="NaN,NaN" />
         <EdgeLayout
           Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
-          TopLeft="649.25,130">
+          TopLeft="NaN,NaN">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,40"
+              EndConnector="{assembly:Null}"
               Start="0,0"
-              End="0,32.5">
+              End="0,0">
               <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.5" />
-                </mssgle:SegmentCollection>
+                <assembly:Null />
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
@@ -1448,19 +1444,15 @@ Technical Support Team"</DTS:PropertyExpression>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint 1]"
-          TopLeft="645.25,63">
+          TopLeft="NaN,NaN">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,25"
+              EndConnector="{assembly:Null}"
               Start="0,0"
-              End="0,17.5">
+              End="0,0">
               <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.5" />
-                </mssgle:SegmentCollection>
+                <assembly:Null />
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>

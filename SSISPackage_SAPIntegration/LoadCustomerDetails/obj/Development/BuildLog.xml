@@ -2,23 +2,23 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>LoadCustomerDetails</Name>
-    <LastWriteTime>2016-04-01T12:38:48.4573475Z</LastWriteTime>
+    <LastWriteTime>2016-04-22T07:06:41.9267395Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>LoadInvetoryBalanceFile.dtsx</Name>
-      <LastWriteTime>2016-04-01T12:31:11.0332716Z</LastWriteTime>
+      <LastWriteTime>2016-04-22T07:06:12.4119293Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LoadItemMasterFile.dtsx</Name>
-      <LastWriteTime>2016-04-01T12:35:47.3572027Z</LastWriteTime>
+      <LastWriteTime>2016-04-22T07:05:40.5545242Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LoadCustomerFile.dtsx</Name>
-      <LastWriteTime>2016-04-01T12:32:55.1269018Z</LastWriteTime>
+      <LastWriteTime>2016-04-22T06:59:52.6532875Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
