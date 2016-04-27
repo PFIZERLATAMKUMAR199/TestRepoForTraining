@@ -4,7 +4,7 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
-        <StartObjectID>LoadInvetoryBalanceFile.dtsx</StartObjectID>
+        <StartObjectID>LoadItemMasterFile.dtsx</StartObjectID>
         <UserIDs />
         <UserPasswords />
         <OfflineMode>false</OfflineMode>
