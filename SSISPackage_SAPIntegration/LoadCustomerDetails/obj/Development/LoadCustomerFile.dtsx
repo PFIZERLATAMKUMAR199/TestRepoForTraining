@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadCustomerFile"
   DTS:PackageType="5"
-  DTS:VersionBuild="186"
-  DTS:VersionGUID="{C610C615-30E6-4B64-9526-0799EBC1FB65}">
+  DTS:VersionBuild="190"
+  DTS:VersionGUID="{3B361370-1B88-464D-917D-11ADFABC9628}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAut6/Bl8Z2kybDKiiJi8irQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAD8x6pDTj6BVHc4tQbBR5X1AAAAAASAAACgAAAAEAAAAEpqrsc5fmNq3jGYByDji/UoAAAA7ZRTsD7VRWNbdnKiVUFCIvzSFJ+aSO8E8kLOu2wowoFWJ8c+dH1hLhQAAABl68Z0UISv9Si0bXAuUzOrT2gYJQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAut6/Bl8Z2kybDKiiJi8irQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABQ5bilCNkOifDA+Nws0HpPAAAAAASAAACgAAAAEAAAAGCyjDKRSByAs3IhxFPC0AMoAAAA7lLkTVfbFAwjh2Xt0DK7iKnsNiUxr/BP89YligZNKz4xqW/Li6fknBQAAACSe1Nt2k8qi+HaChb2GLTi6uFGuQ</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -753,13 +753,14 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="File System Task"
       DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:PropertyExpression
         DTS:Name="Disable">@[User::DisableTask]</DTS:PropertyExpression>
       <DTS:ObjectData>
         <FileSystemData
           TaskOperationType="RenameFile"
+          TaskOverwriteDestFile="True"
           TaskSourcePath="User::SourceFileName"
           TaskIsSourceVariable="True"
           TaskDestinationPath="User::ProcessedCustomerFileNameAndPath"
@@ -3557,7 +3558,7 @@ namespace ST_803eb8c0325946cf9e272e5ae7612e8f
         /// </summary>
 		public void Main()
 		{
-			// TODO: Add your code here
+			// Custom Code added to get and set File Name Dynamically
 
 			Dts.TaskResult = (int)ScriptResults.Success;
             string InboundFolder = Dts.Variables["User::InboundFolder"].Value.ToString();
@@ -3585,11 +3586,7 @@ namespace ST_803eb8c0325946cf9e272e5ae7612e8f
                 Dts.Variables["User::DisableTask"].Value = false;
                 Dts.Variables["User::CustomerFileName"].Value = lstFileName[0].ToString();
             }
-            //else if (lstFileName.Count > 1)
-            //{
-
-            //}
-            
+         
 		}
 
         #region ScriptResults declaration
@@ -3710,50 +3707,6 @@ namespace ST_803eb8c0325946cf9e272e5ae7612e8f
 		<msb:File Include="Properties\Resources.Designer.cs"/>
 		<msb:File Include="Properties\Settings.settings"/>
 		<msb:File Include="ScriptMain.cs"/>
-		<msb:Breakpoint Include="2c9bf590e51942d994f74444f116e847">
-			<msb:HitCountType>1</msb:HitCountType>
-			<msb:FileName>ScriptMain.cs</msb:FileName>
-			<msb:LineNumber>117</msb:LineNumber>
-			<msb:HitCountTarget>1</msb:HitCountTarget>
-			<msb:ColumnNumber>18</msb:ColumnNumber>
-			<msb:Enabled>True</msb:Enabled>
-			<msb:Condition></msb:Condition>
-			<msb:ConditionType>1</msb:ConditionType>
-			<msb:Language>C#</msb:Language>
-		</msb:Breakpoint>
-		<msb:Breakpoint Include="1179ed1250db49c0a89b475367ed3cc5">
-			<msb:FileName>ScriptMain.cs</msb:FileName>
-			<msb:HitCountType>1</msb:HitCountType>
-			<msb:LineNumber>93</msb:LineNumber>
-			<msb:HitCountTarget>1</msb:HitCountTarget>
-			<msb:ColumnNumber>1</msb:ColumnNumber>
-			<msb:Enabled>True</msb:Enabled>
-			<msb:ConditionType>1</msb:ConditionType>
-			<msb:Condition></msb:Condition>
-			<msb:Language>C#</msb:Language>
-		</msb:Breakpoint>
-		<msb:Breakpoint Include="29cf0fa3f6eb4377a0e96fb1f42ed33b">
-			<msb:FileName>ScriptMain.cs</msb:FileName>
-			<msb:HitCountType>1</msb:HitCountType>
-			<msb:LineNumber>103</msb:LineNumber>
-			<msb:HitCountTarget>1</msb:HitCountTarget>
-			<msb:ColumnNumber>13</msb:ColumnNumber>
-			<msb:Enabled>True</msb:Enabled>
-			<msb:ConditionType>1</msb:ConditionType>
-			<msb:Condition></msb:Condition>
-			<msb:Language>C#</msb:Language>
-		</msb:Breakpoint>
-		<msb:Breakpoint Include="524612ada6d0480bb5f31800905e17f9">
-			<msb:HitCountType>1</msb:HitCountType>
-			<msb:FileName>ScriptMain.cs</msb:FileName>
-			<msb:LineNumber>98</msb:LineNumber>
-			<msb:HitCountTarget>1</msb:HitCountTarget>
-			<msb:ColumnNumber>13</msb:ColumnNumber>
-			<msb:Enabled>True</msb:Enabled>
-			<msb:Condition></msb:Condition>
-			<msb:ConditionType>1</msb:ConditionType>
-			<msb:Language>C#</msb:Language>
-		</msb:Breakpoint>
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
           <ProjectItem
@@ -3866,7 +3819,7 @@ namespace ST_803eb8c0325946cf9e272e5ae7612e8f.Properties {
           <BinaryItem
             Name="ST_803eb8c0325946cf9e272e5ae7612e8f.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAHhoIFcAAAAAAAAAAOAAAiELAQsAABIAAAAIAAAAAAAAzjAA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAPiNIFcAAAAAAAAAAOAAAiELAQsAABIAAAAIAAAAAAAAzjAA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACAAAAAAgAAAAAAAAMAQIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAHQwAABXAAAAAEAAAAgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -3904,7 +3857,7 @@ nQAJAGAFoQDxAH0FpQAMALwBGwABAa8FsQABAbgFtgAMAMIFuwAMAMYFwQDpANAFxQAMAE0FygAZ
 ALwBGwAIABQATgAIABgAUwApAJMAgAAuABsAUAEuACMAUAEuAGMAdgEuAAsA3wAuABMAJwEuADMA
 JwEuACsAUAEuADsAVgEuAEMAUAEuAFsAbQFDAGsAUwBJAJMAgABhAJsAUwCDAKsAUwB1ANAAAgAB
 AAMAAwAAAG8BLwAAAO4BNAAAABICQgACAAIAAwACAAMABQABAAQABQACAAUABwCrAASAAAABAAAA
-SRdoWgAAAAAAAH8AAAAEAAAAAAAAAAAAAAABALEAAAAAAAQAAAAAAAAAAAAAAAEAugAAAAAACwAA
+SRcobQAAAAAAAH8AAAAEAAAAAAAAAAAAAAABALEAAAAAAAQAAAAAAAAAAAAAAAEAugAAAAAACwAA
 AAAAAAAAAAAACgD1AAAAAAALAAAAAAAAAAAAAAAKAO0EAAAAAAAAAAABAAAA4gUAAAUABAAAAAA8
 TW9kdWxlPgBTVF84MDNlYjhjMDMyNTk0NmNmOWUyNzJlNWFlNzYxMmU4Zi5kbGwAUmVzb3VyY2Vz
 AFNUXzgwM2ViOGMwMzI1OTQ2Y2Y5ZTI3MmU1YWU3NjEyZThmLlByb3BlcnRpZXMAU2V0dGluZ3MA
@@ -3939,7 +3892,7 @@ AHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAAJ1UAcwBlAHIAOgA6AEkAbgBiAG8A
 dQBuAGQARgBvAGwAZABlAHIAADVDAFUAUwBUAE8ATQBFAFIATQBBAFMAVABFAFIAXwBUAE8AXwBT
 AEUATQBQAF8AQwBMAF8AAC1VAHMAZQByADoAOgBDAHUAcwB0AG8AbQBlAHIARgBpAGwAZQBOAGEA
 bQBlAAABACNVAHMAZQByADoAOgBOAG8ARgBpAGwAZQBFAHIAcgBvAHIAACNVAHMAZQByADoAOgBE
-AGkAcwBhAGIAbABlAFQAYQBzAGsAAAAAAGsdPHTFealOmEe1QtbFbi0ACLd6XFYZNOCJCImEXc2A
+AGkAcwBhAGIAbABlAFQAYQBzAGsAAAAAALu5aofxzD1IsRkAC48Z71MACLd6XFYZNOCJCImEXc2A
 gMyRAwYSFQMGEhkDIAABBAAAEhUEAAASGQUAAQESGQQIABIVBAgAEhkDBhIMBAAAEgwECAASDAIG
 CAMGERQEAAAAAAQBAAAABCABAQ4EIAEBCAYAARJREVUEIAASWQYgAgEOElkEBwESFQUgAQERYQgB
 AAIAAAAAAAMAAAEEIAASbQQgABJxBSABEnUcAyAAHAMgAA4FAAEdDg4FFRJ9AQ4EIAECDgQgAQ4I
@@ -3956,13 +3909,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAEAEAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAA
 AEgAAABYQAAAsAMAAAAAAAAAAAAAsAM0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8A
-AAAAAL0E7/4AAAEAAAABAGhaSRcAAAEAaFpJFz8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
+AAAAAL0E7/4AAAEAAAABAChtSRcAAAEAKG1JFz8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
 AAAAAQBWAGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8A
 bgAAAAAAAACwBBADAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAAOwCAAABADAAMAAw
 ADAAMAA0AGIAMAAAAHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAAAABTAFQA
 XwA4ADAAMwBlAGIAOABjADAAMwAyADUAOQA0ADYAYwBmADkAZQAyADcAMgBlADUAYQBlADcANgAx
 ADIAZQA4AGYAAABAAA8AAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4ANQA5ADYA
-MQAuADIAMwAxADQANAAAAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAFQAXwA4
+MQAuADIANwA5ADQANAAAAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAFQAXwA4
 ADAAMwBlAGIAOABjADAAMwAyADUAOQA0ADYAYwBmADkAZQAyADcAMgBlADUAYQBlADcANgAxADIA
 ZQA4AGYALgBkAGwAbAAAAEgAEgABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAAAEMAbwBw
 AHkAcgBpAGcAaAB0ACAAQAAgACAAMgAwADEANgAAAHgAKAABAE8AcgBpAGcAaQBuAGEAbABGAGkA
@@ -3970,8 +3923,8 @@ bABlAG4AYQBtAGUAAABTAFQAXwA4ADAAMwBlAGIAOABjADAAMwAyADUAOQA0ADYAYwBmADkAZQAy
 ADcAMgBlADUAYQBlADcANgAxADIAZQA4AGYALgBkAGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQA
 TgBhAG0AZQAAAAAAUwBUAF8AOAAwADMAZQBiADgAYwAwADMAMgA1ADkANAA2AGMAZgA5AGUAMgA3
 ADIAZQA1AGEAZQA3ADYAMQAyAGUAOABmAAAARAAPAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkA
-bwBuAAAAMQAuADAALgA1ADkANgAxAC4AMgAzADEANAA0AAAAAABIAA8AAQBBAHMAcwBlAG0AYgBs
-AHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgA1ADkANgAxAC4AMgAzADEANAA0AAAAAAAAAAAA
+bwBuAAAAMQAuADAALgA1ADkANgAxAC4AMgA3ADkANAA0AAAAAABIAA8AAQBBAHMAcwBlAG0AYgBs
+AHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgA1ADkANgAxAC4AMgA3ADkANAA0AAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -3990,26 +3943,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
-          <Breakpoint
-            Enabled="True"
-            File="ScriptMain.cs"
-            Line="93"
-            Column="1" />
-          <Breakpoint
-            Enabled="True"
-            File="ScriptMain.cs"
-            Line="117"
-            Column="18" />
-          <Breakpoint
-            Enabled="True"
-            File="ScriptMain.cs"
-            Line="103"
-            Column="13" />
-          <Breakpoint
-            Enabled="True"
-            File="ScriptMain.cs"
-            Line="98"
-            Column="13" />
         </ScriptProject>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -4023,7 +3956,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       DTS:LocaleID="-1"
       DTS:ObjectName="Send Mail Task"
       DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:PropertyExpression
         DTS:Name="Disable">! @[User::DisableTask]</DTS:PropertyExpression>
@@ -4054,7 +3987,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Email Parameter"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:PropertyExpression
         DTS:Name="Disable">! @[User::DisableTask]</DTS:PropertyExpression>

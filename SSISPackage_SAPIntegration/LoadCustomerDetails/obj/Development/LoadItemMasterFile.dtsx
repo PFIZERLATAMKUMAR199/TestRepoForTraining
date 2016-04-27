@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadItemMasterFile"
   DTS:PackageType="5"
-  DTS:VersionBuild="180"
-  DTS:VersionGUID="{869C6D1F-9FDA-4A84-810A-9D9AB6152A1C}">
+  DTS:VersionBuild="183"
+  DTS:VersionGUID="{59ADB327-8F87-412B-953A-E27A7B45A897}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAut6/Bl8Z2kybDKiiJi8irQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACmk20sFErevm+Jyj8S5xVuAAAAAASAAACgAAAAEAAAALMkvyQtO3DVQ5X+TVeAUacoAAAAmqbah5N9ojPP5upmJdj73tkBOXuI/LgfdtihByRZSzKLNAqfenUzgxQAAADPyP9Yl6+wmQW65njE+swSZ+1ksg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAut6/Bl8Z2kybDKiiJi8irQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAO+ivcNXz7uYrL0fUKpxZ9AAAAAASAAACgAAAAEAAAAMaXSUlKjq6LBKJXfAADWMQoAAAAfKDDvOouLkWx8uGWa7+JPHp7E4tZxUn5oUXTZTMCp/1WDp8/XEfDwRQAAAB7QzuI/hHjXjf6A49B0t39q/Gr8Q</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -2128,7 +2128,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Execute SQL Task"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:PropertyExpression
         DTS:Name="Disable">! @[User::DisableTask]</DTS:PropertyExpression>
@@ -2161,7 +2161,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="File System Task for ItemMaster"
       DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:PropertyExpression
         DTS:Name="Disable">@[User::DisableTask]</DTS:PropertyExpression>
@@ -2183,7 +2183,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="File System Task for PriceDetail"
       DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:PropertyExpression
         DTS:Name="Disable">@[User::DisableTask]</DTS:PropertyExpression>
@@ -8405,39 +8405,6 @@ namespace ST_954ad330bb3745adb20bacf72d3eab19
 		<msb:File Include="Properties\Resources.Designer.cs"/>
 		<msb:File Include="Properties\Settings.settings"/>
 		<msb:File Include="ScriptMain.cs"/>
-		<msb:Breakpoint Include="e3d40cebd19e4746a95a40d4daba000d">
-			<msb:HitCountType>1</msb:HitCountType>
-			<msb:FileName>ScriptMain.cs</msb:FileName>
-			<msb:LineNumber>93</msb:LineNumber>
-			<msb:HitCountTarget>1</msb:HitCountTarget>
-			<msb:ColumnNumber>1</msb:ColumnNumber>
-			<msb:Enabled>True</msb:Enabled>
-			<msb:Condition></msb:Condition>
-			<msb:ConditionType>1</msb:ConditionType>
-			<msb:Language>C#</msb:Language>
-		</msb:Breakpoint>
-		<msb:Breakpoint Include="4eb3569ec2a1431ea573a6f8af06f7ad">
-			<msb:HitCountType>1</msb:HitCountType>
-			<msb:FileName>ScriptMain.cs</msb:FileName>
-			<msb:LineNumber>103</msb:LineNumber>
-			<msb:HitCountTarget>1</msb:HitCountTarget>
-			<msb:ColumnNumber>13</msb:ColumnNumber>
-			<msb:Enabled>True</msb:Enabled>
-			<msb:Condition></msb:Condition>
-			<msb:ConditionType>1</msb:ConditionType>
-			<msb:Language>C#</msb:Language>
-		</msb:Breakpoint>
-		<msb:Breakpoint Include="b9bc323047c240278818d83ed9ff8ba0">
-			<msb:HitCountType>1</msb:HitCountType>
-			<msb:FileName>ScriptMain.cs</msb:FileName>
-			<msb:LineNumber>98</msb:LineNumber>
-			<msb:HitCountTarget>1</msb:HitCountTarget>
-			<msb:ColumnNumber>13</msb:ColumnNumber>
-			<msb:Enabled>True</msb:Enabled>
-			<msb:Condition></msb:Condition>
-			<msb:ConditionType>1</msb:ConditionType>
-			<msb:Language>C#</msb:Language>
-		</msb:Breakpoint>
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
           <ProjectItem
@@ -8549,7 +8516,7 @@ namespace ST_954ad330bb3745adb20bacf72d3eab19.Properties {
           <BinaryItem
             Name="ST_954ad330bb3745adb20bacf72d3eab19.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDANJvIFcAAAAAAAAAAOAAAiELAQsAABIAAAAIAAAAAAAAXjAA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDABKPIFcAAAAAAAAAAOAAAiELAQsAABIAAAAIAAAAAAAAXjAA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACAAAAAAgAAAAAAAAMAQIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAAwwAABPAAAAAEAAAAgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -8585,7 +8552,7 @@ vAF6AMkAvAEbABEAvAEbANEAvAEbABkA1gSNANkA3gRdANkANgWSAOEATQWXAOkAVgWdAAkAYAWh
 APEAfQWlAAwAvAEbAAEBrwWxAAEBuAW2AAwAwgW7AAwAxgXBAOkA0AXFAAwATQXKABkAvAEbAAgA
 FABOAAgAGABTACkAkwCAAC4AGwBQAS4AIwBQAS4AYwB2AS4ACwDfAC4AEwAnAS4AMwAnAS4AKwBQ
 AS4AOwBWAS4AQwBQAS4AWwBtAUMAawBTAEkAkwCAAGEAmwBTAIMAqwBTAHUA0AACAAEAAwADAAAA
-bwEvAAAA7gE0AAAAEgJCAAIAAgADAAIAAwAFAAEABAAFAAIABQAHAKsABIAAAAEAAABJFxVeAAAA
+bwEvAAAA7gE0AAAAEgJCAAIAAgADAAIAAwAFAAEABAAFAAIABQAHAKsABIAAAAEAAABJF7VtAAAA
 AAAAfwAAAAQAAAAAAAAAAAAAAAEAsQAAAAAABAAAAAAAAAAAAAAAAQC6AAAAAAALAAAAAAAAAAAA
 AAAKAPUAAAAAAAsAAAAAAAAAAAAAAAoA7QQAAAAAAAAAAAEAAADiBQAABQAEAAAAADxNb2R1bGU+
 AFNUXzk1NGFkMzMwYmIzNzQ1YWRiMjBiYWNmNzJkM2VhYjE5LmRsbABSZXNvdXJjZXMAU1RfOTU0
@@ -8620,7 +8587,7 @@ ADcANAA1AGEAZABiADIAMABiAGEAYwBmADcAMgBkADMAZQBhAGIAMQA5AC4AUAByAG8AcABlAHIA
 dABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAnVQBzAGUAcgA6ADoASQBuAGIAbwB1AG4AZABG
 AG8AbABkAGUAcgAALUkAVABFAE0ATQBBAFMAVABFAFIAXwBUAE8AXwBTAEUATQBQAF8AQwBMAF8A
 ADFVAHMAZQByADoAOgBJAHQAZQBtAE0AYQBzAHQAZQByAEYAaQBsAGUATgBhAG0AZQAAAQAjVQBz
-AGUAcgA6ADoARABpAHMAYQBiAGwAZQBUAGEAcwBrAAAAAACalcJ7+wYRSIbopmUoyAklAAi3elxW
+AGUAcgA6ADoARABpAHMAYQBiAGwAZQBUAGEAcwBrAAAAAADzSvKb4IfcRIXmx8EHVVKIAAi3elxW
 GTTgiQiJhF3NgIDMkQMGEhUDBhIZAyAAAQQAABIVBAAAEhkFAAEBEhkECAASFQQIABIZAwYSDAQA
 ABIMBAgAEgwCBggDBhEUBAAAAAAEAQAAAAQgAQEOBCABAQgGAAESURFVBCAAElkGIAIBDhJZBAcB
 EhUFIAEBEWEIAQACAAAAAAADAAABBCAAEm0EIAAScQUgARJ1HAMgABwDIAAOBQABHQ4OBRUSfQEO
@@ -8639,13 +8606,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAEAEAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAA
 AEgAAABYQAAAsAMAAAAAAAAAAAAAsAM0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8A
-AAAAAL0E7/4AAAEAAAABABVeSRcAAAEAFV5JFz8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
+AAAAAL0E7/4AAAEAAAABALVtSRcAAAEAtW1JFz8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
 AAAAAQBWAGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8A
 bgAAAAAAAACwBBADAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAAOwCAAABADAAMAAw
 ADAAMAA0AGIAMAAAAHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAAAABTAFQA
 XwA5ADUANABhAGQAMwAzADAAYgBiADMANwA0ADUAYQBkAGIAMgAwAGIAYQBjAGYANwAyAGQAMwBl
 AGEAYgAxADkAAABAAA8AAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4ANQA5ADYA
-MQAuADIANAAwADgANQAAAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAFQAXwA5
+MQAuADIAOAAwADgANQAAAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAFQAXwA5
 ADUANABhAGQAMwAzADAAYgBiADMANwA0ADUAYQBkAGIAMgAwAGIAYQBjAGYANwAyAGQAMwBlAGEA
 YgAxADkALgBkAGwAbAAAAEgAEgABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAAAEMAbwBw
 AHkAcgBpAGcAaAB0ACAAQAAgACAAMgAwADEANgAAAHgAKAABAE8AcgBpAGcAaQBuAGEAbABGAGkA
@@ -8653,8 +8620,8 @@ bABlAG4AYQBtAGUAAABTAFQAXwA5ADUANABhAGQAMwAzADAAYgBiADMANwA0ADUAYQBkAGIAMgAw
 AGIAYQBjAGYANwAyAGQAMwBlAGEAYgAxADkALgBkAGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQA
 TgBhAG0AZQAAAAAAUwBUAF8AOQA1ADQAYQBkADMAMwAwAGIAYgAzADcANAA1AGEAZABiADIAMABi
 AGEAYwBmADcAMgBkADMAZQBhAGIAMQA5AAAARAAPAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkA
-bwBuAAAAMQAuADAALgA1ADkANgAxAC4AMgA0ADAAOAA1AAAAAABIAA8AAQBBAHMAcwBlAG0AYgBs
-AHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgA1ADkANgAxAC4AMgA0ADAAOAA1AAAAAAAAAAAA
+bwBuAAAAMQAuADAALgA1ADkANgAxAC4AMgA4ADAAOAA1AAAAAABIAA8AAQBBAHMAcwBlAG0AYgBs
+AHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgA1ADkANgAxAC4AMgA4ADAAOAA1AAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -8673,21 +8640,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
-          <Breakpoint
-            Enabled="True"
-            File="ScriptMain.cs"
-            Line="93"
-            Column="1" />
-          <Breakpoint
-            Enabled="True"
-            File="ScriptMain.cs"
-            Line="103"
-            Column="13" />
-          <Breakpoint
-            Enabled="True"
-            File="ScriptMain.cs"
-            Line="98"
-            Column="13" />
         </ScriptProject>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -9091,50 +9043,17 @@ namespace ST_52da37bf44b945e1bd14181144d0bba1
 	<msb:PropertyGroup>
 		<msb:CodeName>ST_52da37bf44b945e1bd14181144d0bba1</msb:CodeName>
 		<msb:DisplayName>ST_52da37bf44b945e1bd14181144d0bba1</msb:DisplayName>
-		<msb:ProjectId>{4A9BA398-8B31-41D8-9F83-A4CB287D5DD8}</msb:ProjectId>
 		<msb:Language>msBuild</msb:Language>
+		<msb:ProjectId>{4A9BA398-8B31-41D8-9F83-A4CB287D5DD8}</msb:ProjectId>
 	</msb:PropertyGroup>
 	<msb:ItemGroup>
 		<msb:Project Include="ST_52da37bf44b945e1bd14181144d0bba1.csproj"/>
 		<msb:File Include="Properties\AssemblyInfo.cs"/>
 		<msb:File Include="Properties\Resources.resx"/>
-		<msb:File Include="Properties\Settings.Designer.cs"/>
 		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
 		<msb:File Include="Properties\Settings.settings"/>
 		<msb:File Include="ScriptMain.cs"/>
-		<msb:Breakpoint Include="b37286ad4b4949d5ac1ac0b6b7742906">
-			<msb:HitCountType>1</msb:HitCountType>
-			<msb:FileName>ScriptMain.cs</msb:FileName>
-			<msb:LineNumber>93</msb:LineNumber>
-			<msb:HitCountTarget>1</msb:HitCountTarget>
-			<msb:ColumnNumber>1</msb:ColumnNumber>
-			<msb:Enabled>True</msb:Enabled>
-			<msb:Condition></msb:Condition>
-			<msb:ConditionType>1</msb:ConditionType>
-			<msb:Language>C#</msb:Language>
-		</msb:Breakpoint>
-		<msb:Breakpoint Include="b7b5906d8db1435794043658376ea36d">
-			<msb:HitCountType>1</msb:HitCountType>
-			<msb:FileName>ScriptMain.cs</msb:FileName>
-			<msb:LineNumber>103</msb:LineNumber>
-			<msb:HitCountTarget>1</msb:HitCountTarget>
-			<msb:ColumnNumber>13</msb:ColumnNumber>
-			<msb:Enabled>True</msb:Enabled>
-			<msb:Condition></msb:Condition>
-			<msb:ConditionType>1</msb:ConditionType>
-			<msb:Language>C#</msb:Language>
-		</msb:Breakpoint>
-		<msb:Breakpoint Include="0363b7f76b154f699f7477a60d67acb6">
-			<msb:HitCountType>1</msb:HitCountType>
-			<msb:FileName>ScriptMain.cs</msb:FileName>
-			<msb:LineNumber>98</msb:LineNumber>
-			<msb:HitCountTarget>1</msb:HitCountTarget>
-			<msb:ColumnNumber>13</msb:ColumnNumber>
-			<msb:Enabled>True</msb:Enabled>
-			<msb:Condition></msb:Condition>
-			<msb:ConditionType>1</msb:ConditionType>
-			<msb:Language>C#</msb:Language>
-		</msb:Breakpoint>
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
           <ProjectItem
@@ -9246,7 +9165,7 @@ namespace ST_52da37bf44b945e1bd14181144d0bba1.Properties {
           <BinaryItem
             Name="ST_52da37bf44b945e1bd14181144d0bba1.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAER0IFcAAAAAAAAAAOAAAiELAQsAABIAAAAIAAAAAAAAbjAA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAA2LIFcAAAAAAAAAAOAAAiELAQsAABIAAAAIAAAAAAAAbjAA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACAAAAAAgAAAAAAAAMAQIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAABQwAABXAAAAAEAAAAgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -9282,7 +9201,7 @@ vAF6AMkAvAEbABEAvAEbANEAvAEbABkA1gSNANkA3gRdANkANgWSAOEATQWXAOkAVgWdAAkAYAWh
 APEAfQWlAAwAvAEbAAEBrwWxAAEBuAW2AAwAwgW7AAwAxgXBAOkA0AXFAAwATQXKABkAvAEbAAgA
 FABOAAgAGABTACkAkwCAAC4AGwBQAS4AIwBQAS4AYwB2AS4ACwDfAC4AEwAnAS4AMwAnAS4AKwBQ
 AS4AOwBWAS4AQwBQAS4AWwBtAUMAawBTAEkAkwCAAGEAmwBTAIMAqwBTAHUA0AACAAEAAwADAAAA
-bwEvAAAA7gE0AAAAEgJCAAIAAgADAAIAAwAFAAEABAAFAAIABQAHAKsABIAAAAEAAABJF05gAAAA
+bwEvAAAA7gE0AAAAEgJCAAIAAgADAAIAAwAFAAEABAAFAAIABQAHAKsABIAAAAEAAABJF7JrAAAA
 AAAAfwAAAAQAAAAAAAAAAAAAAAEAsQAAAAAABAAAAAAAAAAAAAAAAQC6AAAAAAALAAAAAAAAAAAA
 AAAKAPUAAAAAAAsAAAAAAAAAAAAAAAoA7QQAAAAAAAAAAAEAAADiBQAABQAEAAAAADxNb2R1bGU+
 AFNUXzUyZGEzN2JmNDRiOTQ1ZTFiZDE0MTgxMTQ0ZDBiYmExLmRsbABSZXNvdXJjZXMAU1RfNTJk
@@ -9317,8 +9236,8 @@ ADkANAA1AGUAMQBiAGQAMQA0ADEAOAAxADEANAA0AGQAMABiAGIAYQAxAC4AUAByAG8AcABlAHIA
 dABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAnVQBzAGUAcgA6ADoASQBuAGIAbwB1AG4AZABG
 AG8AbABkAGUAcgAAM1AAUgBJAEMARQBfAEQARQBUAEEASQBMAFMAXwBUAE8AXwBTAEUATQBQAF8A
 QwBMAF8AADNVAHMAZQByADoAOgBQAHIAaQBjAGUARABlAHQAYQBpAGwARgBpAGwAZQBOAGEAbQBl
-AAABACNVAHMAZQByADoAOgBEAGkAcwBhAGIAbABlAFQAYQBzAGsAAAAAAHPJjXHUVGJHlnX0ZIdj
-tUIACLd6XFYZNOCJCImEXc2AgMyRAwYSFQMGEhkDIAABBAAAEhUEAAASGQUAAQESGQQIABIVBAgA
+AAABACNVAHMAZQByADoAOgBEAGkAcwBhAGIAbABlAFQAYQBzAGsAAAAAALEBKiFod4ZLhQo8PiY3
+13kACLd6XFYZNOCJCImEXc2AgMyRAwYSFQMGEhkDIAABBAAAEhUEAAASGQUAAQESGQQIABIVBAgA
 EhkDBhIMBAAAEgwECAASDAIGCAMGERQEAAAAAAQBAAAABCABAQ4EIAEBCAYAARJREVUEIAASWQYg
 AgEOElkEBwESFQUgAQERYQgBAAIAAAAAAAMAAAEEIAASbQQgABJxBSABEnUcAyAAHAMgAA4FAAEd
 Dg4FFRJ9AQ4EIAECDgQgAQ4IBSABARMAAyAACAQgAQEcBSABEwAIDgcGDh0OFRJ9AQ4OHQ4IRwEA
@@ -9336,13 +9255,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAEAEAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAA
 AEgAAABYQAAAsAMAAAAAAAAAAAAAsAM0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8A
-AAAAAL0E7/4AAAEAAAABAE5gSRcAAAEATmBJFz8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
+AAAAAL0E7/4AAAEAAAABALJrSRcAAAEAsmtJFz8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
 AAAAAQBWAGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8A
 bgAAAAAAAACwBBADAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAAOwCAAABADAAMAAw
 ADAAMAA0AGIAMAAAAHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAAAABTAFQA
 XwA1ADIAZABhADMANwBiAGYANAA0AGIAOQA0ADUAZQAxAGIAZAAxADQAMQA4ADEAMQA0ADQAZAAw
 AGIAYgBhADEAAABAAA8AAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4ANQA5ADYA
-MQAuADIANAA2ADUANAAAAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAFQAXwA1
+MQAuADIANwA1ADcAMAAAAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAFQAXwA1
 ADIAZABhADMANwBiAGYANAA0AGIAOQA0ADUAZQAxAGIAZAAxADQAMQA4ADEAMQA0ADQAZAAwAGIA
 YgBhADEALgBkAGwAbAAAAEgAEgABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAAAEMAbwBw
 AHkAcgBpAGcAaAB0ACAAQAAgACAAMgAwADEANgAAAHgAKAABAE8AcgBpAGcAaQBuAGEAbABGAGkA
@@ -9350,8 +9269,8 @@ bABlAG4AYQBtAGUAAABTAFQAXwA1ADIAZABhADMANwBiAGYANAA0AGIAOQA0ADUAZQAxAGIAZAAx
 ADQAMQA4ADEAMQA0ADQAZAAwAGIAYgBhADEALgBkAGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQA
 TgBhAG0AZQAAAAAAUwBUAF8ANQAyAGQAYQAzADcAYgBmADQANABiADkANAA1AGUAMQBiAGQAMQA0
 ADEAOAAxADEANAA0AGQAMABiAGIAYQAxAAAARAAPAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkA
-bwBuAAAAMQAuADAALgA1ADkANgAxAC4AMgA0ADYANQA0AAAAAABIAA8AAQBBAHMAcwBlAG0AYgBs
-AHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgA1ADkANgAxAC4AMgA0ADYANQA0AAAAAAAAAAAA
+bwBuAAAAMQAuADAALgA1ADkANgAxAC4AMgA3ADUANwAwAAAAAABIAA8AAQBBAHMAcwBlAG0AYgBs
+AHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgA1ADkANgAxAC4AMgA3ADUANwAwAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -9370,21 +9289,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
-          <Breakpoint
-            Enabled="True"
-            File="ScriptMain.cs"
-            Line="93"
-            Column="1" />
-          <Breakpoint
-            Enabled="True"
-            File="ScriptMain.cs"
-            Line="103"
-            Column="13" />
-          <Breakpoint
-            Enabled="True"
-            File="ScriptMain.cs"
-            Line="98"
-            Column="13" />
         </ScriptProject>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -9398,14 +9302,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       DTS:LocaleID="-1"
       DTS:ObjectName="Send Mail Task when no InboundFiles"
       DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:PropertyExpression
         DTS:Name="Disable">! @[User::DisableTask]</DTS:PropertyExpression>
       <DTS:PropertyExpression
         DTS:Name="FromLine">@[User::MailFromField]</DTS:PropertyExpression>
       <DTS:PropertyExpression
-        DTS:Name="MessageSource">"Hi Team,"+ "/n"+ "No InboundFiles Exist"</DTS:PropertyExpression>
+        DTS:Name="MessageSource">"No InboundFiles Exist"</DTS:PropertyExpression>
       <DTS:PropertyExpression
         DTS:Name="Subject">TRIM( @[User::MailEnvironment] ) + " Environment || No Inbound Files Exist - "+  @[System::PackageName] +" package - "+ (DT_WSTR,50) DATEPART("yyyy", GETDATE()) + "-"+(DT_WSTR,50) DATEPART("mm", GETDATE())+"-"+(DT_WSTR,50) DATEPART("dd", GETDATE())</DTS:PropertyExpression>
       <DTS:PropertyExpression
@@ -9416,7 +9320,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           SendMailTask:From="&quot;&quot;"
           SendMailTask:To="&quot;&quot;"
           SendMailTask:Subject="&quot;&quot; Environment || No Inbound Files Exist - LoadItemMasterFile package - 2016-4-27"
-          SendMailTask:MessageSource="Hi Team,/nNo InboundFiles Exist" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+          SendMailTask:MessageSource="No InboundFiles Exist" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -9783,6 +9687,18 @@ Technical Support Team"</DTS:PropertyExpression>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="830,371" />
+        <NodeLayout
+          Size="231,42"
+          Id="Package\File System Task for ItemMaster"
+          TopLeft="394,459" />
+        <NodeLayout
+          Size="227,42"
+          Id="Package\File System Task for PriceDetail"
+          TopLeft="649,458" />
+        <NodeLayout
           Size="179,42"
           Id="Package\Read ItemMaster File"
           TopLeft="250,284" />
@@ -9790,6 +9706,18 @@ Technical Support Team"</DTS:PropertyExpression>
           Size="181,45"
           Id="Package\Read Price Detail file"
           TopLeft="248,374" />
+        <NodeLayout
+          Size="292,42"
+          Id="Package\Script Task for Getting ItemMaster File Name"
+          TopLeft="193,42" />
+        <NodeLayout
+          Size="288,42"
+          Id="Package\Script Task for Getting PriceDetail File Name"
+          TopLeft="193,116" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Send Mail Task when no InboundFiles"
+          TopLeft="1045,370" />
         <NodeLayout
           Size="162,42"
           Id="Package\Truncate old data"
@@ -9834,142 +9762,6 @@ Technical Support Team"</DTS:PropertyExpression>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="42.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="292,42"
-          Id="Package\Script Task for Getting ItemMaster File Name"
-          TopLeft="193,42" />
-        <NodeLayout
-          Size="231,42"
-          Id="Package\File System Task for ItemMaster"
-          TopLeft="394,459" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="582.666666666667,413">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-73.1666666666666,46"
-              Start="0,0"
-              End="-73.1666666666666,38.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.5430978613091" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.5430978613091"
-                    Point2="0,18.5430978613091"
-                    Point3="-4,18.5430978613091" />
-                  <mssgle:LineSegment
-                    End="-69.1666666666666,18.5430978613091" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-69.1666666666666,18.5430978613091"
-                    Point2="-73.1666666666666,18.5430978613091"
-                    Point3="-73.1666666666666,22.5430978613091" />
-                  <mssgle:LineSegment
-                    End="-73.1666666666666,38.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Execute SQL Task"
-          TopLeft="830,371" />
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Send Mail Task when no InboundFiles"
-          TopLeft="1045,370" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="786,392">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="44,0"
-              Start="0,0"
-              End="36.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="36.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="993,391.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="52,0"
-              Start="0,0"
-              End="44.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="44.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="288,42"
-          Id="Package\Script Task for Getting PriceDetail File Name"
-          TopLeft="193,116" />
-        <NodeLayout
-          Size="227,42"
-          Id="Package\File System Task for PriceDetail"
-          TopLeft="649,458" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="682.333333333333,413">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="80.1666666666667,45"
-              Start="0,0"
-              End="80.1666666666667,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.1399870382372" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.1399870382372"
-                    Point2="0,18.1399870382372"
-                    Point3="4,18.1399870382372" />
-                  <mssgle:LineSegment
-                    End="76.1666666666667,18.1399870382372" />
-                  <mssgle:CubicBezierSegment
-                    Point1="76.1666666666667,18.1399870382372"
-                    Point2="80.1666666666667,18.1399870382372"
-                    Point3="80.1666666666667,22.1399870382372" />
-                  <mssgle:LineSegment
-                    End="80.1666666666667,37.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10023,6 +9815,84 @@ Technical Support Team"</DTS:PropertyExpression>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="582.666666666667,413">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-73.1666666666666,46"
+              Start="0,0"
+              End="-73.1666666666666,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.5430978613091" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.5430978613091"
+                    Point2="0,18.5430978613091"
+                    Point3="-4,18.5430978613091" />
+                  <mssgle:LineSegment
+                    End="-69.1666666666666,18.5430978613091" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-69.1666666666666,18.5430978613091"
+                    Point2="-73.1666666666666,18.5430978613091"
+                    Point3="-73.1666666666666,22.5430978613091" />
+                  <mssgle:LineSegment
+                    End="-73.1666666666666,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="786,392">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="44,0"
+              Start="0,0"
+              End="36.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="36.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="993,391.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="52,0"
+              Start="0,0"
+              End="44.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="44.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
           TopLeft="338.5,158">
           <EdgeLayout.Curve>
@@ -10036,6 +9906,40 @@ Technical Support Team"</DTS:PropertyExpression>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="682.333333333333,413">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="80.1666666666667,45"
+              Start="0,0"
+              End="80.1666666666667,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.1399870382372" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.1399870382372"
+                    Point2="0,18.1399870382372"
+                    Point3="4,18.1399870382372" />
+                  <mssgle:LineSegment
+                    End="76.1666666666667,18.1399870382372" />
+                  <mssgle:CubicBezierSegment
+                    Point1="76.1666666666667,18.1399870382372"
+                    Point2="80.1666666666667,18.1399870382372"
+                    Point3="80.1666666666667,22.1399870382372" />
+                  <mssgle:LineSegment
+                    End="80.1666666666667,37.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

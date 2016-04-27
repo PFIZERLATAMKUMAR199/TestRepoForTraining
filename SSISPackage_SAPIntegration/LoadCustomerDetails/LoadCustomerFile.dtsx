@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadCustomerFile"
   DTS:PackageType="5"
-  DTS:VersionBuild="189"
-  DTS:VersionGUID="{CED848FC-911A-4F62-8F88-F00FC1E49C50}">
+  DTS:VersionBuild="190"
+  DTS:VersionGUID="{3B361370-1B88-464D-917D-11ADFABC9628}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAut6/Bl8Z2kybDKiiJi8irQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAXb3smHJTcjB4HIE2fQcBbAAAAAASAAACgAAAAEAAAAHxFJQQhOfpHW97amvwXnxAoAAAADpHAEIM+U+QhidBvQk5Z97YuEnAoqkicJR22f4AA6cwVLvFroAJG9hQAAABRtBvMMCHAJBPHk/MaoIB0pZeVPg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAut6/Bl8Z2kybDKiiJi8irQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAUuZ+1ikZ4cgsfRhmnaIXQAAAAAASAAACgAAAAEAAAAMrYdZMdGJHTRy+tDG1y38EoAAAA3IhpALI6W8NruzlmJIC6OrFeksZmv7OzEPWr7f4Jc4QcTHujTOLXkxQAAACyDf2yNOHL7UzA/zjyUa6C5Xcjbg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -760,6 +760,7 @@
       <DTS:ObjectData>
         <FileSystemData
           TaskOperationType="RenameFile"
+          TaskOverwriteDestFile="True"
           TaskSourcePath="User::SourceFileName"
           TaskIsSourceVariable="True"
           TaskDestinationPath="User::ProcessedCustomerFileNameAndPath"
@@ -3314,14 +3315,35 @@
           ReadOnlyVariables="User::InboundFolder"
           ReadWriteVariables="User::CustomerFileName,User::DisableTask,User::NoFileError">
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_803eb8c0325946cf9e272e5ae7612e8f")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_803eb8c0325946cf9e272e5ae7612e8f")]
+[assembly: AssemblyCopyright("Copyright @  2016")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -3718,35 +3740,14 @@ namespace ST_803eb8c0325946cf9e272e5ae7612e8f.Properties {
     }
 }]]></ProjectItem>
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_803eb8c0325946cf9e272e5ae7612e8f")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_803eb8c0325946cf9e272e5ae7612e8f")]
-[assembly: AssemblyCopyright("Copyright @  2016")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -4157,14 +4158,6 @@ Technical Support Team"</DTS:PropertyExpression>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Enable Only if the File is Present]"
-      DTS:CreationName=""
-      DTS:DTSID="{271FD91A-7B49-4C8F-9A4D-9FD912E1C72B}"
-      DTS:From="Package\Script Task for getting file name dynamically"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Enable Only if the File is Present"
-      DTS:To="Package\Truncate old data on every run" />
-    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Enable Only If the File is Present]"
       DTS:CreationName=""
       DTS:DTSID="{00AE4A3B-6190-49FD-9618-59C60653DC8E}"
@@ -4172,6 +4165,14 @@ Technical Support Team"</DTS:PropertyExpression>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Enable Only If the File is Present"
       DTS:To="Package\Read the Customer txt file and load data in DB table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Enable Only if the File is Present]"
+      DTS:CreationName=""
+      DTS:DTSID="{271FD91A-7B49-4C8F-9A4D-9FD912E1C72B}"
+      DTS:From="Package\Script Task for getting file name dynamically"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Enable Only if the File is Present"
+      DTS:To="Package\Truncate old data on every run" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Enabled Only when the File is present]"
       DTS:CreationName=""
@@ -4373,30 +4374,6 @@ Technical Support Team"</DTS:PropertyExpression>
           Id="Package\Update Status column value in DB table"
           TopLeft="438,343" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Enable Only If the File is Present]"
-          TopLeft="241.75,235">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,99.5"
-              Start="0,0"
-              End="0,92">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,92" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-72.69138671875,40.1708984375,145.3827734375,11.658203125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Enable Only if the File is Present]"
           TopLeft="317,60">
           <EdgeLayout.Curve>
@@ -4429,6 +4406,30 @@ Technical Support Team"</DTS:PropertyExpression>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-109.47138671875,61,143.9427734375,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Enable Only If the File is Present]"
+          TopLeft="241.75,235">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,99.5"
+              Start="0,0"
+              End="0,92">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,92" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-72.69138671875,40.1708984375,145.3827734375,11.658203125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4749,11 +4750,11 @@ Technical Support Team"</DTS:PropertyExpression>
     </LayoutInfo>
   </DtsEventHandler>
   <PrecedenceConstraint
-    design-time-name="Package.PrecedenceConstraints[Enable Only If the File is Present]">
+    design-time-name="Package.PrecedenceConstraints[Enable Only if the File is Present]">
     <ShowAnnotation>ConstraintName</ShowAnnotation>
   </PrecedenceConstraint>
   <PrecedenceConstraint
-    design-time-name="Package.PrecedenceConstraints[Enable Only if the File is Present]">
+    design-time-name="Package.PrecedenceConstraints[Enable Only If the File is Present]">
     <ShowAnnotation>ConstraintName</ShowAnnotation>
   </PrecedenceConstraint>
   <PrecedenceConstraint

@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAut6/Bl8Z2kybDKiiJi8irQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABbhNv2oR0Naf9KvJanj+z6AAAAAASAAACgAAAAEAAAAJZW9Om8o2+r304QGiaxMIwoAAAAMsaHFHxbqrqa59AXwVf9vY/hqSxZ/k1vAw8G9ojEO/s/9ScQITQIdRQAAACuPftdndmOQuyHNoY7Lqq6/iMMiA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAut6/Bl8Z2kybDKiiJi8irQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADbFMtfgT5RibQwaoRgTrNpAAAAAASAAACgAAAAEAAAAKdQQXwXiaexYTJWOR3pQ7coAAAA3wVqUHUHd/uJLJCZ9tAwUufChKFbUld9djIYxJPsBi33GLYYCIb4RBQAAADiKDHNk1eSJAPbIUjHlAt0FaLEKw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -348,7 +348,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="File System Task"
       DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:PropertyExpression
         DTS:Name="Disable">@[User::DisableTask]</DTS:PropertyExpression>
@@ -1994,7 +1994,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       DTS:LocaleID="-1"
       DTS:ObjectName="Send Mail If No inbound File Found"
       DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:PropertyExpression
         DTS:Name="Disable">!@[User::DisableTask]</DTS:PropertyExpression>
@@ -2025,7 +2025,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Email Parameter"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:PropertyExpression
         DTS:Name="Disable">!@[User::DisableTask]</DTS:PropertyExpression>
