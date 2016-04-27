@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadCustomerFile"
   DTS:PackageType="5"
-  DTS:VersionBuild="186"
-  DTS:VersionGUID="{C610C615-30E6-4B64-9526-0799EBC1FB65}">
+  DTS:VersionBuild="189"
+  DTS:VersionGUID="{CED848FC-911A-4F62-8F88-F00FC1E49C50}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAut6/Bl8Z2kybDKiiJi8irQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABSk7XilJcHI+W7dVbKKPZNAAAAAASAAACgAAAAEAAAAO9tcb4kuvpvniq8aIhBTwYoAAAA/RkypXBVAjE2HmOWfSRb6XoXp6/Tblg6X0taNLx5htIajauUkTnHDhQAAAAs6+roNrFEEhWUqJQqBo225E3qpQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAut6/Bl8Z2kybDKiiJi8irQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAXb3smHJTcjB4HIE2fQcBbAAAAAASAAACgAAAAEAAAAHxFJQQhOfpHW97amvwXnxAoAAAADpHAEIM+U+QhidBvQk5Z97YuEnAoqkicJR22f4AA6cwVLvFroAJG9hQAAABRtBvMMCHAJBPHk/MaoIB0pZeVPg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -3314,35 +3314,14 @@
           ReadOnlyVariables="User::InboundFolder"
           ReadWriteVariables="User::CustomerFileName,User::DisableTask,User::NoFileError">
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_803eb8c0325946cf9e272e5ae7612e8f")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_803eb8c0325946cf9e272e5ae7612e8f")]
-[assembly: AssemblyCopyright("Copyright @  2016")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -3558,7 +3537,7 @@ namespace ST_803eb8c0325946cf9e272e5ae7612e8f
         /// </summary>
 		public void Main()
 		{
-			// TODO: Add your code here
+			// Custom Code added to get and set File Name Dynamically
 
 			Dts.TaskResult = (int)ScriptResults.Success;
             string InboundFolder = Dts.Variables["User::InboundFolder"].Value.ToString();
@@ -3586,11 +3565,7 @@ namespace ST_803eb8c0325946cf9e272e5ae7612e8f
                 Dts.Variables["User::DisableTask"].Value = false;
                 Dts.Variables["User::CustomerFileName"].Value = lstFileName[0].ToString();
             }
-            //else if (lstFileName.Count > 1)
-            //{
-
-            //}
-            
+         
 		}
 
         #region ScriptResults declaration
@@ -3711,50 +3686,6 @@ namespace ST_803eb8c0325946cf9e272e5ae7612e8f
 		<msb:File Include="Properties\Resources.Designer.cs"/>
 		<msb:File Include="Properties\Settings.settings"/>
 		<msb:File Include="ScriptMain.cs"/>
-		<msb:Breakpoint Include="2c9bf590e51942d994f74444f116e847">
-			<msb:HitCountType>1</msb:HitCountType>
-			<msb:FileName>ScriptMain.cs</msb:FileName>
-			<msb:LineNumber>117</msb:LineNumber>
-			<msb:HitCountTarget>1</msb:HitCountTarget>
-			<msb:ColumnNumber>18</msb:ColumnNumber>
-			<msb:Enabled>True</msb:Enabled>
-			<msb:Condition></msb:Condition>
-			<msb:ConditionType>1</msb:ConditionType>
-			<msb:Language>C#</msb:Language>
-		</msb:Breakpoint>
-		<msb:Breakpoint Include="1179ed1250db49c0a89b475367ed3cc5">
-			<msb:FileName>ScriptMain.cs</msb:FileName>
-			<msb:HitCountType>1</msb:HitCountType>
-			<msb:LineNumber>93</msb:LineNumber>
-			<msb:HitCountTarget>1</msb:HitCountTarget>
-			<msb:ColumnNumber>1</msb:ColumnNumber>
-			<msb:Enabled>True</msb:Enabled>
-			<msb:ConditionType>1</msb:ConditionType>
-			<msb:Condition></msb:Condition>
-			<msb:Language>C#</msb:Language>
-		</msb:Breakpoint>
-		<msb:Breakpoint Include="29cf0fa3f6eb4377a0e96fb1f42ed33b">
-			<msb:FileName>ScriptMain.cs</msb:FileName>
-			<msb:HitCountType>1</msb:HitCountType>
-			<msb:LineNumber>103</msb:LineNumber>
-			<msb:HitCountTarget>1</msb:HitCountTarget>
-			<msb:ColumnNumber>13</msb:ColumnNumber>
-			<msb:Enabled>True</msb:Enabled>
-			<msb:ConditionType>1</msb:ConditionType>
-			<msb:Condition></msb:Condition>
-			<msb:Language>C#</msb:Language>
-		</msb:Breakpoint>
-		<msb:Breakpoint Include="524612ada6d0480bb5f31800905e17f9">
-			<msb:HitCountType>1</msb:HitCountType>
-			<msb:FileName>ScriptMain.cs</msb:FileName>
-			<msb:LineNumber>98</msb:LineNumber>
-			<msb:HitCountTarget>1</msb:HitCountTarget>
-			<msb:ColumnNumber>13</msb:ColumnNumber>
-			<msb:Enabled>True</msb:Enabled>
-			<msb:Condition></msb:Condition>
-			<msb:ConditionType>1</msb:ConditionType>
-			<msb:Language>C#</msb:Language>
-		</msb:Breakpoint>
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
           <ProjectItem
@@ -3787,14 +3718,35 @@ namespace ST_803eb8c0325946cf9e272e5ae7612e8f.Properties {
     }
 }]]></ProjectItem>
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_803eb8c0325946cf9e272e5ae7612e8f")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_803eb8c0325946cf9e272e5ae7612e8f")]
+[assembly: AssemblyCopyright("Copyright @  2016")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -3866,7 +3818,7 @@ namespace ST_803eb8c0325946cf9e272e5ae7612e8f.Properties {
           <BinaryItem
             Name="ST_803eb8c0325946cf9e272e5ae7612e8f.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAHhoIFcAAAAAAAAAAOAAAiELAQsAABIAAAAIAAAAAAAAzjAA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAPiNIFcAAAAAAAAAAOAAAiELAQsAABIAAAAIAAAAAAAAzjAA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACAAAAAAgAAAAAAAAMAQIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAHQwAABXAAAAAEAAAAgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -3904,7 +3856,7 @@ nQAJAGAFoQDxAH0FpQAMALwBGwABAa8FsQABAbgFtgAMAMIFuwAMAMYFwQDpANAFxQAMAE0FygAZ
 ALwBGwAIABQATgAIABgAUwApAJMAgAAuABsAUAEuACMAUAEuAGMAdgEuAAsA3wAuABMAJwEuADMA
 JwEuACsAUAEuADsAVgEuAEMAUAEuAFsAbQFDAGsAUwBJAJMAgABhAJsAUwCDAKsAUwB1ANAAAgAB
 AAMAAwAAAG8BLwAAAO4BNAAAABICQgACAAIAAwACAAMABQABAAQABQACAAUABwCrAASAAAABAAAA
-SRdoWgAAAAAAAH8AAAAEAAAAAAAAAAAAAAABALEAAAAAAAQAAAAAAAAAAAAAAAEAugAAAAAACwAA
+SRcobQAAAAAAAH8AAAAEAAAAAAAAAAAAAAABALEAAAAAAAQAAAAAAAAAAAAAAAEAugAAAAAACwAA
 AAAAAAAAAAAACgD1AAAAAAALAAAAAAAAAAAAAAAKAO0EAAAAAAAAAAABAAAA4gUAAAUABAAAAAA8
 TW9kdWxlPgBTVF84MDNlYjhjMDMyNTk0NmNmOWUyNzJlNWFlNzYxMmU4Zi5kbGwAUmVzb3VyY2Vz
 AFNUXzgwM2ViOGMwMzI1OTQ2Y2Y5ZTI3MmU1YWU3NjEyZThmLlByb3BlcnRpZXMAU2V0dGluZ3MA
@@ -3939,7 +3891,7 @@ AHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAAJ1UAcwBlAHIAOgA6AEkAbgBiAG8A
 dQBuAGQARgBvAGwAZABlAHIAADVDAFUAUwBUAE8ATQBFAFIATQBBAFMAVABFAFIAXwBUAE8AXwBT
 AEUATQBQAF8AQwBMAF8AAC1VAHMAZQByADoAOgBDAHUAcwB0AG8AbQBlAHIARgBpAGwAZQBOAGEA
 bQBlAAABACNVAHMAZQByADoAOgBOAG8ARgBpAGwAZQBFAHIAcgBvAHIAACNVAHMAZQByADoAOgBE
-AGkAcwBhAGIAbABlAFQAYQBzAGsAAAAAAGsdPHTFealOmEe1QtbFbi0ACLd6XFYZNOCJCImEXc2A
+AGkAcwBhAGIAbABlAFQAYQBzAGsAAAAAALu5aofxzD1IsRkAC48Z71MACLd6XFYZNOCJCImEXc2A
 gMyRAwYSFQMGEhkDIAABBAAAEhUEAAASGQUAAQESGQQIABIVBAgAEhkDBhIMBAAAEgwECAASDAIG
 CAMGERQEAAAAAAQBAAAABCABAQ4EIAEBCAYAARJREVUEIAASWQYgAgEOElkEBwESFQUgAQERYQgB
 AAIAAAAAAAMAAAEEIAASbQQgABJxBSABEnUcAyAAHAMgAA4FAAEdDg4FFRJ9AQ4EIAECDgQgAQ4I
@@ -3956,13 +3908,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAEAEAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAA
 AEgAAABYQAAAsAMAAAAAAAAAAAAAsAM0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8A
-AAAAAL0E7/4AAAEAAAABAGhaSRcAAAEAaFpJFz8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
+AAAAAL0E7/4AAAEAAAABAChtSRcAAAEAKG1JFz8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
 AAAAAQBWAGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8A
 bgAAAAAAAACwBBADAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAAOwCAAABADAAMAAw
 ADAAMAA0AGIAMAAAAHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAAAABTAFQA
 XwA4ADAAMwBlAGIAOABjADAAMwAyADUAOQA0ADYAYwBmADkAZQAyADcAMgBlADUAYQBlADcANgAx
 ADIAZQA4AGYAAABAAA8AAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4ANQA5ADYA
-MQAuADIAMwAxADQANAAAAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAFQAXwA4
+MQAuADIANwA5ADQANAAAAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAFQAXwA4
 ADAAMwBlAGIAOABjADAAMwAyADUAOQA0ADYAYwBmADkAZQAyADcAMgBlADUAYQBlADcANgAxADIA
 ZQA4AGYALgBkAGwAbAAAAEgAEgABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAAAEMAbwBw
 AHkAcgBpAGcAaAB0ACAAQAAgACAAMgAwADEANgAAAHgAKAABAE8AcgBpAGcAaQBuAGEAbABGAGkA
@@ -3970,8 +3922,8 @@ bABlAG4AYQBtAGUAAABTAFQAXwA4ADAAMwBlAGIAOABjADAAMwAyADUAOQA0ADYAYwBmADkAZQAy
 ADcAMgBlADUAYQBlADcANgAxADIAZQA4AGYALgBkAGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQA
 TgBhAG0AZQAAAAAAUwBUAF8AOAAwADMAZQBiADgAYwAwADMAMgA1ADkANAA2AGMAZgA5AGUAMgA3
 ADIAZQA1AGEAZQA3ADYAMQAyAGUAOABmAAAARAAPAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkA
-bwBuAAAAMQAuADAALgA1ADkANgAxAC4AMgAzADEANAA0AAAAAABIAA8AAQBBAHMAcwBlAG0AYgBs
-AHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgA1ADkANgAxAC4AMgAzADEANAA0AAAAAAAAAAAA
+bwBuAAAAMQAuADAALgA1ADkANgAxAC4AMgA3ADkANAA0AAAAAABIAA8AAQBBAHMAcwBlAG0AYgBs
+AHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgA1ADkANgAxAC4AMgA3ADkANAA0AAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -3990,26 +3942,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
-          <Breakpoint
-            Enabled="True"
-            File="ScriptMain.cs"
-            Line="93"
-            Column="1" />
-          <Breakpoint
-            Enabled="True"
-            File="ScriptMain.cs"
-            Line="117"
-            Column="18" />
-          <Breakpoint
-            Enabled="True"
-            File="ScriptMain.cs"
-            Line="103"
-            Column="13" />
-          <Breakpoint
-            Enabled="True"
-            File="ScriptMain.cs"
-            Line="98"
-            Column="13" />
         </ScriptProject>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -4225,14 +4157,6 @@ Technical Support Team"</DTS:PropertyExpression>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Enable Only If the File is Present]"
-      DTS:CreationName=""
-      DTS:DTSID="{00AE4A3B-6190-49FD-9618-59C60653DC8E}"
-      DTS:From="Package\Truncate old data on every run"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Enable Only If the File is Present"
-      DTS:To="Package\Read the Customer txt file and load data in DB table" />
-    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Enable Only if the File is Present]"
       DTS:CreationName=""
       DTS:DTSID="{271FD91A-7B49-4C8F-9A4D-9FD912E1C72B}"
@@ -4240,6 +4164,14 @@ Technical Support Team"</DTS:PropertyExpression>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Enable Only if the File is Present"
       DTS:To="Package\Truncate old data on every run" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Enable Only If the File is Present]"
+      DTS:CreationName=""
+      DTS:DTSID="{00AE4A3B-6190-49FD-9618-59C60653DC8E}"
+      DTS:From="Package\Truncate old data on every run"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Enable Only If the File is Present"
+      DTS:To="Package\Read the Customer txt file and load data in DB table" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Enabled Only when the File is present]"
       DTS:CreationName=""
@@ -4441,6 +4373,30 @@ Technical Support Team"</DTS:PropertyExpression>
           Id="Package\Update Status column value in DB table"
           TopLeft="438,343" />
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Enable Only If the File is Present]"
+          TopLeft="241.75,235">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,99.5"
+              Start="0,0"
+              End="0,92">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,92" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-72.69138671875,40.1708984375,145.3827734375,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Enable Only if the File is Present]"
           TopLeft="317,60">
           <EdgeLayout.Curve>
@@ -4473,30 +4429,6 @@ Technical Support Team"</DTS:PropertyExpression>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-109.47138671875,61,143.9427734375,11.658203125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Enable Only If the File is Present]"
-          TopLeft="241.75,235">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,99.5"
-              Start="0,0"
-              End="0,92">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,92" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-72.69138671875,40.1708984375,145.3827734375,11.658203125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4817,11 +4749,11 @@ Technical Support Team"</DTS:PropertyExpression>
     </LayoutInfo>
   </DtsEventHandler>
   <PrecedenceConstraint
-    design-time-name="Package.PrecedenceConstraints[Enable Only if the File is Present]">
+    design-time-name="Package.PrecedenceConstraints[Enable Only If the File is Present]">
     <ShowAnnotation>ConstraintName</ShowAnnotation>
   </PrecedenceConstraint>
   <PrecedenceConstraint
-    design-time-name="Package.PrecedenceConstraints[Enable Only If the File is Present]">
+    design-time-name="Package.PrecedenceConstraints[Enable Only if the File is Present]">
     <ShowAnnotation>ConstraintName</ShowAnnotation>
   </PrecedenceConstraint>
   <PrecedenceConstraint
