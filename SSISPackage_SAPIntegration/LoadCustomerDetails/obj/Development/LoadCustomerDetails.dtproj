@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">APCW10A6G00BMPQ</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAut6/Bl8Z2kybDKiiJi8irQAAAAACAAAAAAADZgAAwAAAABAAAABSnl9MO1nslwf/TAv5tr3ZAAAAAASAAACgAAAAEAAAALYiG/O+Rg+/nV6oH89T5V2IAAAAj0IZ6X9qyWD5sn64++8N7i0UCYIDCVD42hoFWn6w8dL8saAkYDLNUSRwhRMO+VVyraC3oKs6vxct0z579wDeM73yczmuLOC/jIkitn1wO3fa2yQXh0RVng7XoR+A9wIfTYxVXCs2mJkdWogIqRMRFdbX8fAoNcNNXFuzPQ2jjG050XHbAOreXhQAAABzUvIreu4Id3c24/NaEeboe7d15A==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAut6/Bl8Z2kybDKiiJi8irQAAAAACAAAAAAADZgAAwAAAABAAAAAN39rMM4OmX+GWiic+lBOUAAAAAASAAACgAAAAEAAAADFn+VSFwYuiBOio+sHwXlGIAAAAsnmhwjuSsrzeXirAwJU2pzDcQ192XYTm5u3UEGCMHJnuUeKTJW0Y6eKpzt6R1Mr64jg304oIXxeL8huXDziAd+1SE1pC/xnN4DsD5jqcfZ3cT0Ycx3b2/+iEWbTLf9DR1OvQyLC2d58e4yxtxyxAHL2B7cWgqyMZJtm+0h4403BCy7/mc9hnFRQAAAACOnySpjwzktTQTuLFlIlMDyBDOg==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -44,10 +44,10 @@
                 <SSIS:Property SSIS:Name="Name">LoadInvetoryBalanceFile</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">72</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">78</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{0345628D-6052-4896-86D7-65AEE3C88AEB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{F2931B93-6363-409E-B9A2-08FDCE62A499}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -391,10 +391,10 @@
                 <SSIS:Property SSIS:Name="Name">LoadItemMasterFile</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">183</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">190</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{59ADB327-8F87-412B-953A-E27A7B45A897}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{49FCC2D7-A28C-459C-B8F1-AAC24DD95D1F}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -903,10 +903,10 @@
                 <SSIS:Property SSIS:Name="Name">LoadCustomerFile</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">190</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">203</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{3B361370-1B88-464D-917D-11ADFABC9628}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{03150512-A778-4DD7-8CC2-20603225D8AF}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
