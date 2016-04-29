@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadInvetoryBalanceFile"
   DTS:PackageType="5"
-  DTS:VersionBuild="78"
-  DTS:VersionGUID="{F2931B93-6363-409E-B9A2-08FDCE62A499}">
+  DTS:VersionBuild="82"
+  DTS:VersionGUID="{90DEA324-5145-46B8-827D-1D5883A5CC80}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAut6/Bl8Z2kybDKiiJi8irQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACgHT/8DaXbtWkDTYUpuXZnAAAAAASAAACgAAAAEAAAABDN0zKBfWiRWIRrH0CKhMcoAAAAxQnh3fHbux6RpCCuI7pm3ZwRweheXSGnCrGTFzQYrQD0E4yaR09/rxQAAACpsPVnNLdtfRcKL63ojAe6ab3o+g</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAut6/Bl8Z2kybDKiiJi8irQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAtzywMDTEMnJy12ErA4N+oAAAAAASAAACgAAAAEAAAANmUNkErE4hHJdH73ArI320oAAAACilI54+tkgRGSbtahRfWdPoYpg6D6/Bh23/rStFjeCaZGXWwWkeonRQAAACTD8khKEAZ3x9pMOWBJxRzftKf6Q</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -425,7 +425,7 @@ Technical Support Team"</DTS:PropertyExpression>
                   SendMailTask:SMTPServer="{53C304BB-DDC1-4F9F-A5C8-AC11F4F6B705}"
                   SendMailTask:From="&quot;&quot;"
                   SendMailTask:To="&quot;&quot;"
-                  SendMailTask:Subject="&quot;&quot; Environment || LoadInvetoryBalanceFile  package completed successfully -2016-4-28"
+                  SendMailTask:Subject="&quot;&quot; Environment || LoadInvetoryBalanceFile  package completed successfully -2016-4-29"
                   SendMailTask:MessageSource="&#xA;Task to load data from files is completed successfully&#xA;&#xA;Regards,&#xA;Technical Support Team" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -1308,14 +1308,35 @@ Technical Support Team"</DTS:PropertyExpression>
           ReadOnlyVariables="User::InboundFolder,User::InvBalanceFileName"
           ReadWriteVariables="User::DisableTask">
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_b4e7c2bff47e4581b44808961a7d50b8")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_b4e7c2bff47e4581b44808961a7d50b8")]
+[assembly: AssemblyCopyright("Copyright @  2016")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -1756,35 +1777,14 @@ namespace ST_b4e7c2bff47e4581b44808961a7d50b8.Properties {
     }
 }]]></ProjectItem>
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_b4e7c2bff47e4581b44808961a7d50b8")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_b4e7c2bff47e4581b44808961a7d50b8")]
-[assembly: AssemblyCopyright("Copyright @  2016")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -2013,11 +2013,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       <DTS:PropertyExpression
         DTS:Name="Disable">!@[User::DisableTask]</DTS:PropertyExpression>
       <DTS:PropertyExpression
-        DTS:Name="MessageSource">"Hi Team,
-
- No Inbound Files have been Found"+ @[System::PackageName]</DTS:PropertyExpression>
+        DTS:Name="FromLine">@[User::MailFromField]</DTS:PropertyExpression>
       <DTS:PropertyExpression
-        DTS:Name="Subject">TRIM( @[User::MailEnvironment] ) + " Environment || Error occured - "+  @[System::PackageName] +" package - "+ (DT_WSTR,50) DATEPART("yyyy", GETDATE()) + "-"+(DT_WSTR,50) DATEPART("mm", GETDATE())+"-"+(DT_WSTR,50) DATEPART("dd", GETDATE())</DTS:PropertyExpression>
+        DTS:Name="MessageSource">"There is no Inbound Files to Process"</DTS:PropertyExpression>
+      <DTS:PropertyExpression
+        DTS:Name="Subject">TRIM( @[User::MailEnvironment] ) + " Environment || No Inbound Files to Process - "+  @[System::PackageName] +" package - "+ (DT_WSTR,50) DATEPART("yyyy", GETDATE()) + "-"+(DT_WSTR,50) DATEPART("mm", GETDATE())+"-"+(DT_WSTR,50) DATEPART("dd", GETDATE())</DTS:PropertyExpression>
       <DTS:PropertyExpression
         DTS:Name="ToLine">@[User::MailToField]</DTS:PropertyExpression>
       <DTS:ObjectData>
@@ -2025,8 +2025,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           SendMailTask:SMTPServer="{53C304BB-DDC1-4F9F-A5C8-AC11F4F6B705}"
           SendMailTask:From="&quot;&quot;"
           SendMailTask:To="&quot;&quot;"
-          SendMailTask:Subject="&quot;&quot; Environment || Error occured - LoadInvetoryBalanceFile package - 2016-4-28"
-          SendMailTask:MessageSource="Hi Team,&#xA;&#xA; No Inbound Files have been FoundLoadInvetoryBalanceFile" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+          SendMailTask:Subject="&quot;&quot; Environment || No Inbound Files to Process - LoadInvetoryBalanceFile package - 2016-4-29"
+          SendMailTask:MessageSource="There is no Inbound Files to Process" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -2200,7 +2200,7 @@ Technical Support Team"</DTS:PropertyExpression>
               SendMailTask:SMTPServer="{53C304BB-DDC1-4F9F-A5C8-AC11F4F6B705}"
               SendMailTask:From="&quot;&quot;"
               SendMailTask:To="&quot;&quot;"
-              SendMailTask:Subject="&quot;&quot; Environment || Error occured - LoadInvetoryBalanceFile package - 2016-4-28"
+              SendMailTask:Subject="&quot;&quot; Environment || Error occured - LoadInvetoryBalanceFile package - 2016-4-29"
               SendMailTask:MessageSource="Hi Team,&#xA;&#xA;Error has occured in   task&#xA;&#xA;ErrorCode is : 0&#xA;&#xA;ErrorDescription is : &#xA;&#xA;Kindly reach out to technical team by raising the ticket to queue AMR-BBT-LATAM OSM SUPPORT&#xA;&#xA;Regards,&#xA;Technical Support Team" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
