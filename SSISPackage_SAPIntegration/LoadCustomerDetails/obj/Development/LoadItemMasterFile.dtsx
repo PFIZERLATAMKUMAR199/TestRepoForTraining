@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadItemMasterFile"
   DTS:PackageType="5"
-  DTS:VersionBuild="196"
-  DTS:VersionGUID="{2C40373F-7646-4BA7-9A9A-9F5736372A27}">
+  DTS:VersionBuild="200"
+  DTS:VersionGUID="{A8ACDDA4-8581-4587-98AC-3771AD8E14AE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAut6/Bl8Z2kybDKiiJi8irQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABiLdZFa7zBjjxEyYh5OwAWAAAAAASAAACgAAAAEAAAAAiC3wRJs5V+Q0WJjDNbT6MoAAAAPKHBa9/vamqxHpyzSv3S3LsTTJXNXNZ/ptG+jGxmY6o/25Q1MJHyHBQAAADIeb4U+F61njz0kyEXlBtsxQv0Cg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAut6/Bl8Z2kybDKiiJi8irQAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADeJE830NfGNwmDbiF7J17DAAAAAASAAACgAAAAEAAAAHw3u5mj2adnc1ConXe68a4oAAAAUKTbmCPEAiElQJU6Bd/6aFcYSbB48OK/uc8BDfN7LIDbLS3Mu/7W/RQAAABZ+92VXD40kVMY2MS5KP+vno25+w</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -2128,7 +2128,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Execute SQL Task"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:PropertyExpression
         DTS:Name="Disable">! @[User::DisableTask]</DTS:PropertyExpression>
@@ -2184,7 +2184,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="File System Task for PriceDetail"
       DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:PropertyExpression
         DTS:Name="Disable">@[User::DisableTask]</DTS:PropertyExpression>
@@ -2332,13 +2332,13 @@
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">[UPPER](#{Package\Read ItemMaster File\Read ITEMMASTER_TO_SEMP_CL_20160229003500 txt file.Outputs[Flat File Source Output].Columns[FilterText]}) == "Z*990" &amp;&amp; [UPPER](#{Package\Read ItemMaster File\Read ITEMMASTER_TO_SEMP_CL_20160229003500 txt file.Outputs[Flat File Source Output].Columns[MTART]}) == "FERT" &amp;&amp; ([UPPER](#{Package\Read ItemMaster File\Read ITEMMASTER_TO_SEMP_CL_20160229003500 txt file.Outputs[Flat File Source Output].Columns[VKORG]}) == "CL10" || [UPPER](#{Package\Read ItemMaster File\Read ITEMMASTER_TO_SEMP_CL_20160229003500 txt file.Outputs[Flat File Source Output].Columns[VKORG]}) == "CL11" || [UPPER](#{Package\Read ItemMaster File\Read ITEMMASTER_TO_SEMP_CL_20160229003500 txt file.Outputs[Flat File Source Output].Columns[VKORG]}) == "CL20")</property>
+                      name="Expression">[UPPER](#{Package\Read ItemMaster File\Read ITEMMASTER_TO_SEMP_CL_20160229003500 txt file.Outputs[Flat File Source Output].Columns[FilterText]}) == "Z*990" &amp;&amp; [UPPER](#{Package\Read ItemMaster File\Read ITEMMASTER_TO_SEMP_CL_20160229003500 txt file.Outputs[Flat File Source Output].Columns[MTART]}) == "FERT" &amp;&amp; ([UPPER](#{Package\Read ItemMaster File\Read ITEMMASTER_TO_SEMP_CL_20160229003500 txt file.Outputs[Flat File Source Output].Columns[VKORG]}) == "CL10" || [UPPER](#{Package\Read ItemMaster File\Read ITEMMASTER_TO_SEMP_CL_20160229003500 txt file.Outputs[Flat File Source Output].Columns[VKORG]}) == "CL20")</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the friendly version of the expression. This expression version uses column names."
                       expressionType="Notify"
-                      name="FriendlyExpression">UPPER(FilterText) == "Z*990" &amp;&amp; UPPER(MTART) == "FERT" &amp;&amp; (UPPER(VKORG) == "CL10" || UPPER(VKORG) == "CL11" || UPPER(VKORG) == "CL20")</property>
+                      name="FriendlyExpression">UPPER(FilterText) == "Z*990" &amp;&amp; UPPER(MTART) == "FERT" &amp;&amp; (UPPER(VKORG) == "CL10" || UPPER(VKORG) == "CL20")</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -8016,6 +8016,15 @@
           ReadOnlyVariables="User::InboundFolder,User::ItemMasterFileName"
           ReadWriteVariables="User::DisableTask">
           <ProjectItem
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+          <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <root>
@@ -8134,35 +8143,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
-          <ProjectItem
-            Name="Properties\Settings.Designer.cs"
-            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_954ad330bb3745adb20bacf72d3eab19.Properties.Settings.get_Default():ST_954ad330bb3745adb20bacf72d3eab19.Properties.Sett" +
-    "ings")]
-
-namespace ST_954ad330bb3745adb20bacf72d3eab19.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
           <ProjectItem
             Name="ST_954ad330bb3745adb20bacf72d3eab19.csproj"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -8422,6 +8402,35 @@ namespace ST_954ad330bb3745adb20bacf72d3eab19
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
           <ProjectItem
+            Name="Properties\Settings.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_954ad330bb3745adb20bacf72d3eab19.Properties.Settings.get_Default():ST_954ad330bb3745adb20bacf72d3eab19.Properties.Sett" +
+    "ings")]
+
+namespace ST_954ad330bb3745adb20bacf72d3eab19.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <ProjectItem
             Name="Properties\AssemblyInfo.cs"
             Encoding="UTF8"><![CDATA[using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -8451,15 +8460,6 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 
 [assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-          <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -8679,6 +8679,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           ReadOnlyVariables="User::InboundFolder,User::PriceDetailFileName"
           ReadWriteVariables="User::DisableTask">
           <ProjectItem
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+          <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <root>
@@ -8797,35 +8806,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
-          <ProjectItem
-            Name="Properties\Settings.Designer.cs"
-            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_52da37bf44b945e1bd14181144d0bba1.Properties.Settings.get_Default():ST_52da37bf44b945e1bd14181144d0bba1.Properties.Sett" +
-    "ings")]
-
-namespace ST_52da37bf44b945e1bd14181144d0bba1.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
           <ProjectItem
             Name="ST_52da37bf44b945e1bd14181144d0bba1.csproj"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -9070,19 +9050,48 @@ namespace ST_52da37bf44b945e1bd14181144d0bba1
 	<msb:PropertyGroup>
 		<msb:CodeName>ST_52da37bf44b945e1bd14181144d0bba1</msb:CodeName>
 		<msb:DisplayName>ST_52da37bf44b945e1bd14181144d0bba1</msb:DisplayName>
-		<msb:ProjectId>{4A9BA398-8B31-41D8-9F83-A4CB287D5DD8}</msb:ProjectId>
 		<msb:Language>msBuild</msb:Language>
+		<msb:ProjectId>{4A9BA398-8B31-41D8-9F83-A4CB287D5DD8}</msb:ProjectId>
 	</msb:PropertyGroup>
 	<msb:ItemGroup>
 		<msb:Project Include="ST_52da37bf44b945e1bd14181144d0bba1.csproj"/>
 		<msb:File Include="Properties\AssemblyInfo.cs"/>
 		<msb:File Include="Properties\Resources.resx"/>
-		<msb:File Include="Properties\Settings.Designer.cs"/>
 		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
 		<msb:File Include="Properties\Settings.settings"/>
 		<msb:File Include="ScriptMain.cs"/>
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Settings.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_52da37bf44b945e1bd14181144d0bba1.Properties.Settings.get_Default():ST_52da37bf44b945e1bd14181144d0bba1.Properties.Sett" +
+    "ings")]
+
+namespace ST_52da37bf44b945e1bd14181144d0bba1.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
           <ProjectItem
             Name="Properties\AssemblyInfo.cs"
             Encoding="UTF8"><![CDATA[using System.Reflection;
@@ -9113,15 +9122,6 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 
 [assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-          <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -9193,7 +9193,7 @@ namespace ST_52da37bf44b945e1bd14181144d0bba1.Properties {
           <BinaryItem
             Name="ST_52da37bf44b945e1bd14181144d0bba1.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAMMVIlcAAAAAAAAAAOAAAiELAQsAABIAAAAIAAAAAAAArjEA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAENuPFcAAAAAAAAAAOAAAiELAQsAABIAAAAIAAAAAAAArjEA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACAAAAAAgAAAAAAAAMAQIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAFgxAABTAAAAAEAAAAgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -9233,7 +9233,7 @@ vAEbAAEBrwWxAAEBuAW2AAwAwgW7AAwAxgXBAOkA0AXFAAwATQXKAAwA7QXQABQA+wXhAAEBuAXm
 ABkBDwbsABQAFwbxACEBLAYbABkAvAEbAAgAFABOAAgAGABTACkAkwCAAC4AGwB9AS4AIwB9AS4A
 YwCjAS4ACwAMAS4AEwBUAS4AMwBUAS4AKwB9AS4AOwCDAS4AQwB9AS4AWwCaAUMAawBTAEkAkwCA
 AGEAmwBTAIMAqwBTAHUA9QACAAEAAwADAAAAbwEvAAAA7gE0AAAAEgJCAAIAAgADAAIAAwAFAAEA
-BAAFAAIABQAHAKsA2gAEgAAAAQAAAEoXTYgAAAAAAAB/AAAABAAAAAAAAAAAAAAAAQCxAAAAAAAE
+BAAFAAIABQAHAKsA2gAEgAAAAQAAAF4XjYUAAAAAAAB/AAAABAAAAAAAAAAAAAAAAQCxAAAAAAAE
 AAAAAAAAAAAAAAABALoAAAAAAAsAAAAAAAAAAAAAAAoA9QAAAAAACwAAAAAAAAAAAAAACgDtBAAA
 AAAAAAAAAQAAADQGAAAFAAQAAAAAPE1vZHVsZT4AU1RfNTJkYTM3YmY0NGI5NDVlMWJkMTQxODEx
 NDRkMGJiYTEuZGxsAFJlc291cmNlcwBTVF81MmRhMzdiZjQ0Yjk0NWUxYmQxNDE4MTE0NGQwYmJh
@@ -9269,7 +9269,7 @@ NQBlADEAYgBkADEANAAxADgAMQAxADQANABkADAAYgBiAGEAMQAuAFAAcgBvAHAAZQByAHQAaQBl
 AHMALgBSAGUAcwBvAHUAcgBjAGUAcwAAJ1UAcwBlAHIAOgA6AEkAbgBiAG8AdQBuAGQARgBvAGwA
 ZABlAHIAADNQAFIASQBDAEUAXwBEAEUAVABBAEkATABTAF8AVABPAF8AUwBFAE0AUABfAEMATABf
 AAAzVQBzAGUAcgA6ADoAUAByAGkAYwBlAEQAZQB0AGEAaQBsAEYAaQBsAGUATgBhAG0AZQAAAQAj
-VQBzAGUAcgA6ADoARABpAHMAYQBiAGwAZQBUAGEAcwBrAAAAAADnSpRMUimmS5qf/BKh70lYAAi3
+VQBzAGUAcgA6ADoARABpAHMAYQBiAGwAZQBUAGEAcwBrAAAAAABWyLXeye53SZ9d/XRmW3vUAAi3
 elxWGTTgiQiJhF3NgIDMkQMGEhUDBhIZAyAAAQQAABIVBAAAEhkFAAEBEhkECAASFQQIABIZAwYS
 DAQAABIMBAgAEgwCBggDBhEUBAAAAAAEAQAAAAQgAQEOBCABAQgGAAESURFVBCAAElkGIAIBDhJZ
 BAcBEhUFIAEBEWEIAQACAAAAAAADAAABBCAAEm0EIAAScQUgARJ1HAMgABwDIAAOBQABHQ4OBRUS
@@ -9283,13 +9283,13 @@ bE1haW4AbXNjb3JlZS5kbGwAAAAAAP8lACAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAEAEAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAA
 AEgAAABYQAAAsAMAAAAAAAAAAAAAsAM0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8A
-AAAAAL0E7/4AAAEAAAABAE2IShcAAAEATYhKFz8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
+AAAAAL0E7/4AAAEAAAABAI2FXhcAAAEAjYVeFz8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
 AAAAAQBWAGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8A
 bgAAAAAAAACwBBADAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAAOwCAAABADAAMAAw
 ADAAMAA0AGIAMAAAAHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAAAABTAFQA
 XwA1ADIAZABhADMANwBiAGYANAA0AGIAOQA0ADUAZQAxAGIAZAAxADQAMQA4ADEAMQA0ADQAZAAw
-AGIAYgBhADEAAABAAA8AAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4ANQA5ADYA
-MgAuADMANAA4ADkAMwAAAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAFQAXwA1
+AGIAYgBhADEAAABAAA8AAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4ANQA5ADgA
+MgAuADMANAAxADgAOQAAAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAFQAXwA1
 ADIAZABhADMANwBiAGYANAA0AGIAOQA0ADUAZQAxAGIAZAAxADQAMQA4ADEAMQA0ADQAZAAwAGIA
 YgBhADEALgBkAGwAbAAAAEgAEgABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAAAEMAbwBw
 AHkAcgBpAGcAaAB0ACAAQAAgACAAMgAwADEANgAAAHgAKAABAE8AcgBpAGcAaQBuAGEAbABGAGkA
@@ -9297,8 +9297,8 @@ bABlAG4AYQBtAGUAAABTAFQAXwA1ADIAZABhADMANwBiAGYANAA0AGIAOQA0ADUAZQAxAGIAZAAx
 ADQAMQA4ADEAMQA0ADQAZAAwAGIAYgBhADEALgBkAGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQA
 TgBhAG0AZQAAAAAAUwBUAF8ANQAyAGQAYQAzADcAYgBmADQANABiADkANAA1AGUAMQBiAGQAMQA0
 ADEAOAAxADEANAA0AGQAMABiAGIAYQAxAAAARAAPAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkA
-bwBuAAAAMQAuADAALgA1ADkANgAyAC4AMwA0ADgAOQAzAAAAAABIAA8AAQBBAHMAcwBlAG0AYgBs
-AHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgA1ADkANgAyAC4AMwA0ADgAOQAzAAAAAAAAAAAA
+bwBuAAAAMQAuADAALgA1ADkAOAAyAC4AMwA0ADEAOAA5AAAAAABIAA8AAQBBAHMAcwBlAG0AYgBs
+AHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgA1ADkAOAAyAC4AMwA0ADEAOAA5AAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -9330,7 +9330,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       DTS:LocaleID="-1"
       DTS:ObjectName="Send Mail Task when no InboundFiles"
       DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:PropertyExpression
         DTS:Name="Disable">! @[User::DisableTask]</DTS:PropertyExpression>
@@ -9347,7 +9347,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           SendMailTask:SMTPServer="{E4E0B4B6-975B-4CBE-910D-5911308EC4BF}"
           SendMailTask:From="&quot;&quot;"
           SendMailTask:To="&quot;&quot;"
-          SendMailTask:Subject="&quot;&quot; Environment || No Inbound Files to Process - LoadItemMasterFile package - 2016-4-29"
+          SendMailTask:Subject="&quot;&quot; Environment || No Inbound Files to Process - LoadItemMasterFile package - 2016-5-18"
           SendMailTask:MessageSource="There is no Inbound Files to Process" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -9447,7 +9447,7 @@ Technical Support Team"</DTS:PropertyExpression>
                   SendMailTask:SMTPServer="{E4E0B4B6-975B-4CBE-910D-5911308EC4BF}"
                   SendMailTask:From="&quot;&quot;"
                   SendMailTask:To="&quot;&quot;"
-                  SendMailTask:Subject="&quot;&quot; Environment || LoadItemMasterFile  package completed successfully -2016-4-29"
+                  SendMailTask:Subject="&quot;&quot; Environment || LoadItemMasterFile  package completed successfully -2016-5-18"
                   SendMailTask:MessageSource="&#xA;Task to load data from files is completed successfully&#xA;&#xA;Regards,&#xA;Technical Support Team" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
               </DTS:ObjectData>
             </DTS:Executable>
@@ -9647,7 +9647,7 @@ Technical Support Team"</DTS:PropertyExpression>
               SendMailTask:SMTPServer="{E4E0B4B6-975B-4CBE-910D-5911308EC4BF}"
               SendMailTask:From="&quot;&quot;"
               SendMailTask:To="&quot;&quot;"
-              SendMailTask:Subject="&quot;&quot; Environment || Error occured - LoadItemMasterFile package - 2016-4-29"
+              SendMailTask:Subject="&quot;&quot; Environment || Error occured - LoadItemMasterFile package - 2016-5-18"
               SendMailTask:MessageSource="Hi Team,&#xA;&#xA;Error has occured in   task&#xA;&#xA;ErrorCode is : 0&#xA;&#xA;ErrorDescription is : &#xA;&#xA;Kindly reach out to technical team by raising the ticket to queue AMR-BBT-LATAM OSM SUPPORT&#xA;&#xA;Regards,&#xA;Technical Support Team" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -9995,7 +9995,7 @@ Technical Support Team"</DTS:PropertyExpression>
     design-time-name="Package.EventHandlers[OnError]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="192,42"
           Id="Package.EventHandlers[OnError]\Rollback the tables data"
@@ -10027,7 +10027,9 @@ Technical Support Team"</DTS:PropertyExpression>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10049,7 +10051,9 @@ Technical Support Team"</DTS:PropertyExpression>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10127,9 +10131,7 @@ Technical Support Team"</DTS:PropertyExpression>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>LoadCustomerDetails</Name>
-    <LastWriteTime>2016-04-28T13:09:06.7282533Z</LastWriteTime>
+    <LastWriteTime>2016-05-18T13:17:42.9018566Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -13,12 +13,12 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LoadItemMasterFile.dtsx</Name>
-      <LastWriteTime>2016-04-29T07:07:11.0156443Z</LastWriteTime>
+      <LastWriteTime>2016-05-18T13:29:41.6883984Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>LoadCustomerFile.dtsx</Name>
-      <LastWriteTime>2016-04-29T07:03:29.6441674Z</LastWriteTime>
+      <LastWriteTime>2016-05-11T13:09:33.302359Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
